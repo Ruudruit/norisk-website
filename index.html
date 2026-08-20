@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No-Risk Autoruitservice – Autoruit repareren of vervangen</title>
+  <meta name="description" content="Autoruit stuk? No-Risk Autoruitservice repareert of vervangt uw autoruit dezelfde dag. Veelal zonder eigen risico via uw verzekering. FOCWA gecertificeerd.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rood: #CC0000;
+      --rood-hover: #aa0000;
+      --zwart: #111111;
+      --grijs: #333333;
+      --lichtgrijs: #f5f5f5;
+      --wit: #ffffff;
+      --font: 'Segoe UI', Arial, sans-serif;
+      --radius: 8px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.12);
+      --transition: 0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--zwart); background: var(--wit); line-height: 1.6; }
+
+    /* ── NAVIGATIE ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(17,17,17,0.95); backdrop-filter: blur(8px);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background var(--transition);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--wit);
+      font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--rood); }
+    .nav-logo-icon {
+      width: 36px; height: 36px; background: var(--rood);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-icon svg { width: 22px; height: 22px; fill: var(--wit); }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.85); text-decoration: none;
+      padding: 0.5rem 1rem; border-radius: var(--radius);
+      font-size: 0.95rem; position: relative; transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 4px; left: 1rem; right: 1rem;
+      height: 2px; background: var(--rood);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .nav-links a:hover { color: var(--wit); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta {
+      background: var(--rood); color: var(--wit) !important;
+      padding: 0.55rem 1.2rem !important; border-radius: var(--radius) !important;
+      font-weight: 600; transition: background var(--transition), transform var(--transition) !important;
+    }
+    .nav-cta:hover { background: var(--rood-hover) !important; transform: translateY(-1px); }
+    .nav-cta::after { display: none !important; }
+
+    /* Hamburger mobiel */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--wit); border-radius: 2px; transition: var(--transition); }
+
+    /* ── HERO VIDEO ── */
+    .hero {
+      position: relative; height: 100vh; min-height: 600px;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    #hero-video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.4) 60%, rgba(204,0,0,0.15) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      padding-top: 68px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+      color: var(--wit); padding: 6px 16px; border-radius: 50px;
+      font-size: 0.85rem; font-weight: 500; margin-bottom: 1.5rem;
+      backdrop-filter: blur(4px);
+    }
+    .hero-badge::before { content: '✓'; color: #4ade80; font-weight: 700; }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800;
+      color: var(--wit); line-height: 1.1; margin-bottom: 1.2rem;
+      max-width: 680px;
+    }
+    .hero h1 em { color: var(--rood); font-style: normal; }
+    .hero p {
+      color: rgba(255,255,255,0.88); font-size: 1.15rem;
+      max-width: 560px; margin-bottom: 2rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--rood); color: var(--wit);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 16px rgba(204,0,0,0.4);
+    }
+    .btn-primary:hover { background: var(--rood-hover); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(204,0,0,0.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12); color: var(--wit);
+      border: 2px solid rgba(255,255,255,0.5);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 600; text-decoration: none;
+      backdrop-filter: blur(4px);
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.22); border-color: var(--wit); transform: translateY(-2px); }
+    .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .hero-stat { color: var(--wit); }
+    .hero-stat strong { display: block; font-size: 1.8rem; font-weight: 800; color: var(--rood); line-height: 1; }
+    .hero-stat span { font-size: 0.85rem; opacity: 0.8; }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      z-index: 2; display: flex; flex-direction: column; align-items: center;
+      gap: 6px; color: rgba(255,255,255,0.6); font-size: 0.75rem; animation: bounce 2s infinite;
+    }
+    .scroll-hint svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+    /* ── USP BALK ── */
+    .usp-bar { background: var(--rood); padding: 1rem 2rem; }
+    .usp-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    }
+    .usp-item { display: flex; align-items: center; gap: 10px; color: var(--wit); font-size: 0.95rem; font-weight: 600; }
+    .usp-item svg { width: 20px; height: 20px; fill: none; stroke: var(--wit); stroke-width: 2.5; flex-shrink: 0; }
+
+    /* ── SECTIES ALGEMEEN ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label { color: var(--rood); font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+    .section-sub { color: var(--grijs); font-size: 1.05rem; max-width: 560px; }
+
+    /* ── DIENSTEN CARDS ── */
+    .diensten { background: var(--lichtgrijs); }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .card {
+      background: var(--wit); border-radius: 12px; padding: 2rem;
+      box-shadow: var(--shadow); transition: transform var(--transition), box-shadow var(--transition);
+      border-top: 4px solid transparent; cursor: default;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,0.15); border-top-color: var(--rood); }
+    .card-icon {
+      width: 56px; height: 56px; background: rgba(204,0,0,0.08);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem; transition: background var(--transition);
+    }
+    .card:hover .card-icon { background: var(--rood); }
+    .card-icon svg { width: 28px; height: 28px; fill: none; stroke: var(--rood); stroke-width: 2; transition: stroke var(--transition); }
+    .card:hover .card-icon svg { stroke: var(--wit); }
+    .card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .card p { color: var(--grijs); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem; }
+    .card-link {
+      color: var(--rood); font-weight: 600; font-size: 0.9rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+      transition: gap var(--transition);
+    }
+    .card-link:hover { gap: 10px; }
+
+    /* ── HOE HET WERKT ── */
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .step { text-align: center; padding: 1.5rem 1rem; }
+    .step-num {
+      width: 56px; height: 56px; background: var(--rood); color: var(--wit);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; font-weight: 800; margin: 0 auto 1.25rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .step:hover .step-num { transform: scale(1.1); box-shadow: 0 6px 20px rgba(204,0,0,0.35); }
+    .step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .step p { color: var(--grijs); font-size: 0.92rem; }
+
+    /* ── REVIEWS ── */
+    .reviews { background: var(--zwart); }
+    .reviews .section-title { color: var(--wit); }
+    .reviews .section-label { color: #ff4444; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .review-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 1.75rem;
+      transition: background var(--transition), transform var(--transition), border-color var(--transition);
+    }
+    .review-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); border-color: var(--rood); }
+    .stars { color: #fbbf24; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .review-text { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem; }
+    .review-author { display: flex; align-items: center; gap: 12px; }
+    .review-avatar {
+      width: 42px; height: 42px; background: var(--rood);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: var(--wit); font-weight: 700; font-size: 1rem;
+    }
+    .review-name { color: var(--wit); font-weight: 600; font-size: 0.95rem; }
+    .review-sub { color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+
+    /* ── CTA SECTIE ── */
+    .cta-sectie { background: var(--rood); text-align: center; padding: 5rem 2rem; }
+    .cta-sectie h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; color: var(--wit); margin-bottom: 1rem; }
+    .cta-sectie p { color: rgba(255,255,255,0.88); font-size: 1.05rem; max-width: 520px; margin: 0 auto 2rem; }
+    .btn-wit {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--wit); color: var(--rood);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .btn-wit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
+
+    /* ── FOOTER ── */
+    footer { background: #0a0a0a; color: rgba(255,255,255,0.7); padding: 3rem 2rem 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
+    .footer-brand .nav-logo { margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+    .footer-col h4 { color: var(--wit); font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.9rem; transition: color var(--transition); }
+    .footer-col a:hover { color: var(--rood); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; }
+    .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--rood); }
+
+    /* ── MOBIEL ── */
+    @media (max-width: 768px) {
+      #hero-video { display: none; }
+      .hero { background: linear-gradient(135deg, #111 60%, #330000 100%); }
+      .hero-overlay { background: rgba(0,0,0,0.5); }
+
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0;
+        position: absolute; top: 68px; left: 0; right: 0;
+        background: rgba(17,17,17,0.98); padding: 1rem 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.75rem 2rem; border-radius: 0; }
+      .nav-links a::after { display: none; }
+
+      .hero-stats { gap: 1.2rem; }
+      .usp-bar-inner { gap: 1.2rem; flex-direction: column; align-items: flex-start; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATIE -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M3 10h18M3 14h18M9 4l-6 6 6 6M15 4l6 6-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+    </div>
+    No-<span>Risk</span>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="diensten.html">Diensten</a></li>
+    <li><a href="locaties.html">Locaties</a></li>
+    <li><a href="over-ons.html">Over ons</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="tel:+31000000000" class="nav-cta">📞 Bel direct</a></li>
+  </ul>
+</nav>
+
+<!-- HERO MET VIDEO -->
+<section class="hero">
+  <video autoplay muted loop playsinline poster="header-poster.jpg" id="hero-video">
+    <source src="No_Risk_Voorruit_Vervanging.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">FOCWA gecertificeerd &amp; verzekerd</div>
+    <h1>Autoruit stuk?<br><em>Wij lossen het op.</em></h1>
+    <p>Snelle reparatie of vervanging van uw autoruit — op locatie of bij ons in de werkplaats. Veelal via uw verzekering zonder eigen risico.</p>
+    <div class="hero-btns">
+      <a href="contact.html" class="btn-primary">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Gratis offerte aanvragen
+      </a>
+      <a href="tel:+31000000000" class="btn-secondary">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Direct bellen
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>500+</strong><span>Klanten per jaar</span></div>
+      <div class="hero-stat"><strong>9,2</strong><span>Gemiddelde beoordeling</span></div>
+      <div class="hero-stat"><strong>Zelfde dag</strong><span>Veelal mogelijk</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- USP BALK -->
+<div class="usp-bar">
+  <div class="usp-bar-inner">
+    <div class="usp-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Dezelfde dag geholpen
+    </div>
+    <div class="usp-item">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Veelal zonder eigen risico
+    </div>
+    <div class="usp-item">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      FOCWA gecertificeerd
+    </div>
+    <div class="usp-item">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Aan huis of op locatie
+    </div>
+  </div>
+</div>
+
+<!-- DIENSTEN -->
+<section class="diensten">
+  <div class="container">
+    <p class="section-label">Wat wij doen</p>
+    <h2 class="section-title">Onze diensten</h2>
+    <p class="section-sub">Van kleine reparaties tot volledige vervanging — altijd vakkundig en snel.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+        </div>
+        <h3>Ruit repareren</h3>
+        <p>Kleine chip of ster in uw autoruit? Wij repareren dit snel en onzichtbaar. Rijveiligheid hersteld, geen vervanging nodig.</p>
+        <a href="diensten.html" class="card-link">Meer informatie →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </div>
+        <h3>Ruit vervangen</h3>
+        <p>Ernstige schade of barst? Wij vervangen de ruit met origineel of OEM-glas — op locatie of in onze werkplaats.</p>
+        <a href="diensten.html" class="card-link">Meer informatie →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>ADAS kalibratie</h3>
+        <p>Na vervanging van uw voorruit kalibreren wij uw rijassistentiesystemen (lane assist, noodremassistent) opnieuw in.</p>
+        <a href="diensten.html" class="card-link">Meer informatie →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3>Verzekering afhandelen</h3>
+        <p>Wij regelen de declaratie rechtstreeks met uw verzekeraar. Veelal betaalt u geen eigen risico bij ruitschade.</p>
+        <a href="diensten.html" class="card-link">Meer informatie →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOE HET WERKT -->
+<section>
+  <div class="container">
+    <p class="section-label">Werkwijze</p>
+    <h2 class="section-title">Hoe werkt het?</h2>
+    <p class="section-sub">In drie stappen uw autoruit gerepareerd of vervangen.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Aanmelden</h3>
+        <p>Bel ons, stuur een WhatsApp of vul het contactformulier in. Wij bevestigen uw aanvraag direct.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Afspraak inplannen</h3>
+        <p>We plannen een afspraak op uw locatie of bij onze werkplaats, veelal dezelfde dag nog.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Klaar!</h3>
+        <p>Onze monteur voert de reparatie of vervanging uit. U rijdt weer veilig de weg op.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Verzekering regelen</h3>
+        <p>Wij verwerken de declaratie bij uw verzekeraar. Geen gedoe, geen formulieren voor u.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="container">
+    <p class="section-label">Wat klanten zeggen</p>
+    <h2 class="section-title">Beoordelingen</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Dezelfde dag nog geholpen, monteur was punctueel en vriendelijk. Ruit ziet er perfect uit en eigen risico hoefde ik niet te betalen!"</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">Marco de Vries</div>
+            <div class="review-sub">Google review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Superschnelle service, ik belde 's ochtends en 's middags was de ruit al vervangen. Alles ook netjes afgehandeld met de verzekering."</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-name">Sandra Bakker</div>
+            <div class="review-sub">Google review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Eindelijk een bedrijf dat doet wat het belooft. Snel, netjes en voor mij niets extra's te betalen. Absoluut aan te bevelen!"</p>
+        <div class="review-author">
+          <div class="review-avatar">R</div>
+          <div>
+            <div class="review-name">Rob Janssen</div>
+            <div class="review-sub">Google review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sectie">
+  <div class="container">
+    <h2>Autoruit stuk? Bel ons nu.</h2>
+    <p>Wij staan klaar om u zo snel mogelijk te helpen — veelal dezelfde dag nog op locatie.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="tel:+31000000000" class="btn-wit">📞 Direct bellen</a>
+      <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.5);padding:.9rem 2rem;border-radius:8px;font-size:1rem;font-weight:700;text-decoration:none;transition:.25s ease;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">📋 Offerte aanvragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex;">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 10h18M3 14h18M9 4l-6 6 6 6M15 4l6 6-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        No-<span>Risk</span>
+      </a>
+      <p>Vakkundige autoruitservice voor particulieren en bedrijven. FOCWA gecertificeerd en verzekerd.</p>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;">📞 <a href="tel:+31000000000" style="color:var(--rood);text-decoration:none;">+31 (0)00 000 0000</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Diensten</h4>
+      <ul>
+        <li><a href="diensten.html">Ruit repareren</a></li>
+        <li><a href="diensten.html">Ruit vervangen</a></li>
+        <li><a href="diensten.html">ADAS kalibratie</a></li>
+        <li><a href="diensten.html">Verzekering</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Informatie</h4>
+      <ul>
+        <li><a href="over-ons.html">Over ons</a></li>
+        <li><a href="locaties.html">Locaties</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Privacy &amp; cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 No-Risk Autoruitservice. Alle rechten voorbehouden.</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="#">Privacybeleid</a>
+      <a href="#">Algemene voorwaarden</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  // Nav achtergrond bij scrollen
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.background =
+      window.scrollY > 60 ? 'rgba(17,17,17,0.98)' : 'rgba(17,17,17,0.95)';
+  });
+</script>
+</body>
+</html>
