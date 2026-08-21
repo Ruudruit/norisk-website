@@ -6,6 +6,7 @@ Statische HTML/CSS website voor No-Risk Autoruitservice.
 ```
 norisk-website/
 ├── index.html          ← Homepage (video header)
+├── flavicon.png        ← Homepage (flavixom header)
 ├── diensten.html       ← Dienstenpagina (video header)
 ├── locaties.html       ← Locatiespagina
 ├── over-ons.html       ← Over ons pagina
