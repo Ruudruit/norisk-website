@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>No-Risk Autoruitservice – Autoruit repareren of vervangen</title>
   <meta name="description" content="Autoruit stuk? No-Risk Autoruitservice repareert of vervangt uw autoruit dezelfde dag. Veelal zonder eigen risico via uw verzekering. FOCWA gecertificeerd.">
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="favicon.jpg">
-  <link rel="apple-touch-icon" href="favicon.jpg">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -36,16 +33,12 @@
       transition: background var(--transition);
     }
     .nav-logo {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none; color: var(--wit);
-      font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px;
+      display: flex; align-items: center;
+      text-decoration: none;
     }
-    .nav-logo span { color: var(--rood); }
-    .nav-logo-icon {
-      width: 36px; height: 36px; background: var(--rood);
-      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    .nav-logo img {
+      height: 44px; width: auto; display: block;
     }
-    .nav-logo-icon svg { width: 22px; height: 22px; fill: var(--wit); }
     .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
     .nav-links a {
       color: rgba(255,255,255,0.85); text-decoration: none;
@@ -395,11 +388,8 @@
 
 <!-- NAVIGATIE -->
 <nav>
-  <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">
-      <svg viewBox="0 0 24 24"><path d="M3 10h18M3 14h18M9 4l-6 6 6 6M15 4l6 6-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-    </div>
-    No-<span>Risk</span>
+  <a href="index.html" class="nav-logo" aria-label="No-Risk Autoruitservice - Home">
+    <img src="logo.png" alt="No-Risk Autoruitservice">
   </a>
   <button class="hamburger" id="hamburger" aria-label="Menu openen">
     <span></span><span></span><span></span>
@@ -817,14 +807,8 @@
 
     <!-- Kolom 1: Brand -->
     <div class="footer-brand">
-      <a href="index.html" class="footer-logo-text">
-        <div class="logo-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 10h18M3 14h18M9 4l-6 6 6 6M15 4l6 6-6 6"/></svg>
-        </div>
-        <div class="logo-name">
-          No-<span>Risk</span> Autoruitservice
-          <em class="logo-sub">BOVAG en Glasgarant erkend</em>
-        </div>
+      <a href="index.html" class="footer-logo-text" aria-label="No-Risk Autoruitservice - Home">
+        <img src="logo.png" alt="No-Risk Autoruitservice" style="height:48px;width:auto;display:block;">
       </a>
       <p class="footer-tagline">Vakkundige autoruitservice voor particulieren en bedrijven. Snel, betrouwbaar en veelal zonder eigen risico.</p>
 
