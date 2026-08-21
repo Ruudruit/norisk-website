@@ -316,7 +316,7 @@
     }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
     .footer-col ul li a {
-      color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem;
+      color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.88rem;
       display: flex; align-items: center; gap: 0.5rem;
       transition: color var(--transition);
     }
@@ -340,7 +340,7 @@
       display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
     }
     .footer-contact-list .ci svg { width: 15px; height: 15px; fill: none; stroke: var(--rood); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-    .footer-contact-list .ct { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.4; }
+    .footer-contact-list .ct { font-size: 0.83rem; color: rgba(255,255,255,0.85); line-height: 1.4; }
     .footer-contact-list .ct strong { display: block; color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 600; }
     .footer-contact-list a { color: rgba(255,255,255,0.85); text-decoration: none; transition: color var(--transition); }
     .footer-contact-list a:hover { color: var(--rood); }
@@ -349,10 +349,12 @@
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.08);
       padding: 1.2rem 0; margin-top: 0;
-      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem;
-      font-size: 0.8rem; color: rgba(255,255,255,0.35); max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: center; align-items: center;
+      flex-wrap: wrap; gap: 0.6rem 1rem;
+      font-size: 0.78rem; color: rgba(255,255,255,0.35);
+      max-width: 1200px; margin: 0 auto; text-align: center;
     }
-    .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color var(--transition); }
+    .footer-bottom a { color: rgba(255,255,255,0.85); text-decoration: none; transition: color var(--transition); white-space: nowrap; }
     .footer-bottom a:hover { color: var(--rood); }
 
     /* ── MOBIEL ── */
@@ -872,7 +874,7 @@
       <ul class="footer-contact-list">
         <li>
           <span class="ci"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-          <span class="ct"><strong>Contactgegevens</strong>No-Risk Autoruitservice</span>
+          <span class="ct"><strong>Contactgegevens</strong></span>
         </li>
         <li>
           <span class="ci"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
@@ -891,11 +893,15 @@
 
   </div>
   <div class="footer-bottom">
-    <span>© 2026 No-Risk Autoruitservice. Alle rechten voorbehouden.</span>
-    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
-      <a href="#">Privacybeleid</a>
-      <a href="Algemenevoorwaarden.pdf" target="_blank">Algemene voorwaarden</a>
-    </div>
+    <a href="https://no-risk.nl/algemene-voorwaarden/" target="_blank" rel="noopener">Algemene voorwaarden</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/cookie-verklaring/" target="_blank" rel="noopener">Cookie verklaring</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/disclaimer/" target="_blank" rel="noopener">Disclaimer</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/privacy-verklaring/" target="_blank" rel="noopener">Privacy verklaring</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/over-ons/" target="_blank" rel="noopener">© No-Risk Autoruitservice 1996-2026</a>
   </div>
 </footer>
 
