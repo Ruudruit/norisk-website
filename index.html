@@ -280,7 +280,7 @@
     .footer-logo-text .logo-name { display: flex; flex-direction: column; }
     .footer-logo-text .logo-name span { color: var(--rood); }
     .footer-logo-text .logo-sub { font-size: 0.65rem; font-weight: 400; color: rgba(255,255,255,0.5); letter-spacing: 0.5px; text-transform: uppercase; }
-    .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5; margin-top: -0.4rem; }
+    .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.85); line-height: 1.5; margin-top: -0.4rem; }
 
     /* Social icons */
     .footer-social { display: flex; gap: 0.6rem; }
@@ -303,10 +303,10 @@
     }
     .footer-badge img { max-height: 32px; max-width: 100%; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.85; }
     .footer-badge-text {
-      font-size: 0.6rem; font-weight: 700; color: rgba(255,255,255,0.7);
+      font-size: 0.6rem; font-weight: 700; color: rgba(255,255,255,0.85);
       text-align: center; letter-spacing: 0.3px; text-transform: uppercase; line-height: 1.3;
     }
-    .footer-badge-text span { display: block; color: rgba(255,255,255,0.4); font-weight: 400; text-transform: none; letter-spacing: 0; }
+    .footer-badge-text span { display: block; color: rgba(255,255,255,0.85); font-weight: 400; text-transform: none; letter-spacing: 0; }
 
     /* Kolommen 2 & 3 – links */
     .footer-col { }
@@ -970,5 +970,17 @@
       window.scrollY > 60 ? 'rgba(17,17,17,0.98)' : 'rgba(17,17,17,0.95)';
   });
 </script>
+  <script>
+    /* ── Sitebeveiliging ── */
+    (function() {
+      document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+      document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12') { e.preventDefault(); return; }
+        if (e.ctrlKey && ['u','s','a'].includes(e.key.toLowerCase())) { e.preventDefault(); return; }
+        if (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase())) { e.preventDefault(); return; }
+      });
+    })();
+  </script>
 </body>
 </html>
