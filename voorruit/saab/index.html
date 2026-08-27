@@ -46,24 +46,22 @@
     .nav-cta:hover { background: var(--rood-hover) !important; }
     .nav-cta::after { display: none !important; }
     /* Zoekbalk */
-    .nav-search { position: relative; display: flex; align-items: center; margin-left: 0.5rem; }
-    .search-toggle {
-      background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.8);
-      display: flex; align-items: center; justify-content: center;
-      width: 38px; height: 38px; border-radius: 50%; transition: background 0.2s, color 0.2s;
-    }
-    .search-toggle:hover, .search-toggle[aria-expanded="true"] { background: rgba(255,255,255,0.12); color: #fff; }
-    .search-toggle svg { width: 18px; height: 18px; }
-    .search-box {
-      display: none; position: absolute; right: 0; top: calc(100% + 10px);
-      width: 360px; background: #fff; border-radius: 10px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.22); overflow: hidden; z-index: 2000;
-    }
+    .nav-search { position: relative; display: flex; align-items: center; margin-left: 0.75rem; }
+    .search-form { display: flex; align-items: center; background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 0 8px 0 14px;
+      transition: background 0.2s, border-color 0.2s; }
+    .search-form:focus-within { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.45); }
+    #search-input { background: none; border: none; outline: none; color: #fff;
+      font-family: inherit; font-size: 0.875rem; width: 190px; padding: 7px 0; }
+    #search-input::placeholder { color: rgba(255,255,255,0.5); }
+    .search-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.7);
+      display: flex; align-items: center; padding: 4px; margin-left: 4px; border-radius: 50%; transition: color 0.15s; }
+    .search-btn:hover { color: #fff; }
+    .search-btn svg { width: 15px; height: 15px; }
+    .search-box { display: none; position: absolute; right: 0; top: calc(100% + 10px);
+      width: 380px; background: #fff; border-radius: 10px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.22); overflow: hidden; z-index: 2000; }
     .search-box.open { display: block; }
-    .search-inner { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid #eee; }
-    .search-inner svg { width: 16px; height: 16px; color: #aaa; flex-shrink: 0; }
-    #search-input { flex: 1; border: none; outline: none; font-size: 0.97rem; color: #222; background: transparent; font-family: inherit; }
-    #search-input::placeholder { color: #bbb; }
     #search-results { list-style: none; max-height: 320px; overflow-y: auto; padding: 4px 0; }
     .sr-item { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; text-decoration: none; color: #222; transition: background 0.15s; }
     .sr-item:hover, .sr-item:focus { background: #f5f5f5; outline: none; }
@@ -88,7 +86,7 @@
     .breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; }
     .breadcrumb a:hover { color: #fff; }
     .merk-logo-wrap {
-      width: 80px; height: 80px; background: rgba(255,255,255,0.08);
+      width: 80px; height: 80px; background: rgba(255,255,255,0.92);
       border-radius: 50%; display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1.2rem; overflow: hidden;
     }
@@ -129,11 +127,8 @@
     .model-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.1); border-color: transparent; }
     .mc-top { display: flex; flex-direction: column; gap: 2px; }
     .mc-naam { font-weight: 700; font-size: 1rem; color: #111; }
-    .mc-uitv { font-size: 0.78rem; font-weight: 600; color: var(--accent); letter-spacing: 0.3px; }
-    .mc-bj { font-size: 0.8rem; color: #888; }
-    .mc-prijzen { display: flex; flex-direction: column; gap: 2px; margin-top: 2px; }
-    .mc-prijs-rep, .mc-prijs-verv { font-size: 0.76rem; color: #666; }
-    .mc-prijs-rep strong, .mc-prijs-verv strong { color: #222; font-weight: 700; }
+    .mc-uitv { font-size: 0.73rem; color: #bbb; letter-spacing: 0.3px; }
+    .mc-bj { font-size: 0.93rem; color: #555; font-weight: 700; }
     .mc-cta {
       margin-top: auto; padding-top: 0.6rem;
       font-size: 0.82rem; font-weight: 600; color: var(--accent);
@@ -179,16 +174,13 @@
     <li><a href="tel:0880225800" class="nav-cta"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>088-022 5800</a></li>
   </ul>
   <div class="nav-search">
-    <button class="search-toggle" id="search-toggle" aria-label="Zoeken" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    </button>
-    <div class="search-box" id="search-box" role="dialog" aria-label="Zoek een automodel">
-      <div class="search-inner">
+    <div class="search-form">
+      <input type="search" id="search-input" placeholder="Zoek merk of model…" autocomplete="off" spellcheck="false">
+      <button class="search-btn" aria-label="Zoeken">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="search" id="search-input" placeholder="Zoek merk of model…" autocomplete="off" spellcheck="false">
-      </div>
-      <ul id="search-results"></ul>
+      </button>
     </div>
+    <ul class="search-box" id="search-box" role="listbox" aria-label="Zoekresultaten"></ul>
   </div>
 </nav>
 
@@ -217,7 +209,6 @@
     
   </div>
   <span class="mc-bj">1993 – 2002</span>
-  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 575</strong></span></div>
   <span class="mc-cta">Bekijk opties →</span>
 </a>
 <a href="9-3/2002-2011/" class="model-card">
@@ -226,7 +217,6 @@
     
   </div>
   <span class="mc-bj">2002 – 2011</span>
-  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 575</strong></span></div>
   <span class="mc-cta">Bekijk opties →</span>
 </a>
 <a href="9-3-cabrio/2003-2011/" class="model-card">
@@ -235,7 +225,6 @@
     
   </div>
   <span class="mc-bj">2003 – 2011</span>
-  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 605</strong></span></div>
   <span class="mc-cta">Bekijk opties →</span>
 </a>
 <a href="9-5/1997-2011/" class="model-card">
@@ -244,7 +233,6 @@
     
   </div>
   <span class="mc-bj">1997 – 2011</span>
-  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 459</strong></span></div>
   <span class="mc-cta">Bekijk opties →</span>
 </a>
 <a href="9-5/2010-2011/" class="model-card">
@@ -253,7 +241,6 @@
     
   </div>
   <span class="mc-bj">2010 – 2011</span>
-  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 589</strong></span></div>
   <span class="mc-cta">Bekijk opties →</span>
 </a>
 <a href="900/1979-1993/" class="model-card">
@@ -262,7 +249,6 @@
     
   </div>
   <span class="mc-bj">1979 – 1993</span>
-  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 575</strong></span></div>
   <span class="mc-cta">Bekijk opties →</span>
 </a>
 <a href="900/1994-2002/" class="model-card">
@@ -271,7 +257,6 @@
     
   </div>
   <span class="mc-bj">1994 – 2002</span>
-  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 589</strong></span></div>
   <span class="mc-cta">Bekijk opties →</span>
 </a>
 <a href="900-cabrio/1986-1993/" class="model-card">
@@ -280,7 +265,6 @@
     
   </div>
   <span class="mc-bj">1986 – 1993</span>
-  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 535</strong></span></div>
   <span class="mc-cta">Bekijk opties →</span>
 </a>
 <a href="900-cabrio/1994-2003/" class="model-card">
@@ -289,7 +273,6 @@
     
   </div>
   <span class="mc-bj">1994 – 2003</span>
-  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 569</strong></span></div>
   <span class="mc-cta">Bekijk opties →</span>
 </a>
 <a href="9000/1994-1997/" class="model-card">
@@ -298,7 +281,6 @@
     
   </div>
   <span class="mc-bj">1994 – 1997</span>
-  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 645</strong></span></div>
   <span class="mc-cta">Bekijk opties →</span>
 </a>
   </div>
