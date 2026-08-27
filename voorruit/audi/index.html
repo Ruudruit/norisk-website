@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voorruit AUDI vervangen – Alle modellen | No-Risk Autoruitservice</title>
+  <meta name="description" content="Bekijk alle 63 AUDI-modellen waarvoor No-Risk Autoruitservice een voorruit kan repareren of vervangen. Veelal €0,- eigen risico.">
+  <link rel="canonical" href="https://no-risk.nl/voorruit/audi/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rood: #CC0000; --rood-hover: #aa0000; --wit: #fff;
+      --accent: #BB0A0A;
+      --radius: 8px; --transition: 0.2s ease;
+    }
+    body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: #222; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(17,17,17,0.97); backdrop-filter: blur(8px);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.82); text-decoration: none;
+      padding: 0.5rem 0.9rem; border-radius: var(--radius);
+      font-size: 0.93rem; position: relative; transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 4px; left: 0.9rem; right: 0.9rem;
+      height: 2px; background: var(--rood);
+      transform: scaleX(0); transform-origin: left; transition: transform var(--transition);
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { background: var(--rood); color: #fff !important;
+      padding: 0.5rem 1.1rem !important; border-radius: var(--radius) !important;
+      font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
+    .nav-cta:hover { background: var(--rood-hover) !important; }
+    .nav-cta::after { display: none !important; }
+    /* Zoekbalk */
+    .nav-search { position: relative; display: flex; align-items: center; margin-left: 0.5rem; }
+    .search-toggle {
+      background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.8);
+      display: flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 50%; transition: background 0.2s, color 0.2s;
+    }
+    .search-toggle:hover, .search-toggle[aria-expanded="true"] { background: rgba(255,255,255,0.12); color: #fff; }
+    .search-toggle svg { width: 18px; height: 18px; }
+    .search-box {
+      display: none; position: absolute; right: 0; top: calc(100% + 10px);
+      width: 360px; background: #fff; border-radius: 10px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.22); overflow: hidden; z-index: 2000;
+    }
+    .search-box.open { display: block; }
+    .search-inner { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid #eee; }
+    .search-inner svg { width: 16px; height: 16px; color: #aaa; flex-shrink: 0; }
+    #search-input { flex: 1; border: none; outline: none; font-size: 0.97rem; color: #222; background: transparent; font-family: inherit; }
+    #search-input::placeholder { color: #bbb; }
+    #search-results { list-style: none; max-height: 320px; overflow-y: auto; padding: 4px 0; }
+    .sr-item { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; text-decoration: none; color: #222; transition: background 0.15s; }
+    .sr-item:hover, .sr-item:focus { background: #f5f5f5; outline: none; }
+    .sr-label { font-size: 0.9rem; font-weight: 500; }
+    .sr-label mark { background: none; color: var(--rood); font-weight: 700; }
+    .sr-bj { font-size: 0.78rem; color: #999; white-space: nowrap; margin-left: 8px; }
+    .sr-empty { padding: 12px 14px; color: #999; font-size: 0.88rem; }
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+
+    /* ── HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, #0f0f0f 50%, color-mix(in srgb, #BB0A0A 30%, #0f0f0f) 100%);
+      padding: 110px 2rem 56px; text-align: center;
+    }
+    .breadcrumb {
+      font-size: 0.78rem; color: rgba(255,255,255,0.4);
+      margin-bottom: 1.6rem; display: flex; justify-content: center; align-items: center; gap: 0.4rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .breadcrumb a:hover { color: #fff; }
+    .merk-logo-wrap {
+      width: 80px; height: 80px; background: rgba(255,255,255,0.08);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.2rem; overflow: hidden;
+    }
+    .merk-logo-wrap img { width: 60px; height: 60px; object-fit: contain; }
+    .merk-monogram {
+      width: 80px; height: 80px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px;
+      margin: 0 auto 1.2rem;
+    }
+    .page-header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 800;
+      color: #fff; line-height: 1.15; margin-bottom: 0.7rem;
+    }
+    .page-header h1 em { color: var(--accent); font-style: normal; }
+    .page-header p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 500px; margin: 0 auto; }
+
+    /* ── MODELLEN GRID ── */
+    .modellen-wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .modellen-count { font-size: 0.85rem; color: #888; margin-bottom: 1.2rem; }
+    .modellen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .model-card {
+      background: #fff; border: 1.5px solid #e8e8e8; border-radius: 10px;
+      padding: 1.2rem 1.1rem 1rem;
+      text-decoration: none; color: #222;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      position: relative; overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .model-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--accent);
+    }
+    .model-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.1); border-color: transparent; }
+    .mc-top { display: flex; flex-direction: column; gap: 2px; }
+    .mc-naam { font-weight: 700; font-size: 1rem; color: #111; }
+    .mc-uitv { font-size: 0.78rem; font-weight: 600; color: var(--accent); letter-spacing: 0.3px; }
+    .mc-bj { font-size: 0.8rem; color: #888; }
+    .mc-prijzen { display: flex; flex-direction: column; gap: 2px; margin-top: 2px; }
+    .mc-prijs-rep, .mc-prijs-verv { font-size: 0.76rem; color: #666; }
+    .mc-prijs-rep strong, .mc-prijs-verv strong { color: #222; font-weight: 700; }
+    .mc-cta {
+      margin-top: auto; padding-top: 0.6rem;
+      font-size: 0.82rem; font-weight: 600; color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    .footer-mini {
+      background: #111; color: rgba(255,255,255,0.4); text-align: center;
+      padding: 1.5rem; font-size: 0.82rem;
+    }
+    .footer-mini a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-mini a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0;
+        position: absolute; top: 68px; left: 0; right: 0;
+        background: rgba(17,17,17,0.98); padding: 1rem 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.75rem 2rem; border-radius: 0; }
+      .nav-links a::after { display: none; }
+      .modellen-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" class="nav-logo" aria-label="No-Risk Autoruitservice - Home">
+    <img src="../../logo.png" alt="No-Risk Autoruitservice">
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../voorruit/">Voorruit per merk</a></li>
+    <li><a href="../../diensten.html">Diensten</a></li>
+    <li><a href="../../locaties.html">Locaties</a></li>
+    <li><a href="../../contact.html">Contact</a></li>
+    <li><a href="tel:0880225800" class="nav-cta"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>088-022 5800</a></li>
+  </ul>
+  <div class="nav-search">
+    <button class="search-toggle" id="search-toggle" aria-label="Zoeken" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <div class="search-box" id="search-box" role="dialog" aria-label="Zoek een automodel">
+      <div class="search-inner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="search-input" placeholder="Zoek merk of model…" autocomplete="off" spellcheck="false">
+      </div>
+      <ul id="search-results"></ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="breadcrumb">
+    <a href="../../index.html">Home</a>
+    <span>›</span>
+    <a href="../../voorruit/">Voorruit per merk</a>
+    <span>›</span>
+    AUDI
+  </div>
+  <div class="merk-logo-wrap">
+      <img src="../../logos/audi.svg" alt="AUDI logo"
+        onerror="this.src='../../logos/audi.png';this.onerror=function(){this.closest('.merk-logo-wrap').innerHTML='<div class=merk-monogram style=background:#BB0A0A;color:#fff>AUD</div>'}">
+    </div>
+  <h1>Voorruit <em>AUDI</em><br>vervangen of repareren?</h1>
+  <p>Kies uw model en ontdek de opties voor uw specifieke uitvoering.</p>
+</div>
+
+<div class="modellen-wrap">
+  <p class="modellen-count">63 modellen gevonden</p>
+  <div class="modellen-grid">
+    <a href="a1/2010-2018/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A1</span>
+    <span class="mc-uitv">8X</span>
+  </div>
+  <span class="mc-bj">2010 – 2018</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 439</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a1/2018-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A1</span>
+    <span class="mc-uitv">GB</span>
+  </div>
+  <span class="mc-bj">2018 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 465</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a2/2000-2005/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A2</span>
+    
+  </div>
+  <span class="mc-bj">2000 – 2005</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 485</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a3/1996-2003/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A3</span>
+    <span class="mc-uitv">8L</span>
+  </div>
+  <span class="mc-bj">1996 – 2003</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 419</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a3/2003-2012/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A3</span>
+    <span class="mc-uitv">8P</span>
+  </div>
+  <span class="mc-bj">2003 – 2012</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 419</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a3/2012-2020/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A3</span>
+    <span class="mc-uitv">8V</span>
+  </div>
+  <span class="mc-bj">2012 – 2020</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 439</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a3-cabrio/2008-2014/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A3 CABRIO</span>
+    <span class="mc-uitv">8P</span>
+  </div>
+  <span class="mc-bj">2008 – 2014</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 539</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a3-cabrio/2014-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A3 CABRIO</span>
+    <span class="mc-uitv">8V</span>
+  </div>
+  <span class="mc-bj">2014 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 495</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a3-sedan/2012-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A3 SEDAN</span>
+    
+  </div>
+  <span class="mc-bj">2012 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 439</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a4/1994-2000/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A4</span>
+    <span class="mc-uitv">B5</span>
+  </div>
+  <span class="mc-bj">1994 – 2000</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 419</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a4/2001-2007/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A4</span>
+    <span class="mc-uitv">B6/B7</span>
+  </div>
+  <span class="mc-bj">2001 – 2007</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 419</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a4/2008-2015/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A4</span>
+    <span class="mc-uitv">B8</span>
+  </div>
+  <span class="mc-bj">2008 – 2015</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 439</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a4/2015-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A4</span>
+    <span class="mc-uitv">B9</span>
+  </div>
+  <span class="mc-bj">2015 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 495</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a4-cabrio/2002-2009/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A4 CABRIO</span>
+    <span class="mc-uitv">B6/B7</span>
+  </div>
+  <span class="mc-bj">2002 – 2009</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 635</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a5/2007-2016/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A5</span>
+    <span class="mc-uitv">8T</span>
+  </div>
+  <span class="mc-bj">2007 – 2016</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 455</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a5/2016-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A5</span>
+    <span class="mc-uitv">F5</span>
+  </div>
+  <span class="mc-bj">2016 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 485</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a5-cabrio/2009-2017/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A5 CABRIO</span>
+    <span class="mc-uitv">8F</span>
+  </div>
+  <span class="mc-bj">2009 – 2017</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 629</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a5-cabrio/2017-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A5 CABRIO</span>
+    <span class="mc-uitv">F5</span>
+  </div>
+  <span class="mc-bj">2017 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 629</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a6/1991-1998/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A6</span>
+    <span class="mc-uitv">C4</span>
+  </div>
+  <span class="mc-bj">1991 – 1998</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 465</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a6/1998-2005/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A6</span>
+    <span class="mc-uitv">C5</span>
+  </div>
+  <span class="mc-bj">1998 – 2005</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 459</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a6/2004-2011/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A6</span>
+    <span class="mc-uitv">C6</span>
+  </div>
+  <span class="mc-bj">2004 – 2011</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 469</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a6/2011-2018/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A6</span>
+    <span class="mc-uitv">C7</span>
+  </div>
+  <span class="mc-bj">2011 – 2018</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 519</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a6/2018-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A6</span>
+    <span class="mc-uitv">C8</span>
+  </div>
+  <span class="mc-bj">2018 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 565</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a7/2010-2018/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A7</span>
+    <span class="mc-uitv">4G</span>
+  </div>
+  <span class="mc-bj">2010 – 2018</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 529</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a7/2018-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A7</span>
+    <span class="mc-uitv">4K</span>
+  </div>
+  <span class="mc-bj">2018 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 565</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a8/1994-2002/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A8</span>
+    <span class="mc-uitv">D2</span>
+  </div>
+  <span class="mc-bj">1994 – 2002</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 539</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a8/2002-2010/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A8</span>
+    <span class="mc-uitv">D3</span>
+  </div>
+  <span class="mc-bj">2002 – 2010</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 649</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a8/2010-2017/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A8</span>
+    <span class="mc-uitv">D4</span>
+  </div>
+  <span class="mc-bj">2010 – 2017</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 1.045</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="a8/2017-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">A8</span>
+    <span class="mc-uitv">D5</span>
+  </div>
+  <span class="mc-bj">2017 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 605</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q2/2016-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q2</span>
+    
+  </div>
+  <span class="mc-bj">2016 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 485</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q3/2011-2018/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q3</span>
+    <span class="mc-uitv">8U</span>
+  </div>
+  <span class="mc-bj">2011 – 2018</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 575</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q3/2018-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q3</span>
+    <span class="mc-uitv">F3</span>
+  </div>
+  <span class="mc-bj">2018 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 595</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q4/2021-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q4</span>
+    
+  </div>
+  <span class="mc-bj">2021 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 549</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q4-e-tron/2021-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q4 e-tron</span>
+    
+  </div>
+  <span class="mc-bj">2021 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 549</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q5/2008-2017/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q5</span>
+    <span class="mc-uitv">8R</span>
+  </div>
+  <span class="mc-bj">2008 – 2017</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 475</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q5/2017-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q5</span>
+    <span class="mc-uitv">FY</span>
+  </div>
+  <span class="mc-bj">2017 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 595</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q6-sportback/2025-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q6 SPORTBACK</span>
+    
+  </div>
+  <span class="mc-bj">2025 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 605</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q6-suv/2024-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q6 SUV</span>
+    
+  </div>
+  <span class="mc-bj">2024 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 715</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q7/2006-2015/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q7</span>
+    <span class="mc-uitv">4L</span>
+  </div>
+  <span class="mc-bj">2006 – 2015</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 539</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q7/2015-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q7</span>
+    <span class="mc-uitv">4M</span>
+  </div>
+  <span class="mc-bj">2015 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 565</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q8/2018-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q8</span>
+    
+  </div>
+  <span class="mc-bj">2018 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="q8-e-tron/2019-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">Q8 e-tron</span>
+    
+  </div>
+  <span class="mc-bj">2019 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 575</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="rs6/1999-2005/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">RS6</span>
+    <span class="mc-uitv">C5</span>
+  </div>
+  <span class="mc-bj">1999 – 2005</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 1.375</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="rs6/2006-2011/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">RS6</span>
+    <span class="mc-uitv">C6</span>
+  </div>
+  <span class="mc-bj">2006 – 2011</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="rs6/2018-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">RS6</span>
+    <span class="mc-uitv">C8</span>
+  </div>
+  <span class="mc-bj">2018 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 1.919</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="s3/1996-2003/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">S3</span>
+    <span class="mc-uitv">8L</span>
+  </div>
+  <span class="mc-bj">1996 – 2003</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 419</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="s3/2005-2012/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">S3</span>
+    <span class="mc-uitv">8P</span>
+  </div>
+  <span class="mc-bj">2005 – 2012</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 419</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="s4/1997-2000/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">S4</span>
+    <span class="mc-uitv">B5</span>
+  </div>
+  <span class="mc-bj">1997 – 2000</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 419</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="s4/2003-2007/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">S4</span>
+    <span class="mc-uitv">B6/B7</span>
+  </div>
+  <span class="mc-bj">2003 – 2007</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 419</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="s5/2008-2016/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">S5</span>
+    <span class="mc-uitv">8T</span>
+  </div>
+  <span class="mc-bj">2008 – 2016</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 455</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="s6/1995-1997/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">S6</span>
+    <span class="mc-uitv">C4</span>
+  </div>
+  <span class="mc-bj">1995 – 1997</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 475</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="s6/1998-2005/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">S6</span>
+    <span class="mc-uitv">C5</span>
+  </div>
+  <span class="mc-bj">1998 – 2005</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 485</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="sq3/2011-2018/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">SQ3</span>
+    <span class="mc-uitv">8U</span>
+  </div>
+  <span class="mc-bj">2011 – 2018</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 575</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="sq3/2018-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">SQ3</span>
+    <span class="mc-uitv">F3</span>
+  </div>
+  <span class="mc-bj">2018 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="sq5/2008-2017/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">SQ5</span>
+    <span class="mc-uitv">8R</span>
+  </div>
+  <span class="mc-bj">2008 – 2017</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 475</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="sq5/2017-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">SQ5</span>
+    <span class="mc-uitv">FY</span>
+  </div>
+  <span class="mc-bj">2017 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 595</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="sq7/2006-2015/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">SQ7</span>
+    <span class="mc-uitv">4L</span>
+  </div>
+  <span class="mc-bj">2006 – 2015</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 649</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="sq7/2015-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">SQ7</span>
+    <span class="mc-uitv">4M</span>
+  </div>
+  <span class="mc-bj">2015 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 675</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="sq8/2018-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">SQ8</span>
+    
+  </div>
+  <span class="mc-bj">2018 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="tt/1998-2006/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">TT</span>
+    <span class="mc-uitv">8N</span>
+  </div>
+  <span class="mc-bj">1998 – 2006</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 439</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="tt/2006-2014/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">TT</span>
+    <span class="mc-uitv">8J</span>
+  </div>
+  <span class="mc-bj">2006 – 2014</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 465</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="tt/2014-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">TT</span>
+    <span class="mc-uitv">8S</span>
+  </div>
+  <span class="mc-bj">2014 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 385</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="e-tron/2019-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">e-tron</span>
+    
+  </div>
+  <span class="mc-bj">2019 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 575</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+  </div>
+</div>
+
+<footer class="footer-mini">
+  © 2025 No-Risk Autoruitservice &nbsp;·&nbsp;
+  <a href="../../index.html">Home</a> &nbsp;·&nbsp;
+  <a href="../../locaties.html">Locaties</a> &nbsp;·&nbsp;
+  <a href="../../contact.html">Contact</a>
+</footer>
+
+<script>
+  const h = document.getElementById('hamburger');
+  const n = document.getElementById('nav-links');
+  h.addEventListener('click', () => n.classList.toggle('open'));
+</script>
+<script src="../../search.js"></script>
+</body>
+</html>

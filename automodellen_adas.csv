@@ -1,0 +1,1063 @@
+merk,model,merk_slug,model_slug,adas,bouwjaar_van,bouwjaar_tot,reparatie_prijs,vervanging_prijs
+AIWAYS,U5,aiways,u5,nee,2020,2025,0,1155
+ALFA ROMEO,147,alfa-romeo,147,nee,2000,2010,0,439
+ALFA ROMEO,155,alfa-romeo,155,nee,1992,1996,0,459
+ALFA ROMEO,156,alfa-romeo,156,nee,1997,2007,0,465
+ALFA ROMEO,166,alfa-romeo,166,nee,1998,2008,0,595
+ALFA ROMEO,4C,alfa-romeo,4c,nee,2013,2025,0,1089
+ALFA ROMEO,ALFA MITO,alfa-romeo,alfa-mito,nee,2008,2020,0,419
+ALFA ROMEO,BRERA,alfa-romeo,brera,nee,2006,2010,0,485
+ALFA ROMEO,GIULIETTA,alfa-romeo,giulietta,nee,2010,2020,0,465
+ALFA ROMEO,GT Coupe,alfa-romeo,gt-coupe,nee,2003,2010,0,469
+ALFA ROMEO,JUNIOR,alfa-romeo,junior,ja,2024,2025,0,589
+ALFA ROMEO,STELVIO,alfa-romeo,stelvio,ja,2017,2025,0,569
+ALFA ROMEO,TONALE,alfa-romeo,tonale,ja,2022,2025,0,605
+AUDI,A1,audi,a1,ja,2010,2018,0,439
+AUDI,A1,audi,a1,ja,2018,2025,0,465
+AUDI,A2,audi,a2,nee,2000,2005,0,485
+AUDI,A3,audi,a3,nee,1996,2003,0,419
+AUDI,A3,audi,a3,ja,2003,2012,0,419
+AUDI,A3,audi,a3,ja,2012,2020,0,439
+AUDI,A3 CABRIO,audi,a3-cabrio,ja,2008,2014,0,539
+AUDI,A3 CABRIO,audi,a3-cabrio,ja,2014,2025,0,495
+AUDI,A3 SEDAN,audi,a3-sedan,ja,2012,2025,0,439
+AUDI,A4,audi,a4,nee,1994,2000,0,419
+AUDI,A4,audi,a4,nee,2001,2007,0,419
+AUDI,A4,audi,a4,ja,2008,2015,0,439
+AUDI,A4,audi,a4,ja,2015,2025,0,495
+AUDI,A4 CABRIO,audi,a4-cabrio,nee,2002,2009,0,635
+AUDI,A5,audi,a5,ja,2007,2016,0,455
+AUDI,A5,audi,a5,ja,2016,2025,0,485
+AUDI,A5 CABRIO,audi,a5-cabrio,ja,2009,2017,0,629
+AUDI,A5 CABRIO,audi,a5-cabrio,ja,2017,2025,0,629
+AUDI,A6,audi,a6,nee,1991,1998,0,465
+AUDI,A6,audi,a6,nee,1998,2005,0,459
+AUDI,A6,audi,a6,ja,2004,2011,0,469
+AUDI,A6,audi,a6,ja,2011,2018,0,519
+AUDI,A6,audi,a6,ja,2018,2025,0,565
+AUDI,A7,audi,a7,ja,2010,2018,0,529
+AUDI,A7,audi,a7,ja,2018,2025,0,565
+AUDI,A8,audi,a8,nee,1994,2002,0,539
+AUDI,A8,audi,a8,ja,2002,2010,0,649
+AUDI,A8,audi,a8,ja,2010,2017,0,1045
+AUDI,A8,audi,a8,ja,2017,2025,0,605
+AUDI,Q2,audi,q2,ja,2016,2025,0,485
+AUDI,Q3,audi,q3,ja,2011,2018,0,575
+AUDI,Q3,audi,q3,ja,2018,2025,0,595
+AUDI,Q4,audi,q4,ja,2021,2025,0,549
+AUDI,Q4 e-tron,audi,q4-e-tron,ja,2021,2025,0,549
+AUDI,Q5,audi,q5,ja,2008,2017,0,475
+AUDI,Q5,audi,q5,ja,2017,2025,0,595
+AUDI,Q6 SPORTBACK,audi,q6-sportback,ja,2025,2025,0,605
+AUDI,Q6 SUV,audi,q6-suv,ja,2024,2025,0,715
+AUDI,Q7,audi,q7,ja,2006,2015,0,539
+AUDI,Q7,audi,q7,ja,2015,2025,0,565
+AUDI,Q8,audi,q8,ja,2018,2025,0,op aanvraag
+AUDI,Q8 e-tron,audi,q8-e-tron,ja,2019,2025,0,575
+AUDI,RS6,audi,rs6,nee,1999,2005,0,1375
+AUDI,RS6,audi,rs6,ja,2006,2011,0,op aanvraag
+AUDI,RS6,audi,rs6,ja,2018,2025,0,1919
+AUDI,S3,audi,s3,nee,1996,2003,0,419
+AUDI,S3,audi,s3,ja,2005,2012,0,419
+AUDI,S4,audi,s4,nee,1997,2000,0,419
+AUDI,S4,audi,s4,nee,2003,2007,0,419
+AUDI,S5,audi,s5,ja,2008,2016,0,455
+AUDI,S6,audi,s6,nee,1995,1997,0,475
+AUDI,S6,audi,s6,nee,1998,2005,0,485
+AUDI,SQ3,audi,sq3,ja,2011,2018,0,575
+AUDI,SQ3,audi,sq3,ja,2018,2025,0,op aanvraag
+AUDI,SQ5,audi,sq5,ja,2008,2017,0,475
+AUDI,SQ5,audi,sq5,ja,2017,2025,0,595
+AUDI,SQ7,audi,sq7,ja,2006,2015,0,649
+AUDI,SQ7,audi,sq7,ja,2015,2025,0,675
+AUDI,SQ8,audi,sq8,ja,2018,2025,0,op aanvraag
+AUDI,TT,audi,tt,nee,1998,2006,0,439
+AUDI,TT,audi,tt,ja,2006,2014,0,465
+AUDI,TT,audi,tt,ja,2014,2025,0,385
+AUDI,e-tron,audi,e-tron,ja,2019,2025,0,575
+BMW,1 Serie,bmw,1-serie,ja,2004,2012,0,439
+BMW,1 Serie,bmw,1-serie,ja,2012,2019,0,475
+BMW,1 Serie,bmw,1-serie,ja,2019,2025,0,495
+BMW,2 Serie,bmw,2-serie,ja,2014,2025,0,485
+BMW,2 Serie Active Tourer,bmw,2-serie-active-tourer,ja,2014,2022,0,439
+BMW,2 Serie Active Tourer,bmw,2-serie-active-tourer,ja,2022,2025,0,op aanvraag
+BMW,2 Serie Gran Tourer,bmw,2-serie-gran-tourer,ja,2015,2025,0,439
+BMW,3 Serie,bmw,3-serie,nee,1983,1990,0,385
+BMW,3 Serie,bmw,3-serie,nee,1991,1998,0,419
+BMW,3 Serie,bmw,3-serie,nee,1998,2005,0,385
+BMW,3 Serie,bmw,3-serie,ja,2005,2012,0,419
+BMW,3 Serie,bmw,3-serie,ja,2012,2019,0,419
+BMW,3 Serie,bmw,3-serie,ja,2019,2025,0,575
+BMW,3 Serie Cabrio,bmw,3-serie-cabrio,nee,1985,1992,0,419
+BMW,3 Serie Cabrio,bmw,3-serie-cabrio,nee,1991,1998,0,415
+BMW,3 Serie Cabrio,bmw,3-serie-cabrio,nee,1998,2005,0,435
+BMW,3 Serie Cabrio,bmw,3-serie-cabrio,ja,2005,2012,0,425
+BMW,3 Serie Compact,bmw,3-serie-compact,nee,1994,2000,0,419
+BMW,3 Serie Compact,bmw,3-serie-compact,nee,2001,2005,0,419
+BMW,3 Serie Coupe,bmw,3-serie-coupe,nee,1985,1992,0,469
+BMW,3 Serie Coupe,bmw,3-serie-coupe,nee,1992,1999,0,439
+BMW,3 Serie Coupe,bmw,3-serie-coupe,nee,1999,2006,0,419
+BMW,3 Serie Coupe,bmw,3-serie-coupe,ja,2006,2013,0,439
+BMW,4 Serie Cabrio,bmw,4-serie-cabrio,ja,2014,2025,0,455
+BMW,4 Serie Coupe,bmw,4-serie-coupe,ja,2013,2025,0,455
+BMW,5 Serie,bmw,5-serie,nee,1972,1987,0,435
+BMW,5 Serie,bmw,5-serie,nee,1988,1995,0,459
+BMW,5 Serie,bmw,5-serie,nee,1995,2003,0,475
+BMW,5 Serie,bmw,5-serie,ja,2003,2010,0,495
+BMW,5 Serie,bmw,5-serie,ja,2003,2021,0,649
+BMW,5 Serie,bmw,5-serie,ja,2010,2017,0,455
+BMW,5 Serie,bmw,5-serie,ja,2017,2025,0,575
+BMW,6 Serie,bmw,6-serie,ja,2003,2011,0,715
+BMW,6 Serie,bmw,6-serie,ja,2011,2025,0,469
+BMW,7 Serie,bmw,7-serie,nee,1994,2001,0,op aanvraag
+BMW,7 Serie,bmw,7-serie,nee,2001,2008,0,529
+BMW,7 Serie,bmw,7-serie,ja,2008,2015,0,565
+BMW,7 Serie,bmw,7-serie,ja,2015,2022,0,575
+BMW,7 Serie,bmw,7-serie,ja,2022,2025,0,op aanvraag
+BMW,X1,bmw,x1,ja,2009,2015,0,465
+BMW,X1,bmw,x1,ja,2015,2022,0,465
+BMW,X1,bmw,x1,ja,2022,2025,0,539
+BMW,X2,bmw,x2,ja,2018,2025,0,469
+BMW,X3,bmw,x3,ja,2003,2010,0,475
+BMW,X3,bmw,x3,ja,2010,2017,0,475
+BMW,X3,bmw,x3,ja,2017,2025,0,525
+BMW,X4,bmw,x4,ja,2014,2018,0,419
+BMW,X4,bmw,x4,ja,2018,2025,0,op aanvraag
+BMW,X5,bmw,x5,nee,2000,2006,0,469
+BMW,X5,bmw,x5,ja,2006,2013,0,449
+BMW,X5,bmw,x5,ja,2013,2018,0,539
+BMW,X5,bmw,x5,ja,2018,2025,0,569
+BMW,X6,bmw,x6,ja,2008,2014,0,495
+BMW,X6,bmw,x6,ja,2014,2019,0,439
+BMW,X6,bmw,x6,ja,2019,2025,0,op aanvraag
+BMW,XM,bmw,xm,ja,2023,2025,0,1315
+BMW,Z3,bmw,z3,nee,1996,2003,0,419
+BMW,Z4,bmw,z4,nee,2004,2009,0,439
+BMW,i3,bmw,i3,ja,2013,2025,0,879
+BMW,i4,bmw,i4,ja,2021,2025,0,519
+BMW,i5,bmw,i5,ja,2023,2025,0,op aanvraag
+BMW,i7,bmw,i7,ja,2022,2025,0,op aanvraag
+BMW,iX,bmw,ix,ja,2021,2025,0,655
+BMW,iX1,bmw,ix1,nee,2022,2025,0,539
+BMW,iX2,bmw,ix2,nee,2022,2025,0,539
+BMW,iX3,bmw,ix3,nee,2022,2025,0,809
+BYD,ATTO 3,byd,atto-3,nee,2024,2025,0,op aanvraag
+BYD,DOLPHIN,byd,dolphin,nee,2023,2025,0,op aanvraag
+BYD,HAN,byd,han,nee,2020,2025,0,op aanvraag
+BYD,SEAL,byd,seal,nee,2023,2025,0,op aanvraag
+BYD,TANG,byd,tang,nee,2021,2025,0,op aanvraag
+CHEVROLET,CAPTIVA,chevrolet,captiva,nee,2006,2025,0,495
+CHEVROLET,LACETTI,chevrolet,lacetti,nee,2004,2009,0,435
+CHEVROLET,LANOS,chevrolet,lanos,nee,1996,2006,0,385
+CHEVROLET,LEGANZA,chevrolet,leganza,nee,1997,2003,0,435
+CHEVROLET,MATIZ,chevrolet,matiz,nee,1995,2005,0,385
+CHEVROLET,MATIZ,chevrolet,matiz,nee,2005,2010,0,385
+CHEVROLET,SPARK,chevrolet,spark,nee,2010,2025,0,385
+CHEVROLET,TACUMA,chevrolet,tacuma,nee,2000,2008,0,435
+CHEVROLET,VOLT,chevrolet,volt,nee,2012,2025,0,565
+CHRYSLER,300C,chrysler,300c,nee,2004,2010,0,589
+CHRYSLER,PT Cruiser,chrysler,pt-cruiser,nee,2000,2010,0,539
+CHRYSLER,YPSILON,chrysler,ypsilon,nee,2011,2025,0,439
+CITROEN,BERLINGO,citroen,berlingo,nee,1996,2008,0,385
+CITROEN,BERLINGO,citroen,berlingo,ja,2008,2018,0,385
+CITROEN,BERLINGO,citroen,berlingo,ja,2018,2025,0,535
+CITROEN,C-CROSSER,citroen,c-crosser,nee,2007,2025,0,459
+CITROEN,C-ZERO,citroen,c-zero,nee,2011,2025,0,435
+CITROEN,C1,citroen,c1,nee,2005,2014,0,385
+CITROEN,C1,citroen,c1,nee,2014,2025,0,385
+CITROEN,C15,citroen,c15,nee,1986,2006,0,op aanvraag
+CITROEN,C2,citroen,c2,nee,2003,2010,0,385
+CITROEN,C3,citroen,c3,ja,2002,2010,0,385
+CITROEN,C3,citroen,c3,ja,2009,2016,0,435
+CITROEN,C3,citroen,c3,ja,2016,2024,0,439
+CITROEN,C3,citroen,c3,ja,2024,2025,0,549
+CITROEN,C3 AIRCROSS,citroen,c3-aircross,ja,2017,2025,0,465
+CITROEN,C3 PICASSO,citroen,c3-picasso,nee,2009,2025,0,465
+CITROEN,C4,citroen,c4,ja,2004,2011,0,435
+CITROEN,C4,citroen,c4,ja,2011,2025,0,435
+CITROEN,C4 AIRCROSS,citroen,c4-aircross,nee,2012,2025,0,435
+CITROEN,C4 CACTUS,citroen,c4-cactus,ja,2014,2025,0,349
+CITROEN,C4 PICASSO,citroen,c4-picasso,ja,2007,2013,0,659
+CITROEN,C4 PICASSO,citroen,c4-picasso,ja,2013,2025,0,685
+CITROEN,C5,citroen,c5,nee,2001,2008,0,435
+CITROEN,C5,citroen,c5,ja,2008,2025,0,419
+CITROEN,C5 AIRCROSS,citroen,c5-aircross,ja,2018,2025,0,535
+CITROEN,C5 AIRCROSS,citroen,c5-aircross,ja,2025,2025,0,535
+CITROEN,C5 X,citroen,c5-x,ja,2024,2025,0,495
+CITROEN,C6,citroen,c6,nee,2006,2012,0,1535
+CITROEN,E-C3,citroen,e-c3,ja,2024,2025,0,535
+CITROEN,JUMPER,citroen,jumper,nee,1994,2006,0,495
+CITROEN,JUMPER,citroen,jumper,ja,2006,2025,0,469
+CITROEN,JUMPY,citroen,jumpy,nee,1994,2006,0,385
+CITROEN,JUMPY,citroen,jumpy,ja,2006,2016,0,435
+CITROEN,JUMPY,citroen,jumpy,ja,2016,2025,0,459
+CITROEN,NEMO,citroen,nemo,nee,2008,2025,0,385
+CITROEN,SAXO,citroen,saxo,nee,1996,2003,0,385
+CUPRA,ATECA,cupra,ateca,ja,2018,2025,0,565
+CUPRA,BORN,cupra,born,ja,2021,2025,0,569
+CUPRA,FORMENTOR,cupra,formentor,ja,2020,2025,0,535
+CUPRA,LEON,cupra,leon,ja,2021,2025,0,535
+CUPRA,TAVASCAN,cupra,tavascan,ja,2024,2025,0,649
+CUPRA,TERRAMAR E HYBRID,cupra,terramar-e-hybrid,ja,2024,2025,0,639
+DACIA,BIGSTER,dacia,bigster,ja,2025,2025,0,op aanvraag
+DACIA,DOKKER,dacia,dokker,nee,2012,2025,0,365
+DACIA,DUSTER,dacia,duster,nee,2010,2025,0,385
+DACIA,JOGGER,dacia,jogger,ja,2022,2025,0,405
+DACIA,LODGY,dacia,lodgy,nee,2012,2025,0,385
+DACIA,LOGAN,dacia,logan,nee,2005,2012,0,349
+DACIA,LOGAN,dacia,logan,nee,2012,2025,0,385
+DACIA,SANDERO,dacia,sandero,ja,2008,2012,0,399
+DACIA,SANDERO,dacia,sandero,ja,2012,2025,0,385
+DODGE,RAM,dodge,ram,nee,2019,2025,0,1155
+DS,DS-3,ds,ds-3,ja,2010,2025,0,519
+DS,DS-4,ds,ds-4,ja,2011,2025,0,539
+DS,DS-5,ds,ds-5,ja,2011,2025,0,605
+FIAT,500,fiat,500,nee,2007,2020,0,385
+FIAT,500 Cabrio,fiat,500-cabrio,nee,2010,2018,0,405
+FIAT,500L,fiat,500l,nee,2012,2025,0,469
+FIAT,500X,fiat,500x,ja,2015,2025,0,465
+FIAT,500e,fiat,500e,ja,2020,2025,0,565
+FIAT,600,fiat,600,ja,2023,2025,0,589
+FIAT,CROMA,fiat,croma,nee,2005,2011,0,469
+FIAT,DOBLO,fiat,doblo,nee,2001,2010,0,385
+FIAT,DOBLO,fiat,doblo,nee,2010,2023,0,385
+FIAT,DOBLO,fiat,doblo,nee,2023,2025,0,535
+FIAT,DUCATO,fiat,ducato,nee,1994,2006,0,495
+FIAT,DUCATO,fiat,ducato,ja,2006,2025,0,539
+FIAT,FIORINO,fiat,fiorino,nee,1988,2008,0,349
+FIAT,FIORINO,fiat,fiorino,nee,2008,2014,0,365
+FIAT,GRANDE PUNTO,fiat,grande-punto,nee,2005,2025,0,435
+FIAT,IDEA,fiat,idea,nee,2004,2010,0,435
+FIAT,PANDA,fiat,panda,nee,1981,2003,0,349
+FIAT,PANDA,fiat,panda,ja,2003,2011,0,365
+FIAT,PANDA,fiat,panda,ja,2012,2025,0,369
+FIAT,PUNTO,fiat,punto,nee,1993,1999,0,385
+FIAT,PUNTO,fiat,punto,nee,1999,2007,0,385
+FIAT,PUNTO,fiat,punto,nee,2005,2025,0,435
+FIAT,SCUDO,fiat,scudo,ja,2006,2016,0,479
+FIAT,SCUDO,fiat,scudo,ja,2022,2025,0,459
+FIAT,TALENTO,fiat,talento,ja,2014,2025,0,475
+FIAT,TIPO,fiat,tipo,ja,2016,2025,0,419
+FISKER,OCEAN,fisker,ocean,nee,2023,2025,0,1919
+FORD,B-MAX,ford,b-max,nee,2012,2025,0,495
+FORD,C-MAX,ford,c-max,nee,2003,2010,0,469
+FORD,C-MAX,ford,c-max,nee,2010,2025,0,419
+FORD,CAPRI,ford,capri,ja,2024,2025,0,655
+FORD,EXPLORER,ford,explorer,ja,2024,2025,0,655
+FORD,FIESTA,ford,fiesta,nee,1989,1995,0,369
+FORD,FIESTA,ford,fiesta,nee,1996,2002,0,385
+FORD,FIESTA,ford,fiesta,nee,2002,2008,0,385
+FORD,FIESTA,ford,fiesta,ja,2008,2016,0,385
+FORD,FIESTA,ford,fiesta,ja,2016,2025,0,509
+FORD,FOCUS,ford,focus,nee,1998,2004,0,475
+FORD,FOCUS,ford,focus,ja,2004,2011,0,525
+FORD,FOCUS,ford,focus,ja,2011,2018,0,465
+FORD,FOCUS,ford,focus,ja,2018,2025,0,429
+FORD,FUSION,ford,fusion,nee,2002,2011,0,385
+FORD,GALAXY,ford,galaxy,nee,1995,2006,0,475
+FORD,GALAXY,ford,galaxy,ja,2006,2015,0,535
+FORD,GALAXY,ford,galaxy,ja,2015,2025,0,649
+FORD,KA,ford,ka,nee,1996,2008,0,365
+FORD,KA,ford,ka,nee,2008,2016,0,409
+FORD,KA,ford,ka,nee,2016,2025,0,385
+FORD,KUGA,ford,kuga,ja,2008,2012,0,419
+FORD,KUGA,ford,kuga,ja,2012,2019,0,539
+FORD,KUGA,ford,kuga,ja,2019,2025,0,635
+FORD,MAVERICK,ford,maverick,nee,2001,2005,0,op aanvraag
+FORD,MONDEO,ford,mondeo,nee,2000,2007,0,385
+FORD,MONDEO,ford,mondeo,ja,2007,2014,0,439
+FORD,MONDEO,ford,mondeo,ja,2014,2025,0,525
+FORD,MUSTANG MACH E,ford,mustang-mach-e,ja,2021,2025,0,875
+FORD,PUMA,ford,puma,ja,2019,2025,0,539
+FORD,RANGER,ford,ranger,ja,2007,2011,0,409
+FORD,RANGER,ford,ranger,ja,2011,2025,0,495
+FORD,S-MAX,ford,s-max,ja,2006,2014,0,569
+FORD,S-MAX,ford,s-max,ja,2014,2025,0,569
+FORD,TRANSIT,ford,transit,nee,1986,2000,0,485
+FORD,TRANSIT,ford,transit,ja,2000,2014,0,549
+FORD,TRANSIT,ford,transit,ja,2014,2025,0,595
+FORD,TRANSIT CONNECT,ford,transit-connect,ja,2002,2013,0,419
+FORD,TRANSIT CONNECT,ford,transit-connect,ja,2014,2025,0,435
+FORD,TRANSIT CUSTOM,ford,transit-custom,ja,2012,2025,0,569
+HONDA,ACCORD,honda,accord,nee,1993,1998,0,459
+HONDA,ACCORD,honda,accord,nee,1998,2003,0,479
+HONDA,ACCORD,honda,accord,nee,2003,2008,0,495
+HONDA,ACCORD,honda,accord,ja,2008,2025,0,575
+HONDA,CIVIC,honda,civic,nee,1991,1996,0,op aanvraag
+HONDA,CIVIC,honda,civic,nee,1996,2001,0,455
+HONDA,CIVIC,honda,civic,nee,2002,2006,0,539
+HONDA,CIVIC,honda,civic,ja,2006,2011,0,525
+HONDA,CIVIC,honda,civic,ja,2012,2017,0,op aanvraag
+HONDA,CIVIC,honda,civic,ja,2017,2022,0,525
+HONDA,CIVIC HATCHBACK 3 DEURS,honda,civic-hatchback-3-deurs,nee,1988,1992,0,485
+HONDA,CIVIC HATCHBACK 3 DEURS,honda,civic-hatchback-3-deurs,nee,1992,1996,0,479
+HONDA,CIVIC HATCHBACK 3 DEURS,honda,civic-hatchback-3-deurs,nee,1996,2001,0,535
+HONDA,CIVIC HATCHBACK 3 DEURS,honda,civic-hatchback-3-deurs,nee,2001,2007,0,535
+HONDA,CIVIC HATCHBACK 3 DEURS,honda,civic-hatchback-3-deurs,ja,2007,2011,0,569
+HONDA,CIVIC HATCHBACK 5 DEURS,honda,civic-hatchback-5-deurs,nee,1995,2000,0,479
+HONDA,CIVIC HATCHBACK 5 DEURS,honda,civic-hatchback-5-deurs,nee,2001,2005,0,495
+HONDA,CIVIC HATCHBACK 5 DEURS,honda,civic-hatchback-5-deurs,ja,2005,2011,0,569
+HONDA,CIVIC HATCHBACK 5 DEURS,honda,civic-hatchback-5-deurs,ja,2012,2017,0,565
+HONDA,CIVIC HATCHBACK 5 DEURS,honda,civic-hatchback-5-deurs,ja,2016,2022,0,525
+HONDA,CIVIC HATCHBACK 5 DEURS,honda,civic-hatchback-5-deurs,ja,2022,2025,0,655
+HONDA,CIVIC HYBRID,honda,civic-hybrid,ja,2006,2011,0,495
+HONDA,CR-V,honda,cr-v,nee,1997,2001,0,535
+HONDA,CR-V,honda,cr-v,nee,2004,2007,0,569
+HONDA,CR-V,honda,cr-v,ja,2007,2012,0,535
+HONDA,CR-V,honda,cr-v,ja,2012,2028,0,535
+HONDA,CR-V,honda,cr-v,ja,2012,2018,0,595
+HONDA,CR-V,honda,cr-v,ja,2018,2023,0,589
+HONDA,CR-V,honda,cr-v,ja,2023,2025,0,605
+HONDA,CR-Z,honda,cr-z,nee,2010,2025,0,535
+HONDA,CRX,honda,crx,nee,1988,1992,0,485
+HONDA,CRX,honda,crx,nee,1992,1997,0,459
+HONDA,FR-V,honda,fr-v,nee,2004,2010,0,485
+HONDA,HR-V,honda,hr-v,nee,1999,2006,0,485
+HONDA,HR-V,honda,hr-v,ja,2015,2022,0,655
+HONDA,HR-V,honda,hr-v,ja,2022,2025,0,645
+HONDA,INSIGHT,honda,insight,nee,2000,2009,0,569
+HONDA,INSIGHT,honda,insight,ja,2009,2018,0,495
+HONDA,JAZZ,honda,jazz,nee,2002,2008,0,429
+HONDA,JAZZ,honda,jazz,ja,2009,2015,0,439
+HONDA,PRELUDE,honda,prelude,nee,2025,2025,0,op aanvraag
+HONDA,ZR-V,honda,zr-v,ja,2023,2025,0,669
+HONDA,e:NY1,honda,eny1,nee,2023,2025,0,669
+HONDA,e:NY2,honda,eny2,nee,2023,2025,0,645
+HYUNDAI,GETZ,hyundai,getz,nee,2002,2025,0,435
+HYUNDAI,GRAND SANTE FE,hyundai,grand-sante-fe,ja,2013,2025,0,755
+HYUNDAI,H100,hyundai,h100,nee,1994,2006,0,385
+HYUNDAI,H200,hyundai,h200,nee,1998,2007,0,435
+HYUNDAI,INSTER,hyundai,inster,ja,2024,2025,0,op aanvraag
+HYUNDAI,IONIQ,hyundai,ioniq,ja,2016,2025,0,535
+HYUNDAI,IONIQ 5,hyundai,ioniq-5,ja,2021,2025,0,705
+HYUNDAI,IONIQ 6,hyundai,ioniq-6,ja,2022,2025,0,705
+HYUNDAI,IONIQ 9,hyundai,ioniq-9,ja,2025,2025,0,op aanvraag
+HYUNDAI,MATRIX,hyundai,matrix,nee,2001,2010,0,435
+HYUNDAI,NEXO,hyundai,nexo,ja,2018,2025,0,op aanvraag
+HYUNDAI,SANTA FE,hyundai,santa-fe,nee,2001,2006,0,525
+HYUNDAI,SANTA FE,hyundai,santa-fe,ja,2006,2013,0,535
+HYUNDAI,SANTA FE,hyundai,santa-fe,ja,2013,2019,0,539
+HYUNDAI,SANTA FE,hyundai,santa-fe,ja,2019,2024,0,775
+HYUNDAI,SANTA FE,hyundai,santa-fe,ja,2024,2025,0,815
+HYUNDAI,SONATA,hyundai,sonata,nee,2005,2010,0,495
+HYUNDAI,TRAJET,hyundai,trajet,nee,1999,2008,0,535
+HYUNDAI,TUCSON,hyundai,tucson,ja,2004,2010,0,479
+HYUNDAI,TUCSON,hyundai,tucson,ja,2015,2021,0,605
+HYUNDAI,TUCSON,hyundai,tucson,ja,2021,2025,0,645
+HYUNDAI,i10,hyundai,i10,ja,2008,2013,0,385
+HYUNDAI,i10,hyundai,i10,ja,2013,2025,0,455
+HYUNDAI,i20,hyundai,i20,ja,2009,2014,0,435
+HYUNDAI,i20,hyundai,i20,ja,2014,2021,0,475
+HYUNDAI,i20,hyundai,i20,ja,2021,2025,0,595
+HYUNDAI,i20 COUPE,hyundai,i20-coupe,ja,2015,2025,0,439
+HYUNDAI,i30,hyundai,i30,ja,2007,2012,0,435
+HYUNDAI,i30,hyundai,i30,ja,2012,2017,0,465
+HYUNDAI,i30,hyundai,i30,ja,2017,2025,0,569
+HYUNDAI,i40,hyundai,i40,ja,2010,2025,0,485
+HYUNDAI,iX20,hyundai,ix20,nee,2010,2025,0,435
+HYUNDAI,iX35,hyundai,ix35,nee,2010,2025,0,459
+HYUNDAI,iX55,hyundai,ix55,nee,2009,2025,0,699
+INFINITY,G-Serie,infinity,g-serie,nee,2021,2025,0,539
+INFINITY,Q60,infinity,q60,nee,2008,2025,0,589
+INFINITY,QX50,infinity,qx50,nee,2008,2013,0,659
+INFINITY,QX70,infinity,qx70,nee,2014,2025,0,605
+IVECO,DAILY,iveco,daily,nee,1999,2014,0,435
+IVECO,DAILY,iveco,daily,nee,2014,2025,0,575
+JAGUAR,E-PACE,jaguar,e-pace,ja,2018,2025,0,989
+JAGUAR,E-TYPE,jaguar,e-type,nee,1961,1970,0,op aanvraag
+JAGUAR,E-TYPE,jaguar,e-type,nee,1968,1972,0,op aanvraag
+JAGUAR,E-TYPE,jaguar,e-type,nee,1971,1975,0,op aanvraag
+JAGUAR,F-PACE,jaguar,f-pace,ja,2018,2025,0,op aanvraag
+JAGUAR,I-PACE,jaguar,i-pace,ja,2018,2025,0,op aanvraag
+JAGUAR,X-TYPE,jaguar,x-type,nee,2001,2009,0,459
+JAGUAR,XF,jaguar,xf,ja,2008,2015,0,535
+JAGUAR,XF,jaguar,xf,ja,2015,2025,0,439
+JAGUAR,XJ,jaguar,xj,nee,2003,2009,0,645
+JAGUAR,XJ,jaguar,xj,nee,2010,2025,0,op aanvraag
+JAGUAR,XK,jaguar,xk,nee,2006,2025,0,655
+JEEP,AVENGER,jeep,avenger,ja,2023,2025,0,595
+JEEP,CHEROKEE,jeep,cherokee,nee,2001,2008,0,459
+JEEP,CHEROKEE,jeep,cherokee,ja,2008,2025,0,535
+JEEP,COMMANDER,jeep,commander,nee,2006,2010,0,539
+JEEP,COMPASS,jeep,compass,ja,2007,2016,0,465
+JEEP,COMPASS,jeep,compass,ja,2016,2025,0,545
+JEEP,GRAND CHEROKEE,jeep,grand-cherokee,nee,1992,1999,0,439
+JEEP,GRAND CHEROKEE,jeep,grand-cherokee,nee,1999,2005,0,495
+JEEP,GRAND CHEROKEE,jeep,grand-cherokee,ja,2005,2011,0,535
+JEEP,GRAND CHEROKEE,jeep,grand-cherokee,ja,2011,2025,0,605
+JEEP,PATRIOT,jeep,patriot,nee,2007,2014,0,495
+JEEP,WRANGLER,jeep,wrangler,nee,1987,1996,0,539
+JEEP,WRANGLER,jeep,wrangler,nee,1997,2006,0,479
+JEEP,WRANGLER,jeep,wrangler,nee,2007,2019,0,859
+JEEP,WRANGLER,jeep,wrangler,nee,2019,2025,0,589
+KIA,CARENS,kia,carens,nee,1999,2002,0,459
+KIA,CARENS,kia,carens,nee,2002,2006,0,465
+KIA,CARENS,kia,carens,nee,2006,2013,0,529
+KIA,CARENS,kia,carens,nee,2013,2025,0,569
+KIA,CARNIVAL,kia,carnival,nee,1999,2006,0,459
+KIA,CARNIVAL,kia,carnival,nee,2006,2025,0,529
+KIA,CEE'D,kia,ceed,ja,2006,2012,0,435
+KIA,CEE'D,kia,ceed,ja,2012,2025,0,459
+KIA,CEED,kia,ceed,ja,2012,2025,0,435
+KIA,EV2,kia,ev2,nee,2025,2025,0,859
+KIA,EV3,kia,ev3,ja,2024,2025,0,705
+KIA,EV4,kia,ev4,ja,2024,2025,0,op aanvraag
+KIA,EV5,kia,ev5,ja,2025,2025,0,op aanvraag
+KIA,EV6,kia,ev6,ja,2021,2025,0,655
+KIA,EV9,kia,ev9,ja,2023,2025,0,755
+KIA,EV9,kia,ev9,ja,2023,2026,0,739
+KIA,NIRO,kia,niro,ja,2016,2022,0,565
+KIA,NIRO,kia,niro,ja,2022,2025,0,659
+KIA,OPIRUS,kia,opirus,nee,2003,2010,0,645
+KIA,OPTIMA,kia,optima,ja,2012,2025,0,595
+KIA,OPTIMA,kia,optima,ja,2015,2025,0,639
+KIA,PICANTO,kia,picanto,nee,2004,2011,0,459
+KIA,PICANTO,kia,picanto,nee,2011,2017,0,459
+KIA,PICANTO,kia,picanto,nee,2017,2025,0,479
+KIA,PRO CEE'D,kia,pro-ceed,ja,2008,2012,0,479
+KIA,PRO CEE'D,kia,pro-ceed,ja,2012,2025,0,479
+KIA,PROCEED,kia,proceed,ja,2019,2025,0,479
+KIA,PV5,kia,pv5,nee,2025,2025,0,859
+KIA,RIO,kia,rio,nee,2000,2005,0,385
+KIA,RIO,kia,rio,ja,2005,2011,0,435
+KIA,RIO,kia,rio,ja,2011,2025,0,455
+KIA,SORENTO,kia,sorento,nee,2002,2009,0,535
+KIA,SORENTO,kia,sorento,ja,2009,2015,0,535
+KIA,SORENTO,kia,sorento,ja,2015,2020,0,685
+KIA,SORENTO,kia,sorento,ja,2020,2025,0,op aanvraag
+KIA,SOUL,kia,soul,ja,2009,2014,0,485
+KIA,SOUL,kia,soul,ja,2014,2019,0,op aanvraag
+KIA,SOUL,kia,soul,ja,2019,2025,0,679
+KIA,SPORTAGE,kia,sportage,nee,1994,2002,0,535
+KIA,SPORTAGE,kia,sportage,ja,2004,2010,0,459
+KIA,SPORTAGE,kia,sportage,ja,2010,2016,0,485
+KIA,SPORTAGE,kia,sportage,ja,2016,2021,0,569
+KIA,SPORTAGE,kia,sportage,ja,2021,2025,0,659
+KIA,VENGA,kia,venga,nee,2009,2014,0,485
+KIA,XCEED,kia,xceed,ja,2019,2025,0,675
+LANCIA,GRAND VOYAGER,lancia,grand-voyager,nee,2011,2017,0,495
+LANCIA,MUSA,lancia,musa,nee,2004,2012,0,439
+LANCIA,YPSILON,lancia,ypsilon,nee,1992,1995,0,429
+LANCIA,YPSILON,lancia,ypsilon,nee,1996,2003,0,385
+LANCIA,YPSILON,lancia,ypsilon,nee,2003,2011,0,439
+LANCIA,YPSILON,lancia,ypsilon,nee,2011,2025,0,485
+LANDROVER,DEFENDER,landrover,defender,ja,1983,2025,0,365
+LANDROVER,DISCOVERY,landrover,discovery,nee,1994,1998,0,459
+LANDROVER,DISCOVERY,landrover,discovery,nee,1999,2004,0,925
+LANDROVER,DISCOVERY,landrover,discovery,ja,2004,2016,0,459
+LANDROVER,DISCOVERY,landrover,discovery,ja,2004,2025,0,539
+LANDROVER,DISCOVERY,landrover,discovery,ja,2017,2025,0,815
+LANDROVER,DISCOVERY SPORT,landrover,discovery-sport,ja,2015,2025,0,595
+LANDROVER,EVOQUE,landrover,evoque,ja,2011,2025,0,699
+LANDROVER,FREELANDER,landrover,freelander,nee,1997,2007,0,495
+LANDROVER,FREELANDER,landrover,freelander,ja,2007,2025,0,495
+LANDROVER,RANGE ROVER,landrover,range-rover,ja,2002,2012,0,1079
+LANDROVER,RANGE ROVER,landrover,range-rover,ja,2013,2025,0,op aanvraag
+LANDROVER,RANGE ROVER SPORT,landrover,range-rover-sport,ja,2005,2013,0,595
+LANDROVER,RANGE ROVER SPORT,landrover,range-rover-sport,ja,2013,2025,0,749
+LANDROVER,RANGE ROVER VELAR,landrover,range-rover-velar,ja,2017,2025,0,825
+LEXUS,CT200H,lexus,ct200h,nee,2011,2025,0,495
+LEXUS,EX-Serie,lexus,ex-serie,nee,2008,2014,0,605
+LEXUS,FX-Serie,lexus,fx-serie,nee,2008,2014,0,645
+LEXUS,G-Serie,lexus,g-serie,nee,2008,2014,0,op aanvraag
+LEXUS,GS300,lexus,gs300,nee,1993,1997,0,op aanvraag
+LEXUS,GS300,lexus,gs300,nee,1997,2000,0,op aanvraag
+LEXUS,GS300/430,lexus,gs300-430,nee,2000,2005,0,529
+LEXUS,GS300/430,lexus,gs300-430,nee,2005,2012,0,op aanvraag
+LEXUS,IS220/250,lexus,is220-250,nee,2005,2013,0,749
+LEXUS,IS300h,lexus,is300h,nee,1999,2005,0,469
+LEXUS,IS300h,lexus,is300h,nee,2013,2025,0,705
+LEXUS,LS400,lexus,ls400,nee,1994,2000,0,595
+LEXUS,NX200T/300H,lexus,nx200t-300h,nee,2014,2025,0,649
+LEXUS,RX-Serie,lexus,rx-serie,nee,2003,2009,0,op aanvraag
+LEXUS,RX300/400H,lexus,rx300-400h,nee,2000,2003,0,op aanvraag
+LEXUS,RX300/400H,lexus,rx300-400h,nee,2003,2009,0,op aanvraag
+LEXUS,RX350/450H,lexus,rx350-450h,nee,2009,2015,0,875
+LEXUS,UX,lexus,ux,ja,2018,2025,0,1145
+LYNKCO,LYNK CO 01,lynkco,lynk-co-01,ja,2020,2025,0,715
+LYNKCO,LYNK CO 02,lynkco,lynk-co-02,ja,2024,2025,0,op aanvraag
+MAN,L2000,man,l2000,nee,1993,1997,0,749
+MAN,TGA breed/hoog,man,tga-breed-hoog,nee,2000,2025,0,1155
+MAN,TGA smal,man,tga-smal,nee,2000,2025,0,1089
+MAN,TGE,man,tge,ja,2017,2025,0,865
+MAN,TGX,man,tgx,nee,2000,2025,0,1139
+MAN,TGX,man,tgx,nee,2014,2025,0,1235
+MAZDA,2,mazda,2,nee,2003,2007,0,419
+MAZDA,2,mazda,2,ja,2007,2014,0,419
+MAZDA,2,mazda,2,ja,2015,2022,0,419
+MAZDA,2,mazda,2,ja,2022,2025,0,445
+MAZDA,3,mazda,3,nee,2003,2006,0,409
+MAZDA,3,mazda,3,ja,2009,2013,0,385
+MAZDA,3,mazda,3,ja,2013,2019,0,455
+MAZDA,3,mazda,3,ja,2019,2025,0,985
+MAZDA,5,mazda,5,nee,2005,2025,0,479
+MAZDA,CX-3,mazda,cx-3,ja,2015,2025,0,485
+MAZDA,CX-30,mazda,cx-30,ja,2019,2025,0,755
+MAZDA,CX-5,mazda,cx-5,ja,2012,2017,0,539
+MAZDA,CX-5,mazda,cx-5,ja,2017,2025,0,595
+MAZDA,CX-60,mazda,cx-60,ja,2022,2025,0,705
+MAZDA,CX-80,mazda,cx-80,ja,2022,2025,0,op aanvraag
+MAZDA,MX3,mazda,mx3,nee,1992,1999,0,469
+MAZDA,MX5,mazda,mx5,nee,1990,1998,0,469
+MAZDA,MX5,mazda,mx5,nee,1998,2005,0,419
+MAZDA,MX5,mazda,mx5,ja,2005,2015,0,469
+MAZDA,MX5,mazda,mx5,ja,2015,2025,0,419
+MAZDA,MX6,mazda,mx6,nee,1996,1996,0,469
+MAZDA,PREMACY,mazda,premacy,nee,1999,2005,0,409
+MERCEDES,A,mercedes,a,nee,1997,2004,0,409
+MERCEDES,A,mercedes,a,ja,2004,2012,0,385
+MERCEDES,A,mercedes,a,ja,2012,2018,0,465
+MERCEDES,A,mercedes,a,ja,2018,2025,0,485
+MERCEDES,ACTROS,mercedes,actros,nee,1996,2011,0,1019
+MERCEDES,ACTROS,mercedes,actros,nee,2012,2025,0,1095
+MERCEDES,ANTOS,mercedes,antos,nee,2012,2018,0,905
+MERCEDES,ANTOS,mercedes,antos,nee,2012,2025,0,1045
+MERCEDES,ATEGO,mercedes,atego,nee,1998,2025,0,825
+MERCEDES,B,mercedes,b,ja,2004,2011,0,385
+MERCEDES,B,mercedes,b,ja,2011,2019,0,485
+MERCEDES,C,mercedes,c,nee,2000,2007,0,439
+MERCEDES,C,mercedes,c,ja,2007,2014,0,495
+MERCEDES,C,mercedes,c,ja,2014,2021,0,485
+MERCEDES,C,mercedes,c,ja,2021,2025,0,855
+MERCEDES,CITAN,mercedes,citan,ja,2012,2021,0,409
+MERCEDES,CITAN,mercedes,citan,ja,2022,2025,0,519
+MERCEDES,CL,mercedes,cl,nee,1999,2006,0,935
+MERCEDES,CL,mercedes,cl,ja,2006,2025,0,1155
+MERCEDES,CLA,mercedes,cla,ja,2013,2019,0,465
+MERCEDES,CLA,mercedes,cla,ja,2019,2025,0,485
+MERCEDES,CLK,mercedes,clk,nee,1997,2002,0,649
+MERCEDES,CLK,mercedes,clk,nee,2002,2009,0,659
+MERCEDES,CLS,mercedes,cls,ja,2004,2011,0,565
+MERCEDES,CLS,mercedes,cls,ja,2011,2018,0,605
+MERCEDES,CLS,mercedes,cls,ja,2018,2025,0,op aanvraag
+MERCEDES,CLS,mercedes,cls,ja,2028,2025,0,989
+MERCEDES,E,mercedes,e,nee,1995,2002,0,525
+MERCEDES,E,mercedes,e,nee,2002,2009,0,479
+MERCEDES,E,mercedes,e,ja,2009,2016,0,589
+MERCEDES,E,mercedes,e,ja,2016,2023,0,495
+MERCEDES,E,mercedes,e,ja,2023,2025,0,589
+MERCEDES,EQA,mercedes,eqa,ja,2019,2025,0,545
+MERCEDES,EQB,mercedes,eqb,ja,2019,2025,0,529
+MERCEDES,EQC,mercedes,eqc,ja,2019,2025,0,605
+MERCEDES,EQC,mercedes,eqc,ja,2023,2025,0,589
+MERCEDES,EQS,mercedes,eqs,ja,2021,2025,0,op aanvraag
+MERCEDES,G,mercedes,g,ja,2009,2025,0,459
+MERCEDES,GL,mercedes,gl,ja,2006,2025,0,715
+MERCEDES,GLA,mercedes,gla,ja,2014,2020,0,519
+MERCEDES,GLA,mercedes,gla,ja,2020,2025,0,545
+MERCEDES,GLB,mercedes,glb,ja,2019,2025,0,529
+MERCEDES,GLB,mercedes,glb,ja,2020,2025,0,919
+MERCEDES,GLC,mercedes,glc,ja,2015,2022,0,539
+MERCEDES,GLC,mercedes,glc,ja,2022,2025,0,569
+MERCEDES,GLE,mercedes,gle,ja,2015,2019,0,659
+MERCEDES,GLE,mercedes,gle,ja,2019,2025,0,755
+MERCEDES,GLK,mercedes,glk,ja,2008,2015,0,495
+MERCEDES,GLS,mercedes,gls,ja,2015,2019,0,655
+MERCEDES,GLS,mercedes,gls,ja,2019,2025,0,755
+MERCEDES,M,mercedes,m,nee,1998,2005,0,659
+MERCEDES,M,mercedes,m,ja,2005,2011,0,715
+MERCEDES,M,mercedes,m,ja,2011,2015,0,605
+MERCEDES,R,mercedes,r,nee,2006,2015,0,655
+MERCEDES,S,mercedes,s,nee,1991,1998,0,569
+MERCEDES,S,mercedes,s,nee,1998,2005,0,685
+MERCEDES,S,mercedes,s,ja,2005,2013,0,825
+MERCEDES,S,mercedes,s,ja,2013,2020,0,1265
+MERCEDES,S,mercedes,s,ja,2020,2025,0,op aanvraag
+MERCEDES,SL,mercedes,sl,nee,1989,2001,0,539
+MERCEDES,SL,mercedes,sl,ja,2001,2012,0,769
+MERCEDES,SLK,mercedes,slk,nee,1996,2004,0,575
+MERCEDES,SLK,mercedes,slk,ja,2004,2011,0,535
+MERCEDES,SLK,mercedes,slk,ja,2011,2025,0,679
+MERCEDES,SPRINTER,mercedes,sprinter,nee,1995,2006,0,385
+MERCEDES,SPRINTER,mercedes,sprinter,ja,2006,2018,0,465
+MERCEDES,SPRINTER,mercedes,sprinter,ja,2018,2025,0,495
+MERCEDES,V,mercedes,v,nee,1996,2003,0,419
+MERCEDES,V,mercedes,v,ja,2014,2025,0,495
+MERCEDES,VARIO,mercedes,vario,nee,1986,2000,0,429
+MERCEDES,VIANO,mercedes,viano,ja,2003,2014,0,385
+MERCEDES,VITO,mercedes,vito,nee,1996,2003,0,385
+MERCEDES,VITO,mercedes,vito,ja,2003,2014,0,385
+MERCEDES,VITO,mercedes,vito,ja,2014,2025,0,535
+MINI,MINI,mini,mini,nee,2001,2006,0,409
+MINI,MINI,mini,mini,ja,2006,2014,0,409
+MINI,MINI,mini,mini,ja,2014,2025,0,409
+MINI,MINI CABRIO,mini,mini-cabrio,nee,2004,2009,0,409
+MINI,MINI CABRIO,mini,mini-cabrio,ja,2009,2016,0,409
+MINI,MINI CABRIO,mini,mini-cabrio,ja,2016,2025,0,419
+MINI,MINI CLUBMAN,mini,mini-clubman,ja,2007,2014,0,419
+MINI,MINI CLUBMAN,mini,mini-clubman,ja,2015,2025,0,435
+MINI,MINI COUNTRYMAN,mini,mini-countryman,ja,2010,2016,0,439
+MINI,MINI COUNTRYMAN,mini,mini-countryman,ja,2016,2025,0,495
+MINI,MINI COUPE,mini,mini-coupe,ja,2011,2025,0,439
+MITSUBISHI,ASX,mitsubishi,asx,ja,2010,2025,0,475
+MITSUBISHI,CANTER,mitsubishi,canter,nee,1985,1996,0,385
+MITSUBISHI,CANTER,mitsubishi,canter,nee,1996,2005,0,385
+MITSUBISHI,CANTER,mitsubishi,canter,nee,2005,2014,0,435
+MITSUBISHI,CARISMA,mitsubishi,carisma,nee,1995,2004,0,385
+MITSUBISHI,COLT,mitsubishi,colt,nee,1988,1992,0,879
+MITSUBISHI,COLT,mitsubishi,colt,nee,1992,1995,0,435
+MITSUBISHI,COLT,mitsubishi,colt,nee,2004,2012,0,435
+MITSUBISHI,ECLIPSE CROSS,mitsubishi,eclipse-cross,ja,2017,2025,0,539
+MITSUBISHI,L200,mitsubishi,l200,nee,1987,1996,0,429
+MITSUBISHI,L200,mitsubishi,l200,nee,1996,2006,0,439
+MITSUBISHI,L200,mitsubishi,l200,ja,2006,2015,0,429
+MITSUBISHI,L200,mitsubishi,l200,ja,2015,2025,0,485
+MITSUBISHI,L300,mitsubishi,l300,nee,1980,1986,0,409
+MITSUBISHI,L300,mitsubishi,l300,nee,1987,2013,0,429
+MITSUBISHI,LANCER,mitsubishi,lancer,nee,1988,1992,0,409
+MITSUBISHI,LANCER,mitsubishi,lancer,nee,1993,1995,0,435
+MITSUBISHI,LANCER,mitsubishi,lancer,nee,1996,2003,0,429
+MITSUBISHI,LANCER,mitsubishi,lancer,nee,2003,2007,0,439
+MITSUBISHI,LANCER,mitsubishi,lancer,nee,2007,2025,0,439
+MITSUBISHI,OUTLANDER,mitsubishi,outlander,nee,2003,2007,0,439
+MITSUBISHI,OUTLANDER,mitsubishi,outlander,ja,2007,2012,0,435
+MITSUBISHI,OUTLANDER,mitsubishi,outlander,ja,2012,2025,0,495
+MITSUBISHI,OUTLANDER PHEV,mitsubishi,outlander-phev,ja,2012,2025,0,595
+MITSUBISHI,PAJERO,mitsubishi,pajero,nee,1982,1990,0,439
+MITSUBISHI,PAJERO,mitsubishi,pajero,nee,1991,1999,0,435
+MITSUBISHI,PAJERO,mitsubishi,pajero,nee,2000,2014,0,475
+MITSUBISHI,SPACESTAR,mitsubishi,spacestar,nee,1998,2005,0,385
+MITSUBISHI,SPACESTAR,mitsubishi,spacestar,nee,2013,2025,0,435
+MITSUBISHI,SPACEWAGON,mitsubishi,spacewagon,nee,1992,1998,0,419
+MITSUBISHI,SPACEWAGON,mitsubishi,spacewagon,nee,1999,2004,0,469
+NIO,EL7,nio,el7,nee,2023,2025,0,1155
+NIO,ES8,nio,es8,nee,2021,2025,0,1155
+NIO,ET5,nio,et5,nee,2022,2025,0,1155
+NISSAN,ALMERA TINO,nissan,almera-tino,nee,2000,2006,0,535
+NISSAN,ARIYA,nissan,ariya,ja,2022,2025,0,699
+NISSAN,CABSTAR,nissan,cabstar,nee,1999,2007,0,435
+NISSAN,CABSTAR,nissan,cabstar,nee,2007,2007,0,465
+NISSAN,CUBE,nissan,cube,nee,2009,2025,0,435
+NISSAN,INTERSTAR,nissan,interstar,nee,2002,2010,0,495
+NISSAN,JUKE,nissan,juke,ja,2010,2019,0,479
+NISSAN,JUKE,nissan,juke,ja,2019,2025,0,569
+NISSAN,KUBISTAR,nissan,kubistar,nee,2003,2025,0,385
+NISSAN,LEAF,nissan,leaf,ja,2011,2018,0,535
+NISSAN,LEAF,nissan,leaf,ja,2018,2025,0,435
+NISSAN,MICRA,nissan,micra,nee,1992,2002,0,385
+NISSAN,MICRA,nissan,micra,ja,2003,2011,0,385
+NISSAN,MICRA,nissan,micra,ja,2011,2017,0,409
+NISSAN,MICRA,nissan,micra,ja,2017,2025,0,465
+NISSAN,NOTE,nissan,note,nee,2006,2013,0,385
+NISSAN,NV200,nissan,nv200,nee,2009,2025,0,469
+NISSAN,NV250,nissan,nv250,nee,2019,2021,0,435
+NISSAN,NV300,nissan,nv300,nee,2016,2025,0,485
+NISSAN,NV400,nissan,nv400,nee,2011,2025,0,435
+NISSAN,PATHFINDER,nissan,pathfinder,nee,1997,2003,0,549
+NISSAN,PATHFINDER,nissan,pathfinder,nee,2005,2014,0,529
+NISSAN,PATROL,nissan,patrol,nee,1998,2010,0,645
+NISSAN,PIXO,nissan,pixo,nee,2009,2014,0,385
+NISSAN,PRIMASTAR,nissan,primastar,nee,2002,2025,0,485
+NISSAN,QASHQAI,nissan,qashqai,ja,2007,2014,0,589
+NISSAN,QASHQAI,nissan,qashqai,ja,2014,2021,0,699
+NISSAN,QASHQAI,nissan,qashqai,ja,2021,2025,0,665
+NISSAN,X-TRAIL,nissan,x-trail,nee,2001,2007,0,539
+NISSAN,X-TRAIL,nissan,x-trail,ja,2007,2014,0,605
+NISSAN,X-TRAIL,nissan,x-trail,ja,2014,2025,0,605
+OPEL,ADAM,opel,adam,nee,2013,2014,0,429
+OPEL,AGILA,opel,agila,nee,2000,2008,0,385
+OPEL,AGILA,opel,agila,nee,2008,2014,0,495
+OPEL,AMPERA,opel,ampera,ja,2012,2017,0,559
+OPEL,AMPERA,opel,ampera,ja,2017,2025,0,589
+OPEL,ANTARA,opel,antara,nee,2007,2014,0,469
+OPEL,ASTRA,opel,astra,nee,1998,2004,0,435
+OPEL,ASTRA,opel,astra,ja,2004,2010,0,439
+OPEL,ASTRA,opel,astra,ja,2010,2015,0,459
+OPEL,ASTRA,opel,astra,ja,2016,2021,0,409
+OPEL,ASTRA,opel,astra,ja,2021,2025,0,495
+OPEL,ASTRA GTC,opel,astra-gtc,ja,2005,2011,0,435
+OPEL,ASTRA GTC,opel,astra-gtc,ja,2011,2018,0,439
+OPEL,ASTRA TWIN TOP,opel,astra-twin-top,ja,2006,2013,0,445
+OPEL,COMBO,opel,combo,nee,1993,2001,0,369
+OPEL,COMBO,opel,combo,ja,2001,2012,0,409
+OPEL,COMBO,opel,combo,ja,2012,2018,0,435
+OPEL,COMBO,opel,combo,ja,2018,2025,0,459
+OPEL,CORSA,opel,corsa,nee,1982,1992,0,375
+OPEL,CORSA,opel,corsa,nee,1993,2000,0,385
+OPEL,CORSA,opel,corsa,nee,2000,2006,0,375
+OPEL,CORSA,opel,corsa,ja,2006,2014,0,385
+OPEL,CORSA,opel,corsa,ja,2014,2025,0,385
+OPEL,CROSSLAND X,opel,crossland-x,ja,2017,2025,0,435
+OPEL,FRONTERA,opel,frontera,nee,2024,2025,0,549
+OPEL,INSIGNIA,opel,insignia,ja,2009,2017,0,435
+OPEL,INSIGNIA,opel,insignia,ja,2009,2025,0,439
+OPEL,INSIGNIA,opel,insignia,ja,2017,2025,0,479
+OPEL,KARL,opel,karl,ja,2015,2025,0,385
+OPEL,MERIVA,opel,meriva,nee,2003,2010,0,379
+OPEL,MERIVA,opel,meriva,nee,2010,2025,0,385
+OPEL,MOKKA,opel,mokka,ja,2012,2025,0,525
+OPEL,MOVANO,opel,movano,nee,1998,2010,0,485
+OPEL,MOVANO,opel,movano,nee,2010,2025,0,525
+OPEL,SINTRA,opel,sintra,nee,1997,2003,0,1089
+OPEL,TIGRA,opel,tigra,nee,1994,2000,0,519
+OPEL,TIGRA,opel,tigra,nee,2004,2010,0,535
+OPEL,VECTRA,opel,vectra,nee,1996,2003,0,419
+OPEL,VECTRA,opel,vectra,nee,2003,2008,0,435
+OPEL,VIVARO,opel,vivaro,ja,2001,2014,0,465
+OPEL,VIVARO,opel,vivaro,ja,2014,2019,0,495
+OPEL,VIVARO,opel,vivaro,ja,2019,2025,0,495
+OPEL,ZAFIRA,opel,zafira,nee,1999,2005,0,415
+OPEL,ZAFIRA,opel,zafira,ja,2005,2011,0,409
+OPEL,ZAFIRA,opel,zafira,ja,2011,2025,0,459
+PEUGEOT,106,peugeot,106,nee,1991,2003,0,385
+PEUGEOT,107,peugeot,107,nee,2005,2014,0,385
+PEUGEOT,108,peugeot,108,ja,2014,2025,0,385
+PEUGEOT,2008,peugeot,2008,ja,2012,2019,0,405
+PEUGEOT,2008,peugeot,2008,ja,2019,2025,0,495
+PEUGEOT,206,peugeot,206,nee,1998,2008,0,415
+PEUGEOT,206 Coupe/Cabrio,peugeot,206-coupe-cabrio,nee,1998,2008,0,479
+PEUGEOT,207,peugeot,207,nee,2006,2012,0,415
+PEUGEOT,207 Coupe/Cabrio,peugeot,207-coupe-cabrio,nee,2007,2011,0,435
+PEUGEOT,208,peugeot,208,ja,2012,2019,0,439
+PEUGEOT,208,peugeot,208,ja,2019,2025,0,465
+PEUGEOT,3008,peugeot,3008,ja,2009,2016,0,545
+PEUGEOT,3008,peugeot,3008,ja,2016,2024,0,535
+PEUGEOT,3008,peugeot,3008,ja,2024,2025,0,605
+PEUGEOT,307,peugeot,307,nee,2001,2008,0,475
+PEUGEOT,307 Coupe/Cabrio,peugeot,307-coupe-cabrio,nee,2001,2008,0,535
+PEUGEOT,308,peugeot,308,ja,2008,2014,0,489
+PEUGEOT,308,peugeot,308,ja,2014,2021,0,439
+PEUGEOT,308,peugeot,308,ja,2021,2025,0,495
+PEUGEOT,4008,peugeot,4008,nee,2012,2025,0,459
+PEUGEOT,406,peugeot,406,nee,1995,2004,0,435
+PEUGEOT,407,peugeot,407,nee,2004,2011,0,485
+PEUGEOT,408,peugeot,408,ja,2022,2025,0,525
+PEUGEOT,5008,peugeot,5008,ja,2009,2016,0,495
+PEUGEOT,5008,peugeot,5008,ja,2016,2025,0,535
+PEUGEOT,508,peugeot,508,ja,2011,2018,0,495
+PEUGEOT,508,peugeot,508,ja,2018,2025,0,485
+PEUGEOT,BIPPER,peugeot,bipper,nee,2008,2025,0,385
+PEUGEOT,BOXER,peugeot,boxer,nee,1994,2006,0,495
+PEUGEOT,BOXER,peugeot,boxer,nee,2006,2025,0,565
+PEUGEOT,EXPERT,peugeot,expert,nee,1994,2006,0,415
+PEUGEOT,EXPERT,peugeot,expert,ja,2006,2016,0,465
+PEUGEOT,EXPERT,peugeot,expert,ja,2016,2025,0,539
+PEUGEOT,PARTNER,peugeot,partner,nee,1996,2008,0,385
+PEUGEOT,PARTNER,peugeot,partner,ja,2008,2018,0,435
+PEUGEOT,PARTNER,peugeot,partner,ja,2018,2025,0,435
+PEUGEOT,RCZ,peugeot,rcz,nee,2010,2025,0,565
+PORSCHE,911,porsche,911,nee,1963,1989,0,649
+PORSCHE,911,porsche,911,nee,1988,1993,0,749
+PORSCHE,911,porsche,911,nee,1994,1998,0,979
+PORSCHE,911,porsche,911,nee,1997,2004,0,759
+PORSCHE,911,porsche,911,ja,2004,2011,0,849
+PORSCHE,911,porsche,911,ja,2011,2016,0,925
+PORSCHE,911,porsche,911,ja,2014,2025,0,815
+PORSCHE,924,porsche,924,nee,1976,1987,0,645
+PORSCHE,944,porsche,944,nee,1985,1991,0,869
+PORSCHE,944,porsche,944,nee,1988,1995,0,705
+PORSCHE,BOXSTER,porsche,boxster,nee,1996,2003,0,705
+PORSCHE,BOXSTER,porsche,boxster,nee,2003,2005,0,879
+PORSCHE,BOXSTER,porsche,boxster,ja,2005,2012,0,649
+PORSCHE,CAYENNE,porsche,cayenne,ja,2002,2010,0,639
+PORSCHE,CAYENNE,porsche,cayenne,ja,2010,2017,0,849
+PORSCHE,CAYENNE,porsche,cayenne,ja,2017,2025,0,op aanvraag
+PORSCHE,CAYMAN,porsche,cayman,ja,2005,2013,0,769
+PORSCHE,MACAN,porsche,macan,ja,2014,2025,0,795
+PORSCHE,PANAMERA,porsche,panamera,ja,2009,2016,0,755
+RENAULT,4 E-TECH,renault,4-e-tech,ja,2025,2025,0,589
+RENAULT,5 E-TECH,renault,5-e-tech,ja,2024,2025,0,589
+RENAULT,ARKANA,renault,arkana,ja,2019,2025,0,539
+RENAULT,AUSTRAL,renault,austral,ja,2022,2025,0,589
+RENAULT,CAPTUR,renault,captur,ja,2013,2019,0,439
+RENAULT,CAPTUR,renault,captur,ja,2019,2025,0,485
+RENAULT,CLIO,renault,clio,nee,1991,1998,0,385
+RENAULT,CLIO,renault,clio,nee,1998,2005,0,385
+RENAULT,CLIO,renault,clio,ja,2005,2013,0,385
+RENAULT,CLIO,renault,clio,ja,2013,2019,0,415
+RENAULT,CLIO,renault,clio,ja,2019,2025,0,385
+RENAULT,ESPACE,renault,espace,nee,1991,1996,0,629
+RENAULT,ESPACE,renault,espace,nee,1996,2002,0,649
+RENAULT,ESPACE,renault,espace,ja,2002,2014,0,675
+RENAULT,ESPACE,renault,espace,ja,2015,2025,0,649
+RENAULT,KADJAR,renault,kadjar,ja,2015,2025,0,549
+RENAULT,KANGOOO,renault,kangooo,nee,1999,2008,0,385
+RENAULT,KANGOOO,renault,kangooo,ja,2008,2022,0,409
+RENAULT,KANGOOO,renault,kangooo,ja,2022,2025,0,519
+RENAULT,KOLEOS,renault,koleos,ja,2008,2014,0,465
+RENAULT,LAGUNA,renault,laguna,nee,1994,2001,0,385
+RENAULT,LAGUNA,renault,laguna,nee,2001,2007,0,385
+RENAULT,LAGUNA,renault,laguna,nee,2007,2025,0,439
+RENAULT,MASTER,renault,master,ja,1998,2010,0,589
+RENAULT,MASTER,renault,master,ja,2010,2025,0,605
+RENAULT,MEGANE,renault,megane,nee,1995,2002,0,385
+RENAULT,MEGANE,renault,megane,nee,2002,2008,0,385
+RENAULT,MEGANE,renault,megane,ja,2008,2016,0,435
+RENAULT,MEGANE,renault,megane,ja,2016,2025,0,465
+RENAULT,MEGANE E-TECH,renault,megane-e-tech,ja,2022,2025,0,549
+RENAULT,MEGANE SCENIC,renault,megane-scenic,nee,1996,2003,0,385
+RENAULT,MEGANE SCENIC,renault,megane-scenic,nee,2003,2009,0,435
+RENAULT,MEGANE SCENIC,renault,megane-scenic,ja,2009,2016,0,569
+RENAULT,MEGANE SCENIC,renault,megane-scenic,ja,2016,2025,0,565
+RENAULT,MODUS,renault,modus,nee,2004,2014,0,385
+RENAULT,TALISMAN,renault,talisman,ja,2016,2022,0,519
+RENAULT,TRAFIC,renault,trafic,ja,2001,2014,0,529
+RENAULT,TRAFIC,renault,trafic,ja,2014,2025,0,529
+RENAULT,TWINGO,renault,twingo,nee,1993,2007,0,385
+RENAULT,TWINGO,renault,twingo,ja,2007,2014,0,385
+RENAULT,TWINGO,renault,twingo,ja,2014,2025,0,419
+RENAULT,TWINGO ELECTRIC,renault,twingo-electric,nee,2014,2025,0,419
+RENAULT,TWIZZY,renault,twizzy,nee,2012,2025,0,569
+RENAULT,ZOE,renault,zoe,ja,2013,2025,0,435
+SAAB,9 3,saab,9-3,nee,1993,2002,0,575
+SAAB,9 3,saab,9-3,nee,2002,2011,0,575
+SAAB,9 3 Cabrio,saab,9-3-cabrio,nee,2003,2011,0,605
+SAAB,9 5,saab,9-5,nee,1997,2011,0,459
+SAAB,9 5,saab,9-5,nee,2010,2011,0,589
+SAAB,900,saab,900,nee,1979,1993,0,575
+SAAB,900,saab,900,nee,1994,2002,0,589
+SAAB,900 Cabrio,saab,900-cabrio,nee,1986,1993,0,535
+SAAB,900 Cabrio,saab,900-cabrio,nee,1994,2003,0,569
+SAAB,9000,saab,9000,nee,1994,1997,0,645
+SEAT,ALHAMBRA,seat,alhambra,ja,1995,2010,0,575
+SEAT,ALHAMBRA,seat,alhambra,ja,2010,2025,0,595
+SEAT,ALTEA,seat,altea,nee,2004,2015,0,385
+SEAT,ALTEA XL,seat,altea-xl,nee,2004,2015,0,385
+SEAT,ARONA,seat,arona,ja,2017,2025,0,435
+SEAT,AROSA,seat,arosa,nee,1997,2004,0,385
+SEAT,ATECA,seat,ateca,ja,2016,2025,0,435
+SEAT,IBIZA,seat,ibiza,nee,1984,1993,0,325
+SEAT,IBIZA,seat,ibiza,nee,1993,1999,0,349
+SEAT,IBIZA,seat,ibiza,nee,2000,2002,0,385
+SEAT,IBIZA,seat,ibiza,nee,2002,2008,0,385
+SEAT,IBIZA,seat,ibiza,ja,2008,2017,0,385
+SEAT,IBIZA,seat,ibiza,ja,2017,2025,0,435
+SEAT,INCA,seat,inca,nee,1996,2003,0,375
+SEAT,LEON,seat,leon,nee,1999,2005,0,385
+SEAT,LEON,seat,leon,ja,2005,2012,0,419
+SEAT,LEON,seat,leon,ja,2012,2025,0,435
+SEAT,Mii,seat,mii,ja,2012,2025,0,349
+SEAT,TARRACO,seat,tarraco,ja,2019,2025,0,565
+SEAT,TOLEDO,seat,toledo,nee,1999,2005,0,385
+SEAT,TOLEDO,seat,toledo,nee,2004,2014,0,385
+SEAT,TOLEDO,seat,toledo,nee,2012,2025,0,419
+SKODA,CITIGO,skoda,citigo,ja,2012,2025,0,375
+SKODA,CITIGO,skoda,citigo,ja,2013,2025,0,465
+SKODA,ENYAQ,skoda,enyaq,ja,2020,2025,0,545
+SKODA,FABIA,skoda,fabia,nee,1999,2007,0,385
+SKODA,FABIA,skoda,fabia,ja,2007,2014,0,385
+SKODA,FABIA,skoda,fabia,ja,2014,2021,0,405
+SKODA,FABIA,skoda,fabia,ja,2021,2025,0,595
+SKODA,KAMIQ,skoda,kamiq,ja,2019,2025,0,535
+SKODA,KAROQ,skoda,karoq,ja,2017,2025,0,495
+SKODA,KODIAQ,skoda,kodiaq,ja,2017,2023,0,489
+SKODA,KODIAQ,skoda,kodiaq,ja,2024,2025,0,539
+SKODA,OCTAVIA,skoda,octavia,nee,1997,2004,0,385
+SKODA,OCTAVIA,skoda,octavia,ja,2004,2013,0,385
+SKODA,OCTAVIA,skoda,octavia,ja,2013,2025,0,435
+SKODA,RAPID,skoda,rapid,nee,2012,2025,0,409
+SKODA,ROOMSTER,skoda,roomster,nee,2006,2014,0,385
+SKODA,SUPERB,skoda,superb,nee,2002,2008,0,385
+SKODA,SUPERB,skoda,superb,ja,2008,2015,0,435
+SKODA,SUPERB,skoda,superb,ja,2015,2025,0,419
+SKODA,YETI,skoda,yeti,ja,2009,2025,0,435
+SMART,FOR FOUR,smart,for-four,nee,2002,2006,0,479
+SMART,FOR FOUR,smart,for-four,ja,2014,2025,0,459
+SMART,FOR TWO,smart,for-two,nee,1998,2007,0,435
+SMART,FOR TWO,smart,for-two,ja,2007,2014,0,419
+SMART,FOR TWO,smart,for-two,ja,2014,2025,0,435
+SMART,ROADSTER,smart,roadster,nee,2003,2005,0,459
+SUBARU,FORESTER,subaru,forester,nee,1997,2002,0,485
+SUBARU,FORESTER,subaru,forester,nee,2002,2008,0,475
+SUBARU,FORESTER,subaru,forester,ja,2008,2013,0,569
+SUBARU,FORESTER,subaru,forester,ja,2013,2025,0,565
+SUBARU,IMPREZA,subaru,impreza,nee,1993,2000,0,435
+SUBARU,IMPREZA,subaru,impreza,nee,2000,2007,0,455
+SUBARU,IMPREZA,subaru,impreza,ja,2010,2017,0,495
+SUBARU,IMPREZA,subaru,impreza,ja,2017,2025,0,799
+SUBARU,LEGACY,subaru,legacy,nee,1998,2003,0,435
+SUBARU,LEGACY,subaru,legacy,nee,2003,2009,0,485
+SUBARU,LEGACY,subaru,legacy,ja,2010,2025,0,595
+SUBARU,TREZIA,subaru,trezia,nee,2011,2025,0,439
+SUZUKI,ALTO,suzuki,alto,nee,1994,2001,0,385
+SUZUKI,ALTO,suzuki,alto,nee,2002,2006,0,439
+SUZUKI,ALTO,suzuki,alto,nee,2009,2025,0,409
+SUZUKI,BALENO,suzuki,baleno,nee,1995,2002,0,419
+SUZUKI,BALENO,suzuki,baleno,nee,2016,2025,0,385
+SUZUKI,CELERIO,suzuki,celerio,nee,2014,2025,0,435
+SUZUKI,IGNIS,suzuki,ignis,nee,2000,2003,0,419
+SUZUKI,IGNIS,suzuki,ignis,nee,2003,2006,0,435
+SUZUKI,IGNIS,suzuki,ignis,ja,2017,2025,0,465
+SUZUKI,JIMNY,suzuki,jimny,ja,1998,2018,0,419
+SUZUKI,KIZASHI,suzuki,kizashi,nee,2014,2025,0,485
+SUZUKI,LIANA,suzuki,liana,nee,2001,2007,0,465
+SUZUKI,SPLASH,suzuki,splash,nee,2008,2025,0,419
+SUZUKI,SWIFT,suzuki,swift,nee,1989,2004,0,419
+SUZUKI,SWIFT,suzuki,swift,ja,2005,2010,0,435
+SUZUKI,SWIFT,suzuki,swift,ja,2010,2017,0,435
+SUZUKI,SWIFT,suzuki,swift,ja,2017,2025,0,465
+SUZUKI,SX4,suzuki,sx4,ja,2006,2014,0,435
+SUZUKI,VITARA,suzuki,vitara,nee,1988,1998,0,385
+SUZUKI,VITARA,suzuki,vitara,ja,2015,2025,0,495
+SUZUKI,WAGON R,suzuki,wagon-r,nee,1997,2000,0,419
+SUZUKI,WAGON R,suzuki,wagon-r,nee,2001,2007,0,419
+TESLA,MODEL 3,tesla,model-3,nee,2017,2025,0,815
+TOYOTA,AURIS,toyota,auris,ja,2007,2012,0,439
+TOYOTA,AURIS,toyota,auris,ja,2012,2025,0,459
+TOYOTA,AURIS HYBRID,toyota,auris-hybrid,ja,2010,2012,0,409
+TOYOTA,AURIS HYBRID,toyota,auris-hybrid,ja,2012,2025,0,439
+TOYOTA,AVENSIS,toyota,avensis,nee,1998,2003,0,479
+TOYOTA,AVENSIS,toyota,avensis,nee,2003,2008,0,459
+TOYOTA,AVENSIS,toyota,avensis,ja,2009,2025,0,485
+TOYOTA,AVENSIS VERSO,toyota,avensis-verso,nee,2001,2006,0,575
+TOYOTA,AYGO,toyota,aygo,ja,2005,2014,0,385
+TOYOTA,AYGO,toyota,aygo,ja,2014,2025,0,385
+TOYOTA,AYGO X,toyota,aygo-x,ja,2022,2025,0,495
+TOYOTA,BX4X,toyota,bx4x,ja,2023,2025,0,1375
+TOYOTA,C-HR,toyota,c-hr,ja,2016,2025,0,575
+TOYOTA,CELICA,toyota,celica,nee,1990,1994,0,595
+TOYOTA,CELICA,toyota,celica,nee,1994,1999,0,op aanvraag
+TOYOTA,CELICA,toyota,celica,nee,1999,2005,0,op aanvraag
+TOYOTA,COROLLA,toyota,corolla,nee,1992,1997,0,459
+TOYOTA,COROLLA,toyota,corolla,nee,1997,2002,0,435
+TOYOTA,COROLLA,toyota,corolla,nee,2002,2007,0,465
+TOYOTA,COROLLA,toyota,corolla,ja,2019,2025,0,539
+TOYOTA,COROLLA VERSO,toyota,corolla-verso,nee,2002,2004,0,435
+TOYOTA,COROLLA VERSO,toyota,corolla-verso,nee,2004,2009,0,419
+TOYOTA,GT86,toyota,gt86,nee,2012,2025,0,589
+TOYOTA,IQ,toyota,iq,nee,2009,2014,0,455
+TOYOTA,LANDCRUISER,toyota,landcruiser,nee,1980,1985,0,549
+TOYOTA,LANDCRUISER,toyota,landcruiser,nee,1985,1995,0,535
+TOYOTA,LANDCRUISER,toyota,landcruiser,nee,1990,1998,0,539
+TOYOTA,LANDCRUISER,toyota,landcruiser,nee,1996,2003,0,589
+TOYOTA,LANDCRUISER,toyota,landcruiser,nee,1998,2007,0,575
+TOYOTA,LANDCRUISER,toyota,landcruiser,nee,2003,2009,0,659
+TOYOTA,LANDCRUISER,toyota,landcruiser,ja,2008,2025,0,809
+TOYOTA,LANDCRUISER,toyota,landcruiser,ja,2010,2025,0,705
+TOYOTA,MR2,toyota,mr2,nee,2000,2003,0,465
+TOYOTA,PASEO,toyota,paseo,nee,1996,1999,0,485
+TOYOTA,PICNIC,toyota,picnic,nee,1997,2001,0,569
+TOYOTA,PREVIA,toyota,previa,nee,1990,2000,0,629
+TOYOTA,PREVIA,toyota,previa,nee,2000,2005,0,645
+TOYOTA,PRIUS,toyota,prius,nee,2000,2004,0,435
+TOYOTA,PRIUS,toyota,prius,nee,2004,2008,0,465
+TOYOTA,PRIUS,toyota,prius,ja,2009,2016,0,1155
+TOYOTA,PRIUS,toyota,prius,ja,2016,2025,0,659
+TOYOTA,PRIUS PLUS,toyota,prius-plus,ja,2012,2021,0,645
+TOYOTA,PROACE,toyota,proace,ja,2013,2016,0,569
+TOYOTA,PROACE,toyota,proace,ja,2016,2020,0,519
+TOYOTA,PROACE CITY,toyota,proace-city,ja,2020,2025,0,535
+TOYOTA,RAV-4,toyota,rav-4,nee,1995,2000,0,op aanvraag
+TOYOTA,RAV-4,toyota,rav-4,nee,2000,2006,0,op aanvraag
+TOYOTA,RAV-4,toyota,rav-4,ja,2006,2013,0,465
+TOYOTA,RAV-4,toyota,rav-4,ja,2013,2018,0,465
+TOYOTA,RAV-4,toyota,rav-4,ja,2018,2025,0,595
+TOYOTA,VERSO,toyota,verso,ja,2009,2014,0,439
+TOYOTA,VERSO S,toyota,verso-s,ja,2011,2025,0,485
+TOYOTA,YARIS,toyota,yaris,nee,1999,2005,0,385
+TOYOTA,YARIS,toyota,yaris,ja,2005,2011,0,385
+TOYOTA,YARIS,toyota,yaris,ja,2011,2020,0,419
+TOYOTA,YARIS,toyota,yaris,ja,2020,2025,0,465
+TOYOTA,YARIS VERSO,toyota,yaris-verso,nee,1999,2005,0,435
+VOLVO,740,volvo,740,nee,1983,1990,0,op aanvraag
+VOLVO,760,volvo,760,nee,1983,1990,0,op aanvraag
+VOLVO,760,volvo,760,nee,1990,1995,0,op aanvraag
+VOLVO,850,volvo,850,nee,1993,2000,0,439
+VOLVO,940,volvo,940,nee,1990,1995,0,op aanvraag
+VOLVO,960,volvo,960,nee,1990,1998,0,op aanvraag
+VOLVO,C30,volvo,c30,nee,2007,2025,0,419
+VOLVO,EX30,volvo,ex30,ja,2024,2025,0,659
+VOLVO,EX40,volvo,ex40,ja,2024,2025,0,599
+VOLVO,S40,volvo,s40,nee,1996,2003,0,419
+VOLVO,S40,volvo,s40,nee,2003,2012,0,419
+VOLVO,S60,volvo,s60,nee,2000,2009,0,419
+VOLVO,S60,volvo,s60,ja,2010,2019,0,495
+VOLVO,S60,volvo,s60,ja,2019,2025,0,539
+VOLVO,S70,volvo,s70,nee,1997,2000,0,435
+VOLVO,S80,volvo,s80,nee,1998,2005,0,435
+VOLVO,S80,volvo,s80,ja,2006,2014,0,495
+VOLVO,S90,volvo,s90,ja,2016,2025,0,649
+VOLVO,V40,volvo,v40,nee,1996,2004,0,419
+VOLVO,V40,volvo,v40,ja,2012,2025,0,435
+VOLVO,V50,volvo,v50,nee,2003,2014,0,419
+VOLVO,V60,volvo,v60,ja,2010,2018,0,495
+VOLVO,V60,volvo,v60,ja,2018,2025,0,539
+VOLVO,V70,volvo,v70,nee,1997,2000,0,419
+VOLVO,V70,volvo,v70,nee,2000,2007,0,419
+VOLVO,V70,volvo,v70,nee,2007,2016,0,495
+VOLVO,V90,volvo,v90,ja,2016,2025,0,649
+VOLVO,XC40,volvo,xc40,ja,2018,2025,0,565
+VOLVO,XC60,volvo,xc60,ja,2008,2017,0,525
+VOLVO,XC60,volvo,xc60,ja,2017,2025,0,649
+VOLVO,XC70,volvo,xc70,nee,2002,2007,0,409
+VOLVO,XC70,volvo,xc70,nee,2007,2014,0,495
+VOLVO,XC90,volvo,xc90,ja,2002,2014,0,535
+VOLVO,XC90,volvo,xc90,ja,2015,2025,0,709
+VW,AMAROK,vw,amarok,ja,2010,2025,0,419
+VW,ARTEON,vw,arteon,ja,2020,2025,0,595
+VW,BORA,vw,bora,nee,1998,2005,0,385
+VW,CADDY,vw,caddy,nee,1984,1995,0,349
+VW,CADDY,vw,caddy,nee,1995,2004,0,385
+VW,CADDY,vw,caddy,ja,2004,2025,0,419
+VW,CADDY MAXI,vw,caddy-maxi,ja,2007,2025,0,419
+VW,CRAFTER,vw,crafter,ja,2006,2017,0,495
+VW,CRAFTER,vw,crafter,ja,2017,2025,0,535
+VW,EOS,vw,eos,nee,2006,2014,0,419
+VW,FOX,vw,fox,nee,2005,2014,0,385
+VW,GOLF,vw,golf,nee,1974,1982,0,329
+VW,GOLF,vw,golf,nee,1983,1991,0,355
+VW,GOLF,vw,golf,nee,1991,1997,0,375
+VW,GOLF,vw,golf,nee,1997,2003,0,385
+VW,GOLF,vw,golf,nee,2003,2008,0,415
+VW,GOLF,vw,golf,ja,2008,2012,0,400
+VW,GOLF,vw,golf,ja,2012,2019,0,419
+VW,GOLF,vw,golf,ja,2019,2025,0,495
+VW,GOLF CABRIO,vw,golf-cabrio,nee,1979,1993,0,349
+VW,GOLF CABRIO,vw,golf-cabrio,nee,1993,1995,0,495
+VW,GOLF CABRIO,vw,golf-cabrio,nee,1995,2000,0,495
+VW,GOLF CABRIO,vw,golf-cabrio,ja,2011,2016,0,435
+VW,GOLF PLUS,vw,golf-plus,ja,2005,2014,0,435
+VW,GOLF SPORTSVAN,vw,golf-sportsvan,ja,2014,2025,0,439
+VW,GOLF VARIANT,vw,golf-variant,ja,2005,2011,0,435
+VW,GOLF VARIANT,vw,golf-variant,ja,2012,2025,0,419
+VW,ID.3,vw,id3,ja,2020,2025,0,539
+VW,ID.4,vw,id4,ja,2020,2025,0,575
+VW,ID.5,vw,id5,ja,2020,2025,0,575
+VW,ID.7,vw,id7,ja,2023,2025,0,1235
+VW,ID.BUZZ,vw,idbuzz,ja,2022,2025,0,905
+VW,JETTA,vw,jetta,nee,1984,1991,0,349
+VW,JETTA,vw,jetta,nee,2005,2011,0,435
+VW,JETTA,vw,jetta,nee,2011,2025,0,435
+VW,LT,vw,lt,nee,1974,1995,0,385
+VW,LT,vw,lt,nee,1996,2006,0,375
+VW,LUPO,vw,lupo,nee,1998,2005,0,385
+VW,MULTIVAN,vw,multivan,nee,2021,2025,0,679
+VW,NEW BEETLE,vw,new-beetle,nee,1998,2011,0,435
+VW,PASSAT,vw,passat,nee,1988,1996,0,419
+VW,PASSAT,vw,passat,nee,1998,2005,0,375
+VW,PASSAT,vw,passat,ja,2005,2014,0,419
+VW,PASSAT,vw,passat,ja,2014,2024,0,439
+VW,PASSAT,vw,passat,ja,2024,2025,0,589
+VW,PASSAT CC,vw,passat-cc,ja,2008,2012,0,495
+VW,POLO,vw,polo,nee,1981,1995,0,355
+VW,POLO,vw,polo,nee,1995,1999,0,385
+VW,POLO,vw,polo,nee,1999,2001,0,409
+VW,POLO,vw,polo,nee,2001,2009,0,385
+VW,POLO,vw,polo,ja,2009,2017,0,385
+VW,POLO,vw,polo,ja,2017,2025,0,425
+VW,SCIROCCO,vw,scirocco,nee,1982,1992,0,465
+VW,SCIROCCO,vw,scirocco,nee,2008,2025,0,op aanvraag
+VW,SHARAN,vw,sharan,ja,1995,2010,0,549
+VW,SHARAN,vw,sharan,ja,2010,2025,0,525
+VW,T-CROSS,vw,t-cross,ja,2019,2025,0,455
+VW,T-ROC,vw,t-roc,ja,2017,2025,0,539
+VW,TAIRON,vw,tairon,ja,2025,2025,0,639
+VW,TIGUAN,vw,tiguan,ja,2007,2016,0,439
+VW,TIGUAN,vw,tiguan,ja,2016,2025,0,439
+VW,TOUAREG,vw,touareg,ja,2002,2010,0,519
+VW,TOUAREG,vw,touareg,ja,2010,2018,0,495
+VW,TOUAREG,vw,touareg,ja,2018,2025,0,595
+VW,TOURAN,vw,touran,ja,2003,2015,0,419
+VW,TOURAN,vw,touran,ja,2015,2025,0,465
+VW,TRANSPORTER,vw,transporter,nee,1967,1978,0,355
+VW,TRANSPORTER,vw,transporter,nee,1979,1990,0,359
+VW,TRANSPORTER,vw,transporter,nee,1990,2003,0,469
+VW,TRANSPORTER,vw,transporter,ja,2003,2015,0,435
+VW,TRANSPORTER,vw,transporter,ja,2015,2025,0,419
+VW,UP!,vw,up,ja,2012,2025,0,405
+XPENG,G3,xpeng,g3,nee,2021,2025,0,1155
+XPENG,G9,xpeng,g9,nee,2022,2025,0,op aanvraag
+XPENG,P7,xpeng,p7,nee,2022,2025,0,op aanvraag
+XPENG,P7,xpeng,p7,nee,2023,2025,0,op aanvraag
+ZEEKR,1,zeekr,1,nee,2024,2025,0,op aanvraag
+ZEEKR,X,zeekr,x,nee,2024,2025,0,op aanvraag

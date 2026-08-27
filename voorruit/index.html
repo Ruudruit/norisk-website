@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voorruit vervangen per automerk – No-Risk Autoruitservice</title>
+  <meta name="description" content="Kies uw automerk en ontdek wat een voorruitvervanging of reparatie kost. No-Risk Autoruitservice — BOVAG-gecertificeerd, levenslange garantie, vaak €0,- eigen risico.">
+  <link rel="canonical" href="https://no-risk.nl/voorruit/">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rood: #CC0000; --rood-hover: #aa0000;
+      --zwart: #111111; --grijs: #444;
+      --lichtgrijs: #f5f5f5; --wit: #ffffff;
+      --font: 'Segoe UI', Arial, sans-serif;
+      --radius: 10px; --transition: 0.22s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--zwart); background: var(--wit); line-height: 1.6; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(17,17,17,0.95); backdrop-filter: blur(8px);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none;
+      padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.95rem;
+      position: relative; transition: color var(--transition); }
+    .nav-links a::after { content: ''; position: absolute; bottom: 4px; left: 1rem; right: 1rem;
+      height: 2px; background: var(--rood);
+      transform: scaleX(0); transform-origin: left; transition: transform var(--transition); }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { background: var(--rood); color: #fff !important;
+      padding: 0.55rem 1.2rem !important; border-radius: 8px !important;
+      font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+    .nav-cta:hover { background: var(--rood-hover) !important; }
+    .nav-cta::after { display: none !important; }
+    /* ── Zoekknop & dropdown ── */
+    .nav-search { position: relative; display: flex; align-items: center; margin-left: 0.5rem; }
+    .search-toggle {
+      background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.8);
+      display: flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 50%;
+      transition: background 0.2s, color 0.2s;
+    }
+    .search-toggle:hover, .search-toggle[aria-expanded="true"] { background: rgba(255,255,255,0.12); color: #fff; }
+    .search-toggle svg { width: 18px; height: 18px; }
+    .search-box {
+      display: none; position: absolute; right: 0; top: calc(100% + 10px);
+      width: 360px; background: #fff; border-radius: 10px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.22); overflow: hidden; z-index: 2000;
+    }
+    .search-box.open { display: block; }
+    .search-inner { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid #eee; }
+    .search-inner svg { width: 16px; height: 16px; color: #aaa; flex-shrink: 0; }
+    #search-input { flex: 1; border: none; outline: none; font-size: 0.97rem; color: #222; background: transparent; font-family: inherit; }
+    #search-input::placeholder { color: #bbb; }
+    #search-results { list-style: none; max-height: 320px; overflow-y: auto; padding: 4px 0; }
+    .sr-item { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; text-decoration: none; color: #222; transition: background 0.15s; }
+    .sr-item:hover, .sr-item:focus { background: #f5f5f5; outline: none; }
+    .sr-label { font-size: 0.9rem; font-weight: 500; }
+    .sr-label mark { background: none; color: var(--rood); font-weight: 700; }
+    .sr-bj { font-size: 0.78rem; color: #999; white-space: nowrap; margin-left: 8px; }
+    .sr-empty { padding: 12px 14px; color: #999; font-size: 0.88rem; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+
+    /* ── HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, #111 60%, #330000 100%);
+      padding: 120px 2rem 64px; text-align: center;
+    }
+    .breadcrumb { font-size: 0.8rem; color: rgba(255,255,255,0.45);
+      margin-bottom: 1.4rem; display: flex; justify-content: center; align-items: center; gap: 0.4rem; }
+    .breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    .breadcrumb a:hover { color: #fff; }
+    .breadcrumb span { color: rgba(255,255,255,0.2); }
+    .page-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+      color: #fff; line-height: 1.15; margin-bottom: 1rem; }
+    .page-header h1 em { color: var(--rood); font-style: normal; }
+    .page-header p { color: rgba(255,255,255,0.72); font-size: 1.05rem;
+      max-width: 560px; margin: 0 auto; }
+
+    /* ── MERKEN GRID ── */
+    .merken-sectie { padding: 4rem 2rem 5rem; max-width: 1280px; margin: 0 auto; }
+
+    .merken-intro { text-align: center; margin-bottom: 3rem; }
+    .merken-intro p { color: var(--grijs); font-size: 1rem; }
+    .merken-intro strong { color: var(--zwart); }
+
+    .merken-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .merk-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: #fff;
+      border: 1.5px solid #eee;
+      border-radius: var(--radius);
+      padding: 1.5rem 1rem 1.1rem;
+      gap: 0.7rem;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .merk-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent, #ddd);
+      transition: height var(--transition);
+    }
+
+    .merk-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.11);
+      border-color: transparent;
+    }
+    .merk-card:hover::before { height: 4px; }
+
+    /* Logo container */
+    .merk-logo {
+      width: 72px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .merk-logo img {
+      max-width: 72px;
+      max-height: 44px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: none;
+      transition: opacity var(--transition);
+    }
+    .merk-logo img.hidden { display: none; }
+
+    /* Fallback monogram — getoond als img niet laadt */
+    .merk-monogram {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--accent, #888);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      flex-shrink: 0;
+    }
+
+    .merk-naam {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--zwart);
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .merk-count {
+      font-size: 0.73rem;
+      color: #999;
+      font-weight: 500;
+    }
+
+    /* ── USP BALK ── */
+    .usp-balk { background: var(--rood); padding: 0.9rem 2rem; }
+    .usp-balk-inner { max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .usp-item { display: flex; align-items: center; gap: 8px;
+      color: #fff; font-size: 0.9rem; font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer { background: #0a0a0a; color: rgba(255,255,255,0.7); padding: 3.5rem 2rem 0; }
+    .footer-inner { max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr 1fr;
+      gap: 2.5rem; padding-bottom: 3rem; }
+    .footer-brand { display: flex; flex-direction: column; gap: 1.2rem; }
+    .footer-logo-text { display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: #fff; font-size: 1.3rem; font-weight: 800; }
+    .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.85); line-height: 1.5; margin-top: -0.4rem; }
+    .footer-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.4rem; }
+    .footer-badge { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 0.5rem 0.6rem; display: flex; align-items: center;
+      justify-content: center; min-height: 44px; }
+    .footer-badge img { max-height: 32px; max-width: 100%; object-fit: contain;
+      filter: brightness(0) invert(1); opacity: 0.85; }
+    .footer-col h4 { color: #fff; font-size: 0.78rem; font-weight: 700;
+      margin-bottom: 1.2rem; letter-spacing: 1.5px; text-transform: uppercase; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .footer-col ul li a { color: rgba(255,255,255,0.85); text-decoration: none;
+      font-size: 0.88rem; display: flex; align-items: center; gap: 0.5rem;
+      transition: color var(--transition); }
+    .footer-col ul li a:hover { color: var(--rood); }
+    .footer-col ul li a .arrow { width: 16px; height: 16px; background: var(--rood);
+      border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .footer-col ul li a .arrow svg { width: 9px; height: 9px; fill: none;
+      stroke: #fff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .footer-col ul li a .pin svg { width: 19px; height: 19px; }
+    .footer-contact-list, .footer-socials-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+    .footer-contact-list li, .footer-socials-list li { display: flex; }
+    .footer-contact-list a { display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none; color: rgba(255,255,255,0.85); font-weight: 600;
+      font-size: 0.9rem; transition: color var(--transition); }
+    .footer-contact-list a:hover { color: var(--rood); }
+    .footer-contact-list .ci { display: flex; align-items: center; flex-shrink: 0; }
+    .footer-contact-list .ci svg { width: 17px; height: 17px; fill: none;
+      stroke: var(--rood); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+      transition: stroke var(--transition); }
+    .footer-contact-list a:hover .ci svg { stroke: #ff4444; }
+    .footer-socials-list a { color: rgba(255,255,255,0.85); text-decoration: none;
+      font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.6rem;
+      transition: color var(--transition); }
+    .footer-socials-list a:hover { color: var(--rood); }
+    .footer-socials-list a svg { width: 20px; height: 20px; flex-shrink: 0; transition: opacity var(--transition); }
+    .footer-socials-list a:hover svg { opacity: 0.75; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 1.2rem 0;
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem 1rem;
+      font-size: 0.78rem; color: rgba(255,255,255,0.35);
+      max-width: 1200px; margin: 0 auto; text-align: center; }
+    .footer-bottom a { color: rgba(255,255,255,0.85); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--rood); }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links { display: none; flex-direction: column; position: absolute;
+        top: 68px; left: 0; right: 0; background: rgba(17,17,17,0.98); padding: 1rem 0; }
+      .nav-links.open { display: flex; }
+      .usp-balk-inner { gap: 1rem; flex-direction: column; align-items: flex-start; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-brand { grid-column: 1 / -1; }
+      .merken-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 0.8rem; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      .merken-grid { grid-template-columns: repeat(3, 1fr); gap: 0.65rem; }
+      .merk-card { padding: 1.1rem 0.6rem 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo" aria-label="No-Risk Autoruitservice - Home">
+    <img src="../logo.png" alt="No-Risk Autoruitservice">
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../diensten.html">Diensten</a></li>
+    <li><a href="../locaties.html">Locaties</a></li>
+    <li><a href="../over-ons.html">Over ons</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+    <li><a href="tel:0880225800" class="nav-cta">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      088-0225800
+    </a></li>
+  </ul>
+  <div class="nav-search">
+    <button class="search-toggle" id="search-toggle" aria-label="Zoeken" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <div class="search-box" id="search-box" role="dialog" aria-label="Zoek een automodel">
+      <div class="search-inner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="search-input" placeholder="Zoek merk of model… bijv. BMW 3" autocomplete="off" spellcheck="false">
+      </div>
+      <ul id="search-results"></ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    Voorruit per merk
+  </div>
+  <h1>Voorruit vervangen<br>per <em>automerk</em></h1>
+  <p>Kies uw merk en ontdek de opties voor uw specifieke model — prijs, ADAS-kalibratie en meer.</p>
+</div>
+
+<div class="usp-balk">
+  <div class="usp-balk-inner">
+    <div class="usp-item">✓ BOVAG-gecertificeerd</div>
+    <div class="usp-item">✓ Levenslange garantie op montage</div>
+    <div class="usp-item">✓ Schadeafhandeling met verzekeraar</div>
+    <div class="usp-item">✓ ADAS-kalibratie op verzoek €95,-</div>
+    <div class="usp-item">✓ Vaak €0,- eigen risico</div>
+  </div>
+</div>
+
+<div class="merken-sectie">
+  <div class="merken-intro">
+    <p>No-Risk werkt voor <strong>49 automerken</strong> — van Alfa Romeo tot Zeekr. Klik op uw merk voor een overzicht van alle modellen.</p>
+  </div>
+
+  <div class="merken-grid">
+
+    <a href="aiways/" class="merk-card" style="--accent:#1B539B">
+      <div class="merk-logo"><img src="../logos/aiways.svg" alt="Aiways" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1B539B>AI</div>'"></div>
+      <span class="merk-naam">Aiways</span>
+      <span class="merk-count">1 model</span>
+    </a>
+
+    <a href="alfa-romeo/" class="merk-card" style="--accent:#9B1016">
+      <div class="merk-logo"><img src="../logos/alfa-romeo.svg" alt="Alfa Romeo" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#9B1016>AR</div>'"></div>
+      <span class="merk-naam">Alfa Romeo</span>
+      <span class="merk-count">12 modellen</span>
+    </a>
+
+    <a href="audi/" class="merk-card" style="--accent:#BB0A0A">
+      <div class="merk-logo"><img src="../logos/audi.svg" alt="Audi" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#BB0A0A>A</div>'"></div>
+      <span class="merk-naam">Audi</span>
+      <span class="merk-count">63 modellen</span>
+    </a>
+
+    <a href="bmw/" class="merk-card" style="--accent:#1C69D4">
+      <div class="merk-logo"><img src="../logos/bmw.svg" alt="BMW" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1C69D4>BMW</div>'"></div>
+      <span class="merk-naam">BMW</span>
+      <span class="merk-count">66 modellen</span>
+    </a>
+
+    <a href="byd/" class="merk-card" style="--accent:#1B539B">
+      <div class="merk-logo"><img src="../logos/byd.svg" alt="BYD" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1B539B>BYD</div>'"></div>
+      <span class="merk-naam">BYD</span>
+      <span class="merk-count">5 modellen</span>
+    </a>
+
+    <a href="chevrolet/" class="merk-card" style="--accent:#D4A017">
+      <div class="merk-logo"><img src="../logos/chevrolet.png" alt="Chevrolet" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#D4A017>CH</div>'"></div>
+      <span class="merk-naam">Chevrolet</span>
+      <span class="merk-count">9 modellen</span>
+    </a>
+
+    <a href="chrysler/" class="merk-card" style="--accent:#2B2B2B">
+      <div class="merk-logo"><img src="../logos/chrysler.svg" alt="Chrysler" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#2B2B2B>CH</div>'"></div>
+      <span class="merk-naam">Chrysler</span>
+      <span class="merk-count">3 modellen</span>
+    </a>
+
+    <a href="citroen/" class="merk-card" style="--accent:#E51C26">
+      <div class="merk-logo"><img src="../logos/citroen.svg" alt="Citroën" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#E51C26>C</div>'"></div>
+      <span class="merk-naam">Citroën</span>
+      <span class="merk-count">35 modellen</span>
+    </a>
+
+    <a href="cupra/" class="merk-card" style="--accent:#BF9B47">
+      <div class="merk-logo"><img src="../logos/cupra.svg" alt="Cupra" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#BF9B47>CU</div>'"></div>
+      <span class="merk-naam">Cupra</span>
+      <span class="merk-count">6 modellen</span>
+    </a>
+
+    <a href="dacia/" class="merk-card" style="--accent:#003189">
+      <div class="merk-logo"><img src="../logos/dacia.svg" alt="Dacia" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#003189>DA</div>'"></div>
+      <span class="merk-naam">Dacia</span>
+      <span class="merk-count">9 modellen</span>
+    </a>
+
+    <a href="dodge/" class="merk-card" style="--accent:#CC0000">
+      <div class="merk-logo"><img src="../logos/dodge.png" alt="Dodge" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#CC0000>DO</div>'"></div>
+      <span class="merk-naam">Dodge</span>
+      <span class="merk-count">1 model</span>
+    </a>
+
+    <a href="ds/" class="merk-card" style="--accent:#333">
+      <div class="merk-logo"><img src="../logos/ds.svg" alt="DS" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#333>DS</div>'"></div>
+      <span class="merk-naam">DS</span>
+      <span class="merk-count">3 modellen</span>
+    </a>
+
+    <a href="fiat/" class="merk-card" style="--accent:#8C1C20">
+      <div class="merk-logo"><img src="../logos/fiat.svg" alt="Fiat" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#8C1C20>FI</div>'"></div>
+      <span class="merk-naam">Fiat</span>
+      <span class="merk-count">26 modellen</span>
+    </a>
+
+    <a href="fisker/" class="merk-card" style="--accent:#1B1B1B">
+      <div class="merk-logo"><img src="../logos/fisker.svg" alt="Fisker" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1B1B1B>FS</div>'"></div>
+      <span class="merk-naam">Fisker</span>
+      <span class="merk-count">1 model</span>
+    </a>
+
+    <a href="ford/" class="merk-card" style="--accent:#003C92">
+      <div class="merk-logo"><img src="../logos/ford.svg" alt="Ford" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#003C92>FO</div>'"></div>
+      <span class="merk-naam">Ford</span>
+      <span class="merk-count">40 modellen</span>
+    </a>
+
+    <a href="honda/" class="merk-card" style="--accent:#CC0000">
+      <div class="merk-logo"><img src="../logos/honda.svg" alt="Honda" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#CC0000>H</div>'"></div>
+      <span class="merk-naam">Honda</span>
+      <span class="merk-count">44 modellen</span>
+    </a>
+
+    <a href="hyundai/" class="merk-card" style="--accent:#002C5F">
+      <div class="merk-logo"><img src="../logos/hyundai.svg" alt="Hyundai" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#002C5F>H</div>'"></div>
+      <span class="merk-naam">Hyundai</span>
+      <span class="merk-count">34 modellen</span>
+    </a>
+
+    <a href="infinity/" class="merk-card" style="--accent:#1A1A1A">
+      <div class="merk-logo"><img src="../logos/infinity.png" alt="Infiniti" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1A1A1A>IN</div>'"></div>
+      <span class="merk-naam">Infiniti</span>
+      <span class="merk-count">4 modellen</span>
+    </a>
+
+    <a href="iveco/" class="merk-card" style="--accent:#003087">
+      <div class="merk-logo"><img src="../logos/iveco.svg" alt="Iveco" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#003087>IV</div>'"></div>
+      <span class="merk-naam">Iveco</span>
+      <span class="merk-count">2 modellen</span>
+    </a>
+
+    <a href="jaguar/" class="merk-card" style="--accent:#1A1A1A">
+      <div class="merk-logo"><img src="../logos/jaguar.svg" alt="Jaguar" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1A1A1A>JA</div>'"></div>
+      <span class="merk-naam">Jaguar</span>
+      <span class="merk-count">12 modellen</span>
+    </a>
+
+    <a href="jeep/" class="merk-card" style="--accent:#2B5134">
+      <div class="merk-logo"><img src="../logos/jeep.svg" alt="Jeep" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#2B5134>JE</div>'"></div>
+      <span class="merk-naam">Jeep</span>
+      <span class="merk-count">15 modellen</span>
+    </a>
+
+    <a href="kia/" class="merk-card" style="--accent:#05141F">
+      <div class="merk-logo"><img src="../logos/kia.svg" alt="Kia" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#05141F>KIA</div>'"></div>
+      <span class="merk-naam">Kia</span>
+      <span class="merk-count">45 modellen</span>
+    </a>
+
+    <a href="lancia/" class="merk-card" style="--accent:#003087">
+      <div class="merk-logo"><img src="../logos/lancia.png" alt="Lancia" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#003087>LA</div>'"></div>
+      <span class="merk-naam">Lancia</span>
+      <span class="merk-count">6 modellen</span>
+    </a>
+
+    <a href="landrover/" class="merk-card" style="--accent:#005A2B">
+      <div class="merk-logo"><img src="../logos/landrover.svg" alt="Land Rover" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#005A2B>LR</div>'"></div>
+      <span class="merk-naam">Land Rover</span>
+      <span class="merk-count">15 modellen</span>
+    </a>
+
+    <a href="lexus/" class="merk-card" style="--accent:#1A1A1A">
+      <div class="merk-logo"><img src="../logos/lexus.png" alt="Lexus" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1A1A1A>LE</div>'"></div>
+      <span class="merk-naam">Lexus</span>
+      <span class="merk-count">18 modellen</span>
+    </a>
+
+    <a href="lynkco/" class="merk-card" style="--accent:#1B1B1B">
+      <div class="merk-logo"><img src="../logos/lynkco.svg" alt="Lynk & Co" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1B1B1B>L&C</div>'"></div>
+      <span class="merk-naam">Lynk &amp; Co</span>
+      <span class="merk-count">2 modellen</span>
+    </a>
+
+    <a href="man/" class="merk-card" style="--accent:#E2001A">
+      <div class="merk-logo"><img src="../logos/man.svg" alt="MAN" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#E2001A>MAN</div>'"></div>
+      <span class="merk-naam">MAN</span>
+      <span class="merk-count">6 modellen</span>
+    </a>
+
+    <a href="mazda/" class="merk-card" style="--accent:#820000">
+      <div class="merk-logo"><img src="../logos/mazda.svg" alt="Mazda" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#820000>MA</div>'"></div>
+      <span class="merk-naam">Mazda</span>
+      <span class="merk-count">22 modellen</span>
+    </a>
+
+    <a href="mercedes/" class="merk-card" style="--accent:#222">
+      <div class="merk-logo"><img src="../logos/mercedes.svg" alt="Mercedes" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#222>MB</div>'"></div>
+      <span class="merk-naam">Mercedes</span>
+      <span class="merk-count">74 modellen</span>
+    </a>
+
+    <a href="mini/" class="merk-card" style="--accent:#1C1C1C">
+      <div class="merk-logo"><img src="../logos/mini.svg" alt="MINI" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1C1C1C>MINI</div>'"></div>
+      <span class="merk-naam">MINI</span>
+      <span class="merk-count">11 modellen</span>
+    </a>
+
+    <a href="mitsubishi/" class="merk-card" style="--accent:#CC0000">
+      <div class="merk-logo"><img src="../logos/mitsubishi.svg" alt="Mitsubishi" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#CC0000>MI</div>'"></div>
+      <span class="merk-naam">Mitsubishi</span>
+      <span class="merk-count">31 modellen</span>
+    </a>
+
+    <a href="nio/" class="merk-card" style="--accent:#1B539B">
+      <div class="merk-logo"><img src="../logos/nio.svg" alt="NIO" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1B539B>NIO</div>'"></div>
+      <span class="merk-naam">NIO</span>
+      <span class="merk-count">3 modellen</span>
+    </a>
+
+    <a href="nissan/" class="merk-card" style="--accent:#C3002F">
+      <div class="merk-logo"><img src="../logos/nissan.svg" alt="Nissan" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#C3002F>NI</div>'"></div>
+      <span class="merk-naam">Nissan</span>
+      <span class="merk-count">31 modellen</span>
+    </a>
+
+    <a href="opel/" class="merk-card" style="--accent:#FFCD00;color:#111">
+      <div class="merk-logo"><img src="../logos/opel.svg" alt="Opel" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#FFCD00;color:#111>OP</div>'"></div>
+      <span class="merk-naam">Opel</span>
+      <span class="merk-count">45 modellen</span>
+    </a>
+
+    <a href="peugeot/" class="merk-card" style="--accent:#0053A0">
+      <div class="merk-logo"><img src="../logos/peugeot.svg" alt="Peugeot" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#0053A0>PE</div>'"></div>
+      <span class="merk-naam">Peugeot</span>
+      <span class="merk-count">37 modellen</span>
+    </a>
+
+    <a href="porsche/" class="merk-card" style="--accent:#8B0000">
+      <div class="merk-logo"><img src="../logos/porsche.svg" alt="Porsche" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#8B0000>PO</div>'"></div>
+      <span class="merk-naam">Porsche</span>
+      <span class="merk-count">19 modellen</span>
+    </a>
+
+    <a href="renault/" class="merk-card" style="--accent:#EFDF00;color:#111">
+      <div class="merk-logo"><img src="../logos/renault.svg" alt="Renault" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#EFDF00;color:#111>RE</div>'"></div>
+      <span class="merk-naam">Renault</span>
+      <span class="merk-count">44 modellen</span>
+    </a>
+
+    <a href="saab/" class="merk-card" style="--accent:#1A3A5C">
+      <div class="merk-logo"><img src="../logos/saab.svg" alt="Saab" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1A3A5C>SA</div>'"></div>
+      <span class="merk-naam">Saab</span>
+      <span class="merk-count">10 modellen</span>
+    </a>
+
+    <a href="seat/" class="merk-card" style="--accent:#1B1B1B">
+      <div class="merk-logo"><img src="../logos/seat.svg" alt="SEAT" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1B1B1B>SE</div>'"></div>
+      <span class="merk-naam">SEAT</span>
+      <span class="merk-count">22 modellen</span>
+    </a>
+
+    <a href="skoda/" class="merk-card" style="--accent:#4BA82E">
+      <div class="merk-logo"><img src="../logos/skoda.svg" alt="Škoda" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#4BA82E>ŠK</div>'"></div>
+      <span class="merk-naam">Škoda</span>
+      <span class="merk-count">20 modellen</span>
+    </a>
+
+    <a href="smart/" class="merk-card" style="--accent:#00ADEF">
+      <div class="merk-logo"><img src="../logos/smart.png" alt="Smart" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#00ADEF>SM</div>'"></div>
+      <span class="merk-naam">Smart</span>
+      <span class="merk-count">6 modellen</span>
+    </a>
+
+    <a href="subaru/" class="merk-card" style="--accent:#003087">
+      <div class="merk-logo"><img src="../logos/subaru.svg" alt="Subaru" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#003087>SU</div>'"></div>
+      <span class="merk-naam">Subaru</span>
+      <span class="merk-count">12 modellen</span>
+    </a>
+
+    <a href="suzuki/" class="merk-card" style="--accent:#003087">
+      <div class="merk-logo"><img src="../logos/suzuki.svg" alt="Suzuki" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#003087>SU</div>'"></div>
+      <span class="merk-naam">Suzuki</span>
+      <span class="merk-count">22 modellen</span>
+    </a>
+
+    <a href="toyota/" class="merk-card" style="--accent:#EB0A1E">
+      <div class="merk-logo"><img src="../logos/toyota.svg" alt="Toyota" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#EB0A1E>TO</div>'"></div>
+      <span class="merk-naam">Toyota</span>
+      <span class="merk-count">57 modellen</span>
+    </a>
+
+    <a href="volvo/" class="merk-card" style="--accent:#003057">
+      <div class="merk-logo"><img src="../logos/volvo.svg" alt="Volvo" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#003057>VO</div>'"></div>
+      <span class="merk-naam">Volvo</span>
+      <span class="merk-count">34 modellen</span>
+    </a>
+
+    <a href="vw/" class="merk-card" style="--accent:#001E50">
+      <div class="merk-logo"><img src="../logos/vw.svg" alt="Volkswagen" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#001E50>VW</div>'"></div>
+      <span class="merk-naam">Volkswagen</span>
+      <span class="merk-count">72 modellen</span>
+    </a>
+
+    <a href="xpeng/" class="merk-card" style="--accent:#1B539B">
+      <div class="merk-logo"><img src="../logos/xpeng.svg" alt="XPENG" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1B539B>XP</div>'"></div>
+      <span class="merk-naam">XPENG</span>
+      <span class="merk-count">4 modellen</span>
+    </a>
+
+    <a href="zeekr/" class="merk-card" style="--accent:#1B539B">
+      <div class="merk-logo"><img src="../logos/zeekr.svg" alt="Zeekr" onerror="this.closest('.merk-logo').innerHTML='<div class=merk-monogram style=background:#1B539B>ZE</div>'"></div>
+      <span class="merk-naam">Zeekr</span>
+      <span class="merk-count">2 modellen</span>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="footer-logo-text" aria-label="No-Risk Autoruitservice - Home">
+        <img src="../logo.png" alt="No-Risk Autoruitservice" style="height:38px;width:auto;display:block;">
+      </a>
+      <p class="footer-tagline">BOVAG en Glasgarant autoruitherstel. Voordelig vakkundig en snel.</p>
+      <div class="footer-badges">
+        <div class="footer-badge"><img src="../bovag.png" alt="BOVAG Erkend Ruitherstel"></div>
+        <div class="footer-badge"><img src="../Glasgarant.png" alt="Glasgarant Keurmerk"></div>
+        <div class="footer-badge"><img src="../erkendduurzaam.gif" alt="Erkend Duurzaam"></div>
+        <div class="footer-badge"><img src="../Schadegarant.png" alt="Schadegarant Gecertificeerd"></div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Diensten</h4>
+      <ul>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Voorruit reparatie</a></li>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Voorruit vervangen</a></li>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Achterruit vervangen</a></li>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Mobiele autoruit service</a></li>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Kosten autoruitschade</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Locaties</h4>
+      <ul>
+        <li><a href="../amsterdam.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Amsterdam</a></li>
+        <li><a href="../rotterdam.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Rotterdam</a></li>
+        <li><a href="../denhaag.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Den Haag</a></li>
+        <li><a href="../barendrecht.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Barendrecht</a></li>
+        <li><a href="../spijkenisse.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Spijkenisse</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-contact-list">
+        <li><a href="../contact.html">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          <span class="ct">Contactgegevens</span></a></li>
+        <li><a href="tel:0880225800">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+          <span class="ct">088-0225800</span></a></li>
+        <li><a href="mailto:info@no-risk.nl">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <span class="ct">info@no-risk.nl</span></a></li>
+        <li><a href="https://wa.me/31655726869" target="_blank" rel="noopener">
+          <span class="ci"><svg viewBox="0 0 24 24" style="fill:#25D366;stroke:none;width:17px;height:17px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+          <span class="ct">0655726869</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Socials</h4>
+      <ul class="footer-socials-list">
+        <li><a href="https://www.instagram.com/noriskautoruitservice/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#CC0000" stroke="none"/></svg>
+          Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/no-risk-autoruitservice/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="#CC0000"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@noriskautoruitservice" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="#CC0000"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a href="../index.html">© No-Risk Autoruitservice 1996-2026</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/privacy-verklaring/" target="_blank">Privacy verklaring</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/algemene-voorwaarden/" target="_blank">Algemene voorwaarden</a>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  // Monogram fallback al in onerror; hier nog font-size aanpassen voor lange teksten
+  document.querySelectorAll('.merk-monogram').forEach(el => {
+    if (el.textContent.length > 3) el.style.fontSize = '0.75rem';
+  });
+</script>
+<script src="../search.js"></script>
+</body>
+</html>

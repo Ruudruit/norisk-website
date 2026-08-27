@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voorruit LEXUS vervangen – Alle modellen | No-Risk Autoruitservice</title>
+  <meta name="description" content="Bekijk alle 18 LEXUS-modellen waarvoor No-Risk Autoruitservice een voorruit kan repareren of vervangen. Veelal €0,- eigen risico.">
+  <link rel="canonical" href="https://no-risk.nl/voorruit/lexus/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rood: #CC0000; --rood-hover: #aa0000; --wit: #fff;
+      --accent: #1A1A1A;
+      --radius: 8px; --transition: 0.2s ease;
+    }
+    body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: #222; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(17,17,17,0.97); backdrop-filter: blur(8px);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.82); text-decoration: none;
+      padding: 0.5rem 0.9rem; border-radius: var(--radius);
+      font-size: 0.93rem; position: relative; transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 4px; left: 0.9rem; right: 0.9rem;
+      height: 2px; background: var(--rood);
+      transform: scaleX(0); transform-origin: left; transition: transform var(--transition);
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { background: var(--rood); color: #fff !important;
+      padding: 0.5rem 1.1rem !important; border-radius: var(--radius) !important;
+      font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
+    .nav-cta:hover { background: var(--rood-hover) !important; }
+    .nav-cta::after { display: none !important; }
+    /* Zoekbalk */
+    .nav-search { position: relative; display: flex; align-items: center; margin-left: 0.5rem; }
+    .search-toggle {
+      background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.8);
+      display: flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 50%; transition: background 0.2s, color 0.2s;
+    }
+    .search-toggle:hover, .search-toggle[aria-expanded="true"] { background: rgba(255,255,255,0.12); color: #fff; }
+    .search-toggle svg { width: 18px; height: 18px; }
+    .search-box {
+      display: none; position: absolute; right: 0; top: calc(100% + 10px);
+      width: 360px; background: #fff; border-radius: 10px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.22); overflow: hidden; z-index: 2000;
+    }
+    .search-box.open { display: block; }
+    .search-inner { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid #eee; }
+    .search-inner svg { width: 16px; height: 16px; color: #aaa; flex-shrink: 0; }
+    #search-input { flex: 1; border: none; outline: none; font-size: 0.97rem; color: #222; background: transparent; font-family: inherit; }
+    #search-input::placeholder { color: #bbb; }
+    #search-results { list-style: none; max-height: 320px; overflow-y: auto; padding: 4px 0; }
+    .sr-item { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; text-decoration: none; color: #222; transition: background 0.15s; }
+    .sr-item:hover, .sr-item:focus { background: #f5f5f5; outline: none; }
+    .sr-label { font-size: 0.9rem; font-weight: 500; }
+    .sr-label mark { background: none; color: var(--rood); font-weight: 700; }
+    .sr-bj { font-size: 0.78rem; color: #999; white-space: nowrap; margin-left: 8px; }
+    .sr-empty { padding: 12px 14px; color: #999; font-size: 0.88rem; }
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+
+    /* ── HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, #0f0f0f 50%, color-mix(in srgb, #1A1A1A 30%, #0f0f0f) 100%);
+      padding: 110px 2rem 56px; text-align: center;
+    }
+    .breadcrumb {
+      font-size: 0.78rem; color: rgba(255,255,255,0.4);
+      margin-bottom: 1.6rem; display: flex; justify-content: center; align-items: center; gap: 0.4rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .breadcrumb a:hover { color: #fff; }
+    .merk-logo-wrap {
+      width: 80px; height: 80px; background: rgba(255,255,255,0.08);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.2rem; overflow: hidden;
+    }
+    .merk-logo-wrap img { width: 60px; height: 60px; object-fit: contain; }
+    .merk-monogram {
+      width: 80px; height: 80px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px;
+      margin: 0 auto 1.2rem;
+    }
+    .page-header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 800;
+      color: #fff; line-height: 1.15; margin-bottom: 0.7rem;
+    }
+    .page-header h1 em { color: var(--accent); font-style: normal; }
+    .page-header p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 500px; margin: 0 auto; }
+
+    /* ── MODELLEN GRID ── */
+    .modellen-wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .modellen-count { font-size: 0.85rem; color: #888; margin-bottom: 1.2rem; }
+    .modellen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .model-card {
+      background: #fff; border: 1.5px solid #e8e8e8; border-radius: 10px;
+      padding: 1.2rem 1.1rem 1rem;
+      text-decoration: none; color: #222;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      position: relative; overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .model-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--accent);
+    }
+    .model-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.1); border-color: transparent; }
+    .mc-top { display: flex; flex-direction: column; gap: 2px; }
+    .mc-naam { font-weight: 700; font-size: 1rem; color: #111; }
+    .mc-uitv { font-size: 0.78rem; font-weight: 600; color: var(--accent); letter-spacing: 0.3px; }
+    .mc-bj { font-size: 0.8rem; color: #888; }
+    .mc-prijzen { display: flex; flex-direction: column; gap: 2px; margin-top: 2px; }
+    .mc-prijs-rep, .mc-prijs-verv { font-size: 0.76rem; color: #666; }
+    .mc-prijs-rep strong, .mc-prijs-verv strong { color: #222; font-weight: 700; }
+    .mc-cta {
+      margin-top: auto; padding-top: 0.6rem;
+      font-size: 0.82rem; font-weight: 600; color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    .footer-mini {
+      background: #111; color: rgba(255,255,255,0.4); text-align: center;
+      padding: 1.5rem; font-size: 0.82rem;
+    }
+    .footer-mini a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-mini a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0;
+        position: absolute; top: 68px; left: 0; right: 0;
+        background: rgba(17,17,17,0.98); padding: 1rem 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.75rem 2rem; border-radius: 0; }
+      .nav-links a::after { display: none; }
+      .modellen-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" class="nav-logo" aria-label="No-Risk Autoruitservice - Home">
+    <img src="../../logo.png" alt="No-Risk Autoruitservice">
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../voorruit/">Voorruit per merk</a></li>
+    <li><a href="../../diensten.html">Diensten</a></li>
+    <li><a href="../../locaties.html">Locaties</a></li>
+    <li><a href="../../contact.html">Contact</a></li>
+    <li><a href="tel:0880225800" class="nav-cta"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>088-022 5800</a></li>
+  </ul>
+  <div class="nav-search">
+    <button class="search-toggle" id="search-toggle" aria-label="Zoeken" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <div class="search-box" id="search-box" role="dialog" aria-label="Zoek een automodel">
+      <div class="search-inner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="search-input" placeholder="Zoek merk of model…" autocomplete="off" spellcheck="false">
+      </div>
+      <ul id="search-results"></ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="breadcrumb">
+    <a href="../../index.html">Home</a>
+    <span>›</span>
+    <a href="../../voorruit/">Voorruit per merk</a>
+    <span>›</span>
+    LEXUS
+  </div>
+  <div class="merk-logo-wrap">
+      <img src="../../logos/lexus.svg" alt="LEXUS logo"
+        onerror="this.src='../../logos/lexus.png';this.onerror=function(){this.closest('.merk-logo-wrap').innerHTML='<div class=merk-monogram style=background:#1A1A1A;color:#fff>LEX</div>'}">
+    </div>
+  <h1>Voorruit <em>LEXUS</em><br>vervangen of repareren?</h1>
+  <p>Kies uw model en ontdek de opties voor uw specifieke uitvoering.</p>
+</div>
+
+<div class="modellen-wrap">
+  <p class="modellen-count">18 modellen gevonden</p>
+  <div class="modellen-grid">
+    <a href="ct200h/2011-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">CT200H</span>
+    
+  </div>
+  <span class="mc-bj">2011 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 495</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="ex-serie/2008-2014/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">EX-Serie</span>
+    
+  </div>
+  <span class="mc-bj">2008 – 2014</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 605</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="fx-serie/2008-2014/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">FX-Serie</span>
+    
+  </div>
+  <span class="mc-bj">2008 – 2014</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 645</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="g-serie/2008-2014/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">G-Serie</span>
+    
+  </div>
+  <span class="mc-bj">2008 – 2014</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="gs300/1993-1997/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">GS300</span>
+    
+  </div>
+  <span class="mc-bj">1993 – 1997</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="gs300/1997-2000/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">GS300</span>
+    
+  </div>
+  <span class="mc-bj">1997 – 2000</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="gs300-430/2000-2005/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">GS300/430</span>
+    
+  </div>
+  <span class="mc-bj">2000 – 2005</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 529</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="gs300-430/2005-2012/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">GS300/430</span>
+    
+  </div>
+  <span class="mc-bj">2005 – 2012</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="is220-250/2005-2013/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">IS220/250</span>
+    
+  </div>
+  <span class="mc-bj">2005 – 2013</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 749</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="is300h/1999-2005/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">IS300h</span>
+    
+  </div>
+  <span class="mc-bj">1999 – 2005</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 469</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="is300h/2013-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">IS300h</span>
+    
+  </div>
+  <span class="mc-bj">2013 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 705</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="ls400/1994-2000/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">LS400</span>
+    
+  </div>
+  <span class="mc-bj">1994 – 2000</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 595</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="nx200t-300h/2014-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">NX200T/300H</span>
+    
+  </div>
+  <span class="mc-bj">2014 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 649</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="rx-serie/2003-2009/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">RX-Serie</span>
+    
+  </div>
+  <span class="mc-bj">2003 – 2009</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="rx300-400h/2000-2003/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">RX300/400H</span>
+    
+  </div>
+  <span class="mc-bj">2000 – 2003</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="rx300-400h/2003-2009/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">RX300/400H</span>
+    
+  </div>
+  <span class="mc-bj">2003 – 2009</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="rx350-450h/2009-2015/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">RX350/450H</span>
+    
+  </div>
+  <span class="mc-bj">2009 – 2015</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 875</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+<a href="ux/2018-2025/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">UX</span>
+    
+  </div>
+  <span class="mc-bj">2018 – 2025</span>
+  <div class="mc-prijzen"><span class="mc-prijs-rep">Reparatie v.a. <strong>€ 0</strong></span><span class="mc-prijs-verv">Vervanging v.a. <strong>€ 1.145</strong></span></div>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+  </div>
+</div>
+
+<footer class="footer-mini">
+  © 2025 No-Risk Autoruitservice &nbsp;·&nbsp;
+  <a href="../../index.html">Home</a> &nbsp;·&nbsp;
+  <a href="../../locaties.html">Locaties</a> &nbsp;·&nbsp;
+  <a href="../../contact.html">Contact</a>
+</footer>
+
+<script>
+  const h = document.getElementById('hamburger');
+  const n = document.getElementById('nav-links');
+  h.addEventListener('click', () => n.classList.toggle('open'));
+</script>
+<script src="../../search.js"></script>
+</body>
+</html>

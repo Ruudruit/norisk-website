@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locaties – No-Risk Autoruitservice | Amsterdam, Rotterdam, Den Haag, Barendrecht, Spijkenisse</title>
+  <meta name="description" content="No-Risk Autoruitservice is actief op 4 locaties in de Randstad: Amsterdam-Zuidoost, Barendrecht, Wateringen (Den Haag) en Spijkenisse. Snel, vakkundig en veelal zonder eigen risico.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AutoRepair",
+        "@id": "https://no-risk.nl/#localbusiness",
+        "name": "No-Risk Autoruitservice",
+        "url": "https://no-risk.nl",
+        "logo": "https://no-risk.nl/logo.png",
+        "image": "https://no-risk.nl/logo.png",
+        "description": "No-Risk Autoruitservice repareert of vervangt uw autoruit op 4 locaties in de Randstad. Veelal zonder eigen risico via uw verzekering.",
+        "telephone": "+31880225800",
+        "email": "info@no-risk.nl",
+        "areaServed": "Randstad, Nederland",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "193"
+        },
+        "location": [
+          {
+            "@type": "AutoRepair",
+            "name": "No-Risk Autoruitservice Amsterdam",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Klokkenbergweg 17",
+              "addressLocality": "Amsterdam",
+              "postalCode": "1101 AK",
+              "addressCountry": "NL"
+            },
+            "telephone": "+31880225800",
+            "url": "https://no-risk.nl/amsterdam/"
+          },
+          {
+            "@type": "AutoRepair",
+            "name": "No-Risk Autoruitservice Barendrecht",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Escudostraat 30",
+              "addressLocality": "Barendrecht",
+              "postalCode": "2991 XN",
+              "addressCountry": "NL"
+            },
+            "telephone": "+31880225800",
+            "url": "https://no-risk.nl/barendrecht/"
+          },
+          {
+            "@type": "AutoRepair",
+            "name": "No-Risk Autoruitservice Wateringen – regio Den Haag",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Willem III Straat 15",
+              "addressLocality": "Wateringen",
+              "postalCode": "2291 SH",
+              "addressCountry": "NL"
+            },
+            "telephone": "+31880225800",
+            "url": "https://no-risk.nl/denhaag/"
+          },
+          {
+            "@type": "AutoRepair",
+            "name": "No-Risk Autoruitservice Spijkenisse",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Einsteinweg 4",
+              "addressLocality": "Spijkenisse",
+              "addressCountry": "NL"
+            },
+            "telephone": "+31880225800",
+            "url": "https://no-risk.nl/spijkenisse/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rood: #CC0000;
+      --rood-hover: #aa0000;
+      --zwart: #111111;
+      --grijs: #333333;
+      --lichtgrijs: #f5f5f5;
+      --wit: #ffffff;
+      --font: 'Segoe UI', Arial, sans-serif;
+      --radius: 8px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.12);
+      --transition: 0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--zwart); background: var(--wit); line-height: 1.6; }
+
+    /* ── NAVIGATIE ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(17,17,17,0.95); backdrop-filter: blur(8px);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background var(--transition);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.85); text-decoration: none;
+      padding: 0.5rem 1rem; border-radius: var(--radius);
+      font-size: 0.95rem; position: relative; transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 4px; left: 1rem; right: 1rem;
+      height: 2px; background: var(--rood);
+      transform: scaleX(0); transform-origin: left; transition: transform var(--transition);
+    }
+    .nav-links a:hover { color: var(--wit); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta {
+      background: var(--rood); color: var(--wit) !important;
+      padding: 0.55rem 1.2rem !important; border-radius: var(--radius) !important;
+      font-weight: 600; transition: background var(--transition), transform var(--transition) !important;
+    }
+    .nav-cta:hover { background: var(--rood-hover) !important; transform: translateY(-1px); }
+    .nav-cta::after { display: none !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--wit); border-radius: 2px; transition: var(--transition); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, #111 60%, #330000 100%);
+      padding: 120px 2rem 60px;
+      text-align: center;
+    }
+    .page-header .breadcrumb {
+      font-size: 0.82rem; color: rgba(255,255,255,0.5);
+      margin-bottom: 1.2rem; display: flex; justify-content: center; align-items: center; gap: 0.4rem;
+    }
+    .page-header .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color var(--transition); }
+    .page-header .breadcrumb a:hover { color: var(--wit); }
+    .page-header .breadcrumb span { color: rgba(255,255,255,0.25); }
+    .page-header .locatie-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(204,0,0,0.25); border: 1px solid rgba(204,0,0,0.5);
+      color: #ff9999; padding: 5px 14px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600; margin-bottom: 1rem;
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800;
+      color: var(--wit); line-height: 1.15; margin-bottom: 1rem;
+    }
+    .page-header h1 em { color: var(--rood); font-style: normal; }
+    .page-header p {
+      color: rgba(255,255,255,0.78); font-size: 1.05rem;
+      max-width: 620px; margin: 0 auto 2rem;
+    }
+    .page-header-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--rood); color: var(--wit);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 16px rgba(204,0,0,0.4);
+    }
+    .btn-primary:hover { background: var(--rood-hover); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(204,0,0,0.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.1); color: var(--wit);
+      border: 2px solid rgba(255,255,255,0.4);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 600; text-decoration: none;
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); border-color: var(--wit); transform: translateY(-2px); }
+
+    /* ── STATISTIEKEN BALK ── */
+    .stats-balk {
+      background: var(--rood); padding: 0.9rem 2rem;
+    }
+    .stats-balk-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    }
+    .stats-item { display: flex; align-items: center; gap: 8px; color: var(--wit); font-size: 0.9rem; font-weight: 600; }
+    .stats-item svg { width: 18px; height: 18px; fill: none; stroke: var(--wit); stroke-width: 2; flex-shrink: 0; }
+
+    /* ── LOCATIES GRID ── */
+    .locaties-section { padding: 5rem 2rem; }
+    .locaties-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { color: var(--rood); font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; line-height: 1.2; margin-bottom: 0.75rem; }
+    .section-intro { color: var(--grijs); font-size: 1.05rem; max-width: 680px; margin-bottom: 3rem; line-height: 1.75; }
+
+    .locaties-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+    }
+
+    .locatie-kaart {
+      background: var(--wit);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .locatie-kaart:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.14); }
+
+    .kaart-map {
+      width: 100%; height: 190px; overflow: hidden; position: relative; background: #eee;
+    }
+    .kaart-map iframe { display: block; width: 100%; height: 100%; border: none; pointer-events: none; }
+    .kaart-map .kaart-overlay {
+      position: absolute; inset: 0; z-index: 2;
+    }
+
+    .kaart-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0; flex: 1; }
+
+    .kaart-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+    .kaart-naam {
+      font-size: 1.25rem; font-weight: 800; color: var(--zwart); line-height: 1.2;
+    }
+    .kaart-naam span { display: block; font-size: 0.8rem; font-weight: 600; color: var(--rood); margin-top: 3px; }
+    .kaart-badge {
+      background: rgba(204,0,0,0.1); border: 1px solid rgba(204,0,0,0.3);
+      color: var(--rood); font-size: 0.72rem; font-weight: 700;
+      padding: 4px 10px; border-radius: 50px; white-space: nowrap; flex-shrink: 0;
+    }
+    .kaart-badge.hq { background: var(--rood); color: var(--wit); border-color: var(--rood); }
+
+    .kaart-details { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.4rem; }
+    .kaart-detail { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.9rem; color: var(--grijs); }
+    .kaart-detail svg { width: 16px; height: 16px; flex-shrink: 0; fill: none; stroke: var(--rood); stroke-width: 2; margin-top: 2px; }
+
+    .kaart-acties { display: flex; gap: 0.7rem; margin-top: auto; }
+    .kaart-btn {
+      flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 0.65rem 1rem; border-radius: 6px;
+      font-size: 0.88rem; font-weight: 700; text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .kaart-btn.rood { background: var(--rood); color: var(--wit); }
+    .kaart-btn.rood:hover { background: var(--rood-hover); transform: translateY(-1px); }
+    .kaart-btn.grijs { background: var(--lichtgrijs); color: var(--zwart); border: 1px solid rgba(0,0,0,0.1); }
+    .kaart-btn.grijs:hover { background: #e8e8e8; transform: translateY(-1px); }
+    .kaart-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* Rotterdam SEO-kaart (anders gestyled) */
+    .locatie-kaart.seo-kaart .kaart-map {
+      background: linear-gradient(135deg, #1a1a1a 0%, #330000 100%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .kaart-map-seo-inner {
+      text-align: center; color: rgba(255,255,255,0.85); padding: 1.5rem;
+    }
+    .kaart-map-seo-inner svg { width: 48px; height: 48px; fill: none; stroke: rgba(204,0,0,0.7); stroke-width: 1.5; margin-bottom: 0.75rem; }
+    .kaart-map-seo-inner p { font-size: 0.88rem; line-height: 1.55; }
+    .kaart-map-seo-inner strong { color: #ff9999; }
+
+    /* ── USP SECTIE ── */
+    .usp-sectie { background: var(--lichtgrijs); padding: 4rem 2rem; }
+    .usp-inner { max-width: 1100px; margin: 0 auto; }
+    .usp-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 2.5rem;
+    }
+    @media (max-width: 768px) {
+      .usp-grid { grid-template-columns: 1fr; }
+    }
+    .usp-item {
+      background: var(--wit); border-radius: var(--radius);
+      padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .usp-icon {
+      width: 44px; height: 44px;
+      background: rgba(204,0,0,0.1); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .usp-icon svg { width: 22px; height: 22px; fill: none; stroke: var(--rood); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .usp-item h3 { font-size: 1rem; font-weight: 800; color: var(--zwart); }
+    .usp-item p { font-size: 0.9rem; color: var(--grijs); line-height: 1.6; }
+
+    /* ── CTA SECTIE ── */
+    .cta-sectie { background: var(--rood); text-align: center; padding: 5rem 2rem; }
+    .cta-sectie h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; color: var(--wit); margin-bottom: 1rem; }
+    .cta-sectie p { color: rgba(255,255,255,0.88); font-size: 1.05rem; max-width: 520px; margin: 0 auto 2rem; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-wit {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--wit); color: var(--rood);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .btn-wit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
+    .btn-cta-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.15); color: #fff;
+      border: 2px solid rgba(255,255,255,0.5);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: background var(--transition);
+    }
+    .btn-cta-ghost:hover { background: rgba(255,255,255,0.25); }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25D366; color: #fff;
+      border: 2px solid #25D366;
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .btn-whatsapp:hover { background: #1ebe5d; border-color: #1ebe5d; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer { background: #0a0a0a; color: rgba(255,255,255,0.7); padding: 3.5rem 2rem 0; }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr 0.9fr;
+      gap: 2.5rem; padding-bottom: 3rem;
+    }
+    .footer-brand { display: flex; flex-direction: column; gap: 1.2rem; }
+    .footer-logo-text {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--wit);
+      font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px; line-height: 1.1;
+    }
+    .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.85); line-height: 1.5; margin-top: -0.4rem; }
+    .footer-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.4rem; }
+    .footer-badge {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 0.5rem 0.6rem;
+      display: flex; align-items: center; justify-content: center; min-height: 48px;
+    }
+    .footer-badge img { max-height: 32px; max-width: 100%; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.85; }
+    .footer-col h4, .footer-contact h4, .footer-socials h4 {
+      color: var(--wit); font-size: 0.78rem; font-weight: 700;
+      margin-bottom: 1.2rem; letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.88rem;
+      display: flex; align-items: center; gap: 0.5rem; transition: color var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--rood); }
+    .footer-col ul li a .arrow {
+      width: 16px; height: 16px; background: var(--rood); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .footer-col ul li a .arrow svg { width: 9px; height: 9px; fill: none; stroke: #fff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .footer-col ul li a .pin { display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .footer-col ul li a .pin svg { width: 19px; height: 19px; }
+    .footer-contact-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+    .footer-contact-list li { display: flex; align-items: center; gap: 0.75rem; }
+    .footer-contact-list .ci { width: 17px; height: 17px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .footer-contact-list .ci svg { width: 17px; height: 17px; fill: none; stroke: var(--rood); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .footer-contact-list .ci svg.filled { fill: var(--rood); stroke: none; }
+    .footer-contact-list .ct { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.4; font-weight: 600; }
+    .footer-contact-list a { color: rgba(255,255,255,0.85); text-decoration: none; transition: color var(--transition); }
+    .footer-contact-list li:hover a { color: var(--rood); }
+    .footer-socials-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .footer-socials-list li a {
+      display: flex; align-items: center; gap: 0.65rem;
+      color: rgba(255,255,255,0.85); text-decoration: none;
+      font-size: 0.9rem; font-weight: 600; transition: color var(--transition);
+    }
+    .footer-socials-list li a:hover { color: var(--rood); }
+    .footer-socials-list svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08); padding: 1.2rem 0;
+      display: flex; justify-content: center; align-items: center;
+      flex-wrap: wrap; gap: 0.6rem 1rem;
+      font-size: 0.78rem; color: rgba(255,255,255,0.35);
+      max-width: 1200px; margin: 0 auto; text-align: center;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.85); text-decoration: none; transition: color var(--transition); white-space: nowrap; }
+    .footer-bottom a:hover { color: var(--rood); }
+
+    /* ── MOBIEL ── */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0;
+        position: absolute; top: 68px; left: 0; right: 0;
+        background: rgba(17,17,17,0.98); padding: 1rem 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.75rem 2rem; border-radius: 0; }
+      .nav-links a::after { display: none; }
+      .locaties-grid { grid-template-columns: 1fr; }
+      .stats-balk-inner { gap: 1rem; flex-direction: column; align-items: flex-start; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-socials { grid-column: 1 / -1; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-badges { grid-template-columns: repeat(4, 1fr); }
+      .footer-bottom { flex-direction: column; align-items: center; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-badges { grid-template-columns: 1fr 1fr; }
+      .kaart-acties { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATIE -->
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="No-Risk Autoruitservice - Home">
+    <img src="logo.png" alt="No-Risk Autoruitservice">
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="diensten.html">Diensten</a></li>
+    <li><a href="locaties.html">Locaties</a></li>
+    <li><a href="over-ons.html">Over ons</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="tel:0880225800" class="nav-cta"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>088-0225800</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    Locaties
+  </div>
+  <div class="locatie-label">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="#ff9999" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    4 Locaties in de Randstad
+  </div>
+  <h1>Onze locaties in<br><em>de Randstad</em></h1>
+  <p>No-Risk Autoruitservice is actief op 4 locaties: Amsterdam, Barendrecht, Wateringen (Den Haag) en Spijkenisse. Altijd vakkundig, snel en veelal zonder eigen risico.</p>
+  <div class="page-header-btns">
+    <a href="tel:+31880225800" class="btn-primary">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Bel 088-0225800
+    </a>
+    <a href="contact.html" class="btn-secondary">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      Online ruitschade melden
+    </a>
+    <a href="https://wa.me/31655726869" target="_blank" rel="noopener" class="btn-whatsapp">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- STATS BALK -->
+<div class="stats-balk">
+  <div class="stats-balk-inner">
+    <div class="stats-item">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      4 vaste locaties in de Randstad
+    </div>
+    <div class="stats-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Veelal binnen 1 werkdag geholpen
+    </div>
+    <div class="stats-item">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Levenslange garantie op montage
+    </div>
+  </div>
+</div>
+
+<!-- LOCATIES GRID -->
+<section class="locaties-section">
+  <div class="locaties-inner">
+    <p class="section-label">Waar vindt u ons</p>
+    <h2 class="section-title">Onze vestigingen</h2>
+    <p class="section-intro">Op alle locaties helpen wij u met professioneel autoruiterstel, inclusief ADAS-kalibratie en schadeafhandeling met uw verzekeraar.</p>
+
+    <div class="locaties-grid">
+
+      <!-- Amsterdam -->
+      <div class="locatie-kaart">
+        <div class="kaart-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2440.1!2d4.938097!3d52.302502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKlokkenbergweg+17%2C+1101+AK+Amsterdam!5e0!3m2!1snl!2snl!4v1"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="No-Risk Autoruitservice Amsterdam">
+          </iframe>
+          <a href="amsterdam.html" class="kaart-overlay" aria-label="Naar Amsterdam pagina"></a>
+        </div>
+        <div class="kaart-body">
+          <div class="kaart-header">
+            <div class="kaart-naam">
+              Amsterdam
+              <span>Amsterdam-Zuidoost</span>
+            </div>
+            <span class="kaart-badge">Servicelocatie</span>
+          </div>
+          <div class="kaart-details">
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Klokkenbergweg 17, 1101 AK Amsterdam
+            </div>
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Ma–Vr 08:00–17:30 | Za op afspraak
+            </div>
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Vlakbij A10 en A2 — ruime parkeergelegenheid
+            </div>
+          </div>
+          <div class="kaart-acties">
+            <a href="amsterdam.html" class="kaart-btn rood">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              Meer info
+            </a>
+            <a href="https://maps.google.com/?q=Klokkenbergweg+17+Amsterdam" target="_blank" rel="noopener" class="kaart-btn grijs">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Route
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barendrecht (HQ) -->
+      <div class="locatie-kaart">
+        <div class="kaart-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2459.5!2d4.5288!3d51.8553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sEscudostraat+30%2C+2991+XN+Barendrecht!5e0!3m2!1snl!2snl!4v1"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="No-Risk Autoruitservice Barendrecht">
+          </iframe>
+          <a href="barendrecht.html" class="kaart-overlay" aria-label="Naar Barendrecht pagina"></a>
+        </div>
+        <div class="kaart-body">
+          <div class="kaart-header">
+            <div class="kaart-naam">
+              Barendrecht
+              <span>Bedrijventerrein Cornelisland</span>
+            </div>
+            <span class="kaart-badge hq">Hoofdvestiging</span>
+          </div>
+          <div class="kaart-details">
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Escudostraat 30, 2991 XN Barendrecht
+            </div>
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Ma–Vr 08:00–17:30 | Za op afspraak
+            </div>
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              A-status Glasgarant · Schadegarant · BOVAG
+            </div>
+          </div>
+          <div class="kaart-acties">
+            <a href="barendrecht.html" class="kaart-btn rood">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              Meer info
+            </a>
+            <a href="https://maps.google.com/?q=Escudostraat+30+Barendrecht" target="_blank" rel="noopener" class="kaart-btn grijs">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Route
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Den Haag / Wateringen -->
+      <div class="locatie-kaart">
+        <div class="kaart-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.1!2d4.2820!3d52.0152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sWillem+III+Straat+15%2C+2291+SH+Wateringen!5e0!3m2!1snl!2snl!4v1"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="No-Risk Autoruitservice Wateringen regio Den Haag">
+          </iframe>
+          <a href="denhaag.html" class="kaart-overlay" aria-label="Naar Den Haag pagina"></a>
+        </div>
+        <div class="kaart-body">
+          <div class="kaart-header">
+            <div class="kaart-naam">
+              Den Haag
+              <span>Werkplaats in Wateringen</span>
+            </div>
+            <span class="kaart-badge">Servicelocatie</span>
+          </div>
+          <div class="kaart-details">
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Willem III Straat 15, 2291 SH Wateringen
+            </div>
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Ma–Vr 08:00–17:30 | Za op afspraak
+            </div>
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              10–15 min vanuit Den Haag via N211
+            </div>
+          </div>
+          <div class="kaart-acties">
+            <a href="denhaag.html" class="kaart-btn rood">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              Meer info
+            </a>
+            <a href="https://maps.google.com/?q=Willem+III+Straat+15+Wateringen" target="_blank" rel="noopener" class="kaart-btn grijs">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Route
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spijkenisse -->
+      <div class="locatie-kaart">
+        <div class="kaart-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2465.5!2d4.323!3d51.847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sEinsteinweg+4%2C+Spijkenisse!5e0!3m2!1snl!2snl!4v1"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="No-Risk Autoruitservice Spijkenisse">
+          </iframe>
+          <a href="spijkenisse.html" class="kaart-overlay" aria-label="Naar Spijkenisse pagina"></a>
+        </div>
+        <div class="kaart-body">
+          <div class="kaart-header">
+            <div class="kaart-naam">
+              Spijkenisse
+              <span>Bij Hoewijk Autoschade</span>
+            </div>
+            <span class="kaart-badge">Servicelocatie</span>
+          </div>
+          <div class="kaart-details">
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Einsteinweg 4, Spijkenisse
+            </div>
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Ma–Vr 08:00–17:30 | Za op afspraak
+            </div>
+            <div class="kaart-detail">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Bereikbaar vanuit Voorne-Putten en Nissewaard
+            </div>
+          </div>
+          <div class="kaart-acties">
+            <a href="spijkenisse.html" class="kaart-btn rood">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              Meer info
+            </a>
+            <a href="https://maps.google.com/?q=Einsteinweg+4+Spijkenisse" target="_blank" rel="noopener" class="kaart-btn grijs">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Route
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- USP SECTIE -->
+<section class="usp-sectie">
+  <div class="usp-inner">
+    <p class="section-label">Waarom No-Risk</p>
+    <h2 class="section-title">Op elke locatie dezelfde kwaliteit</h2>
+    <div class="usp-grid">
+      <div class="usp-item">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>ADAS-kalibratie standaard</h3>
+        <p>Na elke voorruitvervanging kalibreren wij de rijhulpsystemen met professionele apparatuur.</p>
+      </div>
+      <div class="usp-item">
+        <div class="usp-icon" style="font-size:1.4rem;font-weight:800;color:var(--rood);font-family:var(--font);">€</div>
+        <h3>Verlaagd of geen eigen risico</h3>
+        <p>Wij regelen de schadeafhandeling direct met uw verzekeraar. Uw schadevrije jaren blijven intact.</p>
+      </div>
+      <div class="usp-item">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Herstel klaar terwijl u wacht</h3>
+        <p>Op afspraak staat u doorgaans na 1 uur weer op de weg — zonder onnodig wachten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTIE -->
+<section class="cta-sectie">
+  <h2>Ruitschade? Wij zijn er voor u.</h2>
+  <p>Bel ons of meld uw schade online. Wij checken uw verzekering en plannen de afspraak bij u in de buurt.</p>
+  <div class="cta-btns">
+    <a href="tel:+31880225800" class="btn-wit">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Bel 088-0225800
+    </a>
+    <a href="contact.html" class="btn-cta-ghost">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      Online ruitschade melden
+    </a>
+    <a href="https://wa.me/31655726869" target="_blank" rel="noopener" class="btn-whatsapp">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+
+    <!-- Kolom 1: Brand -->
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-text" aria-label="No-Risk Autoruitservice - Home">
+        <img src="logo.png" alt="No-Risk Autoruitservice" style="height:38px;width:auto;display:block;">
+      </a>
+      <p class="footer-tagline">BOVAG en Glasgarant autoruitherstel. Voordelig vakkundig en snel.</p>
+      <div class="footer-badges">
+        <div class="footer-badge"><img src="bovag.png" alt="BOVAG Erkend Ruitherstel"></div>
+        <div class="footer-badge"><img src="Glasgarant.png" alt="Glasgarant Keurmerk"></div>
+        <div class="footer-badge"><img src="erkendduurzaam.gif" alt="Erkend Duurzaam"></div>
+        <div class="footer-badge"><img src="Schadegarant.png" alt="Schadegarant Gecertificeerd"></div>
+      </div>
+    </div>
+
+    <!-- Kolom 2: Diensten -->
+    <div class="footer-col">
+      <h4>Diensten</h4>
+      <ul>
+        <li><a href="diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Voorruit reparatie</a></li>
+        <li><a href="diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Voorruit vervangen</a></li>
+        <li><a href="diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Achterruit vervangen</a></li>
+        <li><a href="diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Mobiele autoruit service</a></li>
+        <li><a href="diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Kosten autoruitschade</a></li>
+      </ul>
+    </div>
+
+    <!-- Kolom 3: Locaties -->
+    <div class="footer-col">
+      <h4>Locaties</h4>
+      <ul>
+        <li><a href="amsterdam.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Amsterdam</a></li>
+        <li><a href="rotterdam.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Rotterdam</a></li>
+        <li><a href="denhaag.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Den Haag</a></li>
+        <li><a href="barendrecht.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Barendrecht</a></li>
+        <li><a href="spijkenisse.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Spijkenisse</a></li>
+      </ul>
+    </div>
+
+    <!-- Kolom 4: Contact -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <ul class="footer-contact-list">
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          <span class="ct"><a href="contact.html">Contactgegevens</a></span>
+        </li>
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+          <span class="ct"><a href="tel:0880225800">088-0225800</a></span>
+        </li>
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <span class="ct"><a href="mailto:info@no-risk.nl">info@no-risk.nl</a></span>
+        </li>
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24" class="filled"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+          <span class="ct"><a href="https://wa.me/31655726869" target="_blank" rel="noopener">0655726869</a></span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Kolom 5: Socials -->
+    <div class="footer-socials">
+      <h4>Socials</h4>
+      <ul class="footer-socials-list">
+        <li>
+          <a href="https://www.instagram.com/noriskautoruitservice/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="#CC0000" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/no-risk-autoruitservice/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="#CC0000">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@noriskautoruitservice" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="#CC0000">
+              <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/>
+            </svg>
+            YouTube
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <a href="https://no-risk.nl/algemene-voorwaarden/" target="_blank" rel="noopener">Algemene voorwaarden</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/cookie-verklaring/" target="_blank" rel="noopener">Cookie verklaring</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/disclaimer/" target="_blank" rel="noopener">Disclaimer</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/privacy-verklaring/" target="_blank" rel="noopener">Privacy verklaring</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="index.html">© No-Risk Autoruitservice 1996-2026</a>
+  </div>
+</footer>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  // Nav achtergrond bij scrollen
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.background =
+      window.scrollY > 60 ? 'rgba(17,17,17,0.98)' : 'rgba(17,17,17,0.95)';
+  });
+</script>
+<script>
+  /* ── Sitebeveiliging ── */
+  (function() {
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12') { e.preventDefault(); return; }
+      if (e.ctrlKey && ['u','s','a'].includes(e.key.toLowerCase())) { e.preventDefault(); return; }
+      if (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase())) { e.preventDefault(); return; }
+    });
+  })();
+</script>
+</body>
+</html>

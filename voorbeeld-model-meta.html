@@ -1,0 +1,314 @@
+<title>Model-meta strip voorbeeld</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rood: #CC0000;
+    --rood-hover: #aa0000;
+    --chip-bg: rgba(255,255,255,0.08);
+    --chip-border: rgba(255,255,255,0.18);
+    --chip-text: rgba(255,255,255,0.75);
+  }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, #111 60%, #330000 100%);
+    padding: 56px 2rem 60px;
+    text-align: center;
+  }
+
+  .breadcrumb {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.01em;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .breadcrumb a:hover { color: rgba(255,255,255,0.75); }
+  .breadcrumb span { color: rgba(255,255,255,0.2); }
+
+  .model-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(204,0,0,0.2);
+    border: 1px solid rgba(204,0,0,0.45);
+    color: #ff9999;
+    padding: 4px 13px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    text-wrap: balance;
+  }
+  h1 em { color: var(--rood); font-style: normal; }
+
+  /* ── MODEL-META STRIP ── */
+  .model-meta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--chip-bg);
+    border: 1px solid var(--chip-border);
+    color: var(--chip-text);
+    padding: 5px 13px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1;
+    backdrop-filter: blur(4px);
+  }
+
+  .meta-chip svg {
+    width: 13px;
+    height: 13px;
+    opacity: 0.65;
+    flex-shrink: 0;
+  }
+
+  .meta-chip strong {
+    color: rgba(255,255,255,0.92);
+    font-weight: 600;
+  }
+
+  /* ── INTRO ── */
+  .page-header p {
+    color: rgba(255,255,255,0.72);
+    font-size: 1.05rem;
+    max-width: 620px;
+    margin: 0 auto 2rem;
+    line-height: 1.65;
+  }
+
+  .page-header p .highlight {
+    color: rgba(255,255,255,0.92);
+    font-weight: 500;
+  }
+
+  /* ── BUTTONS ── */
+  .page-header-btns {
+    display: flex;
+    gap: 0.9rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--rood);
+    color: #fff;
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(204,0,0,0.4);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.35);
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  /* ── DIVIDER / LABEL ── */
+  .section-label {
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin: 2.5rem 0 1.5rem;
+  }
+
+  /* ── VERGELIJKING ── */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 860px;
+    margin: 0 auto 2rem;
+  }
+
+  .compare-box {
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .compare-box h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1rem;
+  }
+
+  .compare-box .version-a h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .compare-box p { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+  .tag-zonder { display: inline-block; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.4); padding: 3px 10px; border-radius: 50px; font-size: 0.75rem; margin-bottom: 0.75rem; }
+  .tag-met { display: inline-block; background: rgba(204,0,0,0.15); border: 1px solid rgba(204,0,0,0.35); color: #ff9999; padding: 3px 10px; border-radius: 50px; font-size: 0.75rem; margin-bottom: 0.75rem; }
+
+  .mini-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.75rem 0 0.75rem;
+  }
+  .mini-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: rgba(255,255,255,0.7);
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.76rem;
+    font-weight: 500;
+  }
+  .mini-chip svg { width: 11px; height: 11px; opacity: 0.6; }
+  .mini-chip strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+
+  .arrow-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 600px) {
+    .compare { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- ══════════════════════════════════════════════════════════════
+     LIVE VOORBEELD — BMW 3 Serie E36, 1991–1998
+     ══════════════════════════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="breadcrumb">
+    <a href="#">Home</a><span>›</span>
+    <a href="#">Voorruit</a><span>›</span>
+    <a href="#">BMW</a><span>›</span>
+    <a href="#">BMW 3 Serie</a><span>›</span>
+    1991–1998
+  </div>
+
+  <div class="model-label">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    Voorruitspecialist voor BMW
+  </div>
+
+  <h1>Voorruit <em>BMW 3 Serie</em> vervangen bij No-Risk</h1>
+
+  <!-- ── MODEL-META STRIP ── -->
+  <div class="model-meta">
+    <span class="meta-chip">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Bouwjaar <strong>1991–1998</strong>
+    </span>
+    <span class="meta-chip">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+      Uitvoering <strong>E36</strong>
+    </span>
+    <span class="meta-chip">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      Geen ADAS-kalibratie nodig
+    </span>
+  </div>
+
+  <p>Een gebarsten of beschadigde voorruit van uw <span class="highlight">BMW 3 Serie E36</span> is niet alleen hinderlijk, maar ook gevaarlijk en verplicht te herstellen. No-Risk Autoruitservice regelt het snel en zorgeloos — van de schademelding bij uw verzekeraar tot montage en garantie. Als BOVAG-gecertificeerd bedrijf garanderen wij vakmanschap en kwaliteit bij elke reparatie.</p>
+
+  <div class="page-header-btns">
+    <a href="#" class="btn-primary">Schade melden</a>
+    <a href="#" class="btn-secondary">088-0225800</a>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     VERGELIJKING: ZONDER vs MET
+     ══════════════════════════════════════════════════════════════ -->
+<div style="padding: 3rem 2rem 4rem; max-width: 900px; margin: 0 auto;">
+  <p class="section-label">Zo verandert de pagina</p>
+
+  <div class="compare">
+    <!-- ZONDER -->
+    <div class="compare-box">
+      <h3>Huidige situatie — zonder strip</h3>
+      <div class="tag-zonder">Geen modelinfo</div>
+      <div style="font-size:1.2rem; font-weight:800; color:#fff; margin-bottom:0.6rem; line-height:1.2;">Voorruit BMW 3 Serie vervangen bij No-Risk</div>
+      <p>Een gebarsten of beschadigde voorruit van uw BMW 3 Serie is niet alleen hinderlijk…</p>
+      <div class="arrow-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Google ziet geen uitvoering-term in de inhoud
+      </div>
+    </div>
+
+    <!-- MET -->
+    <div class="compare-box">
+      <h3>Nieuw — met model-meta strip</h3>
+      <div class="tag-met">✓ Uitvoering zichtbaar</div>
+      <div style="font-size:1.2rem; font-weight:800; color:#fff; margin-bottom:0.6rem; line-height:1.2;">Voorruit BMW 3 Serie vervangen bij No-Risk</div>
+      <div class="mini-meta">
+        <span class="mini-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>1991–1998</span>
+        <span class="mini-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/></svg>Uitvoering <strong>E36</strong></span>
+        <span class="mini-chip">✓ Geen ADAS</span>
+      </div>
+      <p>…uw <strong style="color:rgba(255,255,255,0.9);">BMW 3 Serie E36</strong> is niet alleen hinderlijk…</p>
+      <div class="arrow-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" width="14" height="14"><polyline points="9 11 12 14 22 4"/></svg>
+        <span style="color:#4ade80;">"voorruit BMW E36" indexeerbaar in H1-context</span>
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align:center; font-size:0.85rem; color:rgba(255,255,255,0.35); margin-top:0.5rem;">
+    Chips verschijnen alleen als de CSV-kolom <code style="background:rgba(255,255,255,0.08); padding:1px 5px; border-radius:3px;">uitvoering</code> niet leeg is
+  </p>
+</div>
