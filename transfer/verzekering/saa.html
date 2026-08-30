@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAA &amp; Autoruitschade – No-Risk Autoruitservice</title>
+  <meta name="description" content="Bent u via SAA verzekerd? No-Risk Autoruitservice is erkend Glasgarant herstelbedrijf en regelt uw ruitschade direct — veelal zonder eigen risico.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Kan ik mijn autoruitschade claimen via SAA?","acceptedAnswer":{"@type":"Answer","text":"Ja. Als uw auto WA+ of All-Risk verzekerd is via SAA Assuradeuren heeft u recht op vergoeding van ruitschade. No-Risk Autoruitservice is als Glasgarant A-status bedrijf erkend hersteller en regelt de melding rechtstreeks."}},
+      {"@type":"Question","name":"Betaal ik eigen risico bij ruitschade via SAA?","acceptedAnswer":{"@type":"Answer","text":"Bij een sterreparatie is veelal geen eigen risico van toepassing. Bij vervanging geldt uw gebruikelijke eigen risico, maar als Glasgarant-bedrijf heeft u recht op het verlaagde Glasgarant-tarief. Wij checken dit altijd vooraf voor u."}},
+      {"@type":"Question","name":"Hoe meld ik schade via SAA bij No-Risk?","acceptedAnswer":{"@type":"Answer","text":"U hoeft zelf niets bij SAA of uw tussenpersoon te melden. Bel, WhatsApp of mail No-Risk — wij nemen de volledige schademelding en afhandeling van u over."}}
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rood: #CC0000;
+      --rood-hover: #aa0000;
+      --zwart: #111111;
+      --grijs: #333333;
+      --lichtgrijs: #f5f5f5;
+      --wit: #ffffff;
+      --font: 'Segoe UI', Arial, sans-serif;
+      --radius: 8px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.10);
+      --transition: 0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--zwart); background: var(--wit); line-height: 1.6; }
+
+    /* ── NAVIGATIE ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(17,17,17,0.95); backdrop-filter: blur(8px);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background var(--transition);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.85); text-decoration: none;
+      padding: 0.5rem 1rem; border-radius: var(--radius);
+      font-size: 0.95rem; position: relative; transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 4px; left: 1rem; right: 1rem;
+      height: 2px; background: var(--rood);
+      transform: scaleX(0); transform-origin: left; transition: transform var(--transition);
+    }
+    .nav-links a:hover { color: var(--wit); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta {
+      background: var(--rood); color: var(--wit) !important;
+      padding: 0.55rem 1.2rem !important; border-radius: var(--radius) !important;
+      font-weight: 600; transition: background var(--transition), transform var(--transition) !important;
+    }
+    .nav-cta:hover { background: var(--rood-hover) !important; transform: translateY(-1px); }
+    .nav-cta::after { display: none !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: var(--transition); }
+    .nav-search { position: relative; display: flex; align-items: center; margin-left: 0.75rem; }
+    .nav-search-icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); cursor: pointer; flex-shrink: 0; }
+    .nav-search-icon svg { width: 16px; height: 16px; fill: none; stroke: rgba(255,255,255,0.8); stroke-width: 2; }
+    #search-input { background: none; border: none; outline: none; color: #fff; font-size: 0.9rem; width: 160px; padding: 4px 8px; }
+    #search-input::placeholder { color: rgba(255,255,255,0.5); }
+    .search-box { display: none; position: absolute; right: 0; top: calc(100% + 10px);
+      width: 340px; background: #fff; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      list-style: none; overflow: hidden; z-index: 2000; }
+    .search-box.open { display: block; }
+    .sr-item { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; text-decoration: none; color: #222; transition: background 0.15s; }
+    .sr-item:hover, .sr-item:focus { background: #f5f5f5; outline: none; }
+    .sr-label { font-size: 0.9rem; font-weight: 500; }
+    .sr-label mark { background: none; color: var(--rood); font-weight: 700; }
+    .sr-icon { margin-right: 5px; font-size: 0.85rem; }
+    .sr-bj { font-size: 0.78rem; color: #999; white-space: nowrap; margin-left: 8px; }
+    .sr-badge { font-size: 0.72rem; font-weight: 600; padding: 2px 7px; border-radius: 10px; white-space: nowrap; margin-left: 8px; }
+    .sr-badge--locatie { background: #e8f4ff; color: #1565c0; }
+    .sr-badge--dienst  { background: #fff3e0; color: #e65100; }
+    .sr-badge--info    { background: #f3e5f5; color: #6a1b9a; }
+    .sr-badge--merk    { background: #e8f5e9; color: #2e7d32; }
+    .sr-badge--pagina  { background: #fafafa; color: #555; }
+    .sr-badge--volmacht { background: #fce8e8; color: #b71c1c; }
+    .sr-empty { padding: 12px 14px; color: #999; font-size: 0.88rem; }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: #111; flex-direction: column; padding: 1rem 2rem 1.5rem; gap: 0.2rem; }
+      .nav-links.open { display: flex; }
+      .nav-search { display: none; }
+    }
+
+    .company-logo-wrap {
+      display: flex; justify-content: center; margin-bottom: 1.25rem;
+    }
+    .company-logo {
+      max-height: 60px; max-width: 200px; object-fit: contain;
+      background: rgba(255,255,255,0.95); border-radius: 8px;
+      padding: 8px 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, #111 55%, #1a0000 100%);
+      padding: 120px 2rem 64px;
+      text-align: center;
+    }
+    .breadcrumb {
+      font-size: 0.82rem; color: rgba(255,255,255,0.5);
+      margin-bottom: 1.2rem; display: flex; justify-content: center; align-items: center; gap: 0.4rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--wit); }
+    .breadcrumb span { color: rgba(255,255,255,0.25); }
+    .dienst-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(204,0,0,0.22); border: 1px solid rgba(204,0,0,0.45);
+      color: #ff9999; padding: 5px 16px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.5px;
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800;
+      color: var(--wit); line-height: 1.15; margin-bottom: 1rem; text-wrap: balance;
+    }
+    .page-header h1 em { color: var(--rood); font-style: normal; }
+    .page-header > p {
+      color: rgba(255,255,255,0.75); font-size: 1.05rem;
+      max-width: 600px; margin: 0 auto 2rem;
+    }
+    .page-header-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--rood); color: var(--wit);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 16px rgba(204,0,0,0.4);
+    }
+    .btn-primary:hover { background: var(--rood-hover); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(204,0,0,0.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.1); color: var(--wit);
+      border: 2px solid rgba(255,255,255,0.4);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 600; text-decoration: none;
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); border-color: var(--wit); transform: translateY(-2px); }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25D366; color: var(--wit);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 600; text-decoration: none;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+    }
+    .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
+
+    /* ── STATS BALK ── */
+    .stats-balk { background: var(--rood); padding: 0.9rem 2rem; }
+    .stats-balk-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    }
+    .stats-item { display: flex; align-items: center; gap: 8px; color: var(--wit); font-size: 0.9rem; font-weight: 600; }
+    .stats-item svg { width: 18px; height: 18px; fill: none; stroke: var(--wit); stroke-width: 2; flex-shrink: 0; }
+
+    /* ── CONTENT SECTIE ── */
+    .content-sectie { padding: 5rem 2rem; background: var(--wit); }
+    .content-sectie.grijs { background: var(--lichtgrijs); }
+    .sectie-inner { max-width: 960px; margin: 0 auto; }
+    .sectie-kop { text-align: center; margin-bottom: 3rem; }
+    .sectie-label { color: var(--rood); font-size: 0.82rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .sectie-titel { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 800; line-height: 1.2; margin-bottom: 0.9rem; text-wrap: balance; }
+    .sectie-tekst { color: var(--grijs); font-size: 1rem; max-width: 680px; margin: 0 auto; line-height: 1.8; }
+
+    /* ── STAPPEN ── */
+    .stappen-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .stap-kaart {
+      background: var(--wit); border: 2px solid var(--lichtgrijs);
+      border-radius: 12px; padding: 1.75rem 1.5rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .stap-kaart:hover { border-color: var(--rood); box-shadow: 0 4px 20px rgba(204,0,0,0.08); }
+    .stap-nr {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--rood); color: var(--wit);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem; flex-shrink: 0;
+    }
+    .stap-kaart h3 { font-size: 1rem; font-weight: 700; }
+    .stap-kaart p { font-size: 0.92rem; color: var(--grijs); line-height: 1.65; }
+
+    /* ── VOORDELEN ── */
+    .voordelen-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 2.5rem;
+    }
+    .voordeel {
+      display: flex; align-items: flex-start; gap: 0.85rem;
+      background: var(--wit); border-radius: 10px; padding: 1.25rem;
+      border: 1px solid rgba(0,0,0,0.07);
+    }
+    .voordeel-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(204,0,0,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .voordeel-icon svg { width: 18px; height: 18px; fill: none; stroke: var(--rood); stroke-width: 2.2; }
+    .voordeel-text strong { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; }
+    .voordeel-text span { font-size: 0.85rem; color: var(--grijs); line-height: 1.5; }
+
+    /* ── CTA BLOK ── */
+    .cta-blok {
+      background: linear-gradient(135deg, #111 60%, #1a0000 100%);
+      padding: 4rem 2rem; text-align: center;
+    }
+    .cta-blok h2 { color: var(--wit); font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; margin-bottom: 0.75rem; text-wrap: balance; }
+    .cta-blok p { color: rgba(255,255,255,0.7); font-size: 1rem; max-width: 520px; margin: 0 auto 2rem; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FAQ ── */
+    .faq-lijst { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+    .faq-item { border: 2px solid var(--lichtgrijs); border-radius: 10px; overflow: hidden; }
+    .faq-vraag {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 1.1rem 1.4rem; font-size: 0.97rem; font-weight: 700; text-align: left;
+      color: var(--zwart); transition: background var(--transition);
+    }
+    .faq-vraag:hover { background: var(--lichtgrijs); }
+    .faq-vraag svg { width: 18px; height: 18px; stroke: var(--rood); flex-shrink: 0; transition: transform var(--transition); }
+    .faq-item.open .faq-vraag svg { transform: rotate(180deg); }
+    .faq-antwoord { display: none; padding: 0 1.4rem 1.2rem; color: var(--grijs); font-size: 0.93rem; line-height: 1.75; }
+    .faq-item.open .faq-antwoord { display: block; }
+
+    /* ── FOOTER ── */
+    footer { background: #0a0a0a; color: rgba(255,255,255,0.7); padding: 3.5rem 2rem 0; }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr 1fr; gap: 2.5rem; padding-bottom: 3rem;
+    }
+    .footer-brand { display: flex; flex-direction: column; gap: 1.2rem; }
+    .footer-logo-text { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.85); line-height: 1.5; margin-top: -0.4rem; }
+    .footer-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.4rem; }
+    .footer-badge {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 0.5rem; display: flex; align-items: center; justify-content: center;
+    }
+    .footer-badge img { max-height: 32px; max-width: 100%; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.85; }
+    .footer-col h4, .footer-contact h4, .footer-socials h4 {
+      color: var(--wit); font-size: 0.88rem; font-weight: 700; margin-bottom: 1rem;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .footer-col ul, .footer-contact-list, .footer-socials-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul a, .footer-contact-list a, .footer-socials-list a {
+      color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem;
+      display: flex; align-items: center; gap: 0.4rem; transition: color var(--transition);
+    }
+    .footer-col ul a:hover, .footer-contact-list a:hover, .footer-socials-list a:hover { color: var(--wit); }
+    .arrow svg { width: 12px; height: 12px; stroke: var(--rood); }
+    .pin svg, .ci svg { width: 14px; height: 14px; }
+    .footer-contact-list li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; }
+    .ci { display: flex; align-items: center; }
+    .ci svg { fill: none; stroke: var(--rood); stroke-width: 2; }
+    .footer-socials-list { gap: 0.7rem; }
+    .footer-socials-list a { font-size: 0.9rem; display: flex; align-items: center; gap: 0.6rem; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08); padding: 1.25rem 0;
+      max-width: 1200px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.8rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color var(--transition); }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.8); }
+    @media (max-width: 1024px) { .footer-inner { grid-template-columns: 1fr 1fr 1fr; } }
+    @media (max-width: 640px) { .footer-inner { grid-template-columns: 1fr 1fr; } .footer-brand { grid-column: 1/-1; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATIE -->
+<nav>
+  <a href="../index.html" class="nav-logo" aria-label="No-Risk Autoruitservice - Home">
+    <img src="../logo.png" alt="No-Risk Autoruitservice">
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../diensten.html">Diensten</a></li>
+    <li><a href="../locaties.html">Locaties</a></li>
+    <li><a href="../autoruitschade-verzekerd.html">Uw verzekering</a></li>
+    <li><a href="../over-ons.html">Over ons</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+    <li><a href="tel:0880225800" class="nav-cta">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>088-0225800</a></li>
+  </ul>
+  <div class="nav-search">
+    <div class="nav-search-icon">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </div>
+    <input type="search" id="search-input" placeholder="Zoek verzekeraar…" autocomplete="off" spellcheck="false">
+    <ul class="search-box" id="search-box" role="listbox" aria-label="Zoekresultaten"></ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../autoruitschade-verzekerd.html">Verzekering</a>
+    <span>›</span>
+    SAA
+  </div>
+  <div class="dienst-label">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff9999" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    BOVAG en Glasgarant autoruitherstel
+  </div>
+  <div class="company-logo-wrap">
+    <img src="logos/saa.png" alt="SAA logo" class="company-logo">
+  </div>
+  <h1>Autoruitschade via<br><em>SAA?</em></h1>
+  <p>Verzekerd via SAA Assuradeuren? No-Risk Autoruitservice regelt de schademelding en afhandeling rechtstreeks — u hoeft zelf niets te doen.</p>
+  <div class="page-header-btns">
+    <a href="../contact.html" class="btn-primary">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      Schade melden
+    </a>
+    <a href="tel:+31880225800" class="btn-secondary">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Bel 088-0225800
+    </a>
+    <a href="https://wa.me/31655726869" target="_blank" rel="noopener" class="btn-whatsapp">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- STATS BALK -->
+<div class="stats-balk">
+  <div class="stats-balk-inner">
+    <div class="stats-item">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      A-status Glasgarant herstelbedrijf
+    </div>
+    <div class="stats-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Direct herstel — op afspraak
+    </div>
+    <div class="stats-item">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      Geen invloed op schadevrije jaren
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="content-sectie">
+  <div class="sectie-inner">
+    <div class="sectie-kop">
+      <p class="sectie-label">SAA volmacht</p>
+      <h2 class="sectie-titel">Erkend herstelbedrijf voor<br>SAA-verzekeringen</h2>
+      <p class="sectie-tekst">SAA Assuradeuren is een erkend volmachtbedrijf in Nederland. Als Glasgarant A-status herstelbedrijf zijn wij erkend om ruitschade rechtstreeks af te handelen voor alle polissen die via SAA zijn afgesloten — inclusief WA+, All-Risk en Casco dekkingen.</p>
+    </div>
+
+    <div class="stappen-grid">
+      <div class="stap-kaart">
+        <div class="stap-nr">1</div>
+        <h3>Contact opnemen</h3>
+        <p>Bel, mail of WhatsApp ons. Wij vragen uw polisnummer en kenteken op — u hoeft zelf niets bij SAA of uw tussenpersoon te regelen.</p>
+      </div>
+      <div class="stap-kaart">
+        <div class="stap-nr">2</div>
+        <h3>Schademelding regelen</h3>
+        <p>No-Risk meldt de schade rechtstreeks en controleert uw dekking en eigen risico vooraf. Transparant, zonder verrassingen.</p>
+      </div>
+      <div class="stap-kaart">
+        <div class="stap-nr">3</div>
+        <h3>Ruit hersteld of vervangen</h3>
+        <p>Bij sterreparatie klaar terwijl u wacht. Bij vervanging inplannen op een locatie bij u in de buurt of mobiel aan huis.</p>
+      </div>
+      <div class="stap-kaart">
+        <div class="stap-nr">4</div>
+        <h3>Factuur direct naar verzekeraar</h3>
+        <p>Wij sturen de rekening rechtstreeks naar de verzekeraar. U betaalt alleen eventueel uw eigen risico — dat is alles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOORDELEN -->
+<section class="content-sectie grijs">
+  <div class="sectie-inner">
+    <div class="sectie-kop">
+      <p class="sectie-label">Waarom No-Risk</p>
+      <h2 class="sectie-titel">Wat u van ons mag verwachten</h2>
+    </div>
+    <div class="voordelen-grid">
+      <div class="voordeel">
+        <div class="voordeel-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="voordeel-text">
+          <strong>Geen eigen risico bij sterreparatie</strong>
+          <span>Bij de meeste SAA-polissen betaalt u niets bij een kleine sterreparatie via Glasgarant.</span>
+        </div>
+      </div>
+      <div class="voordeel">
+        <div class="voordeel-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="voordeel-text">
+          <strong>Direct herstel op afspraak</strong>
+          <span>Sterreparaties zijn vaak klaar terwijl u wacht. Vervanging plannen wij snel in op een locatie naar keuze.</span>
+        </div>
+      </div>
+      <div class="voordeel">
+        <div class="voordeel-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="voordeel-text">
+          <strong>BOVAG en Glasgarant autoruitherstel</strong>
+          <span>Als A-status herstelbedrijf voldoen wij aan de hoogste kwaliteitsnormen die verzekeraars eisen.</span>
+        </div>
+      </div>
+      <div class="voordeel">
+        <div class="voordeel-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="voordeel-text">
+          <strong>Wij regelen de administratie</strong>
+          <span>Van schademelding tot factuur — wij communiceren rechtstreeks met SAA en uw tussenpersoon.</span>
+        </div>
+      </div>
+      <div class="voordeel">
+        <div class="voordeel-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="voordeel-text">
+          <strong>Meerdere vestigingen</strong>
+          <span>Rotterdam, Barendrecht, Spijkenisse, Den Haag en Amsterdam. Of mobiel aan huis.</span>
+        </div>
+      </div>
+      <div class="voordeel">
+        <div class="voordeel-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="voordeel-text">
+          <strong>Score 9,8 van klanten</strong>
+          <span>Meer dan 1.000 klanten per jaar beoordelen onze service met een gemiddelde van 9,8.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="content-sectie">
+  <div class="sectie-inner">
+    <div class="sectie-kop">
+      <p class="sectie-label">Veelgestelde vragen</p>
+      <h2 class="sectie-titel">Vragen over SAA<br>&amp; autoruitschade</h2>
+    </div>
+    <ul class="faq-lijst">
+      <li class="faq-item">
+        <button class="faq-vraag" aria-expanded="false">
+          Kan ik mijn autoruitschade claimen via SAA?
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-antwoord">Ja. Als uw auto WA+ of All-Risk verzekerd is via SAA heeft u recht op vergoeding van ruitschade. No-Risk regelt de melding rechtstreeks — u hoeft alleen uw polisnummer en kenteken bij de hand te hebben.</div>
+      </li>
+      <li class="faq-item">
+        <button class="faq-vraag" aria-expanded="false">
+          Betaal ik eigen risico bij ruitschade via SAA?
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-antwoord">Bij een sterreparatie is veelal geen eigen risico van toepassing. Bij vervanging geldt uw gebruikelijke eigen risico, maar als Glasgarant-bedrijf heeft u recht op het verlaagde Glasgarant-tarief. Wij checken dit altijd vooraf voor u — geen verrassingen achteraf.</div>
+      </li>
+      <li class="faq-item">
+        <button class="faq-vraag" aria-expanded="false">
+          Hoe meld ik schade via SAA bij No-Risk?
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-antwoord">U hoeft zelf niets bij SAA of uw tussenpersoon te melden. Neem contact op via telefoon, WhatsApp of het contactformulier. Wij nemen de volledige schademelding en afhandeling van u over.</div>
+      </li>
+      <li class="faq-item">
+        <button class="faq-vraag" aria-expanded="false">
+          Stijgt mijn premie als ik ruitschade claim?
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-antwoord">Nee. Ruitschade heeft geen invloed op uw schadevrije jaren en uw premie stijgt er niet door. Dit geldt voor vrijwel alle polissen via SAA.</div>
+      </li>
+      <li class="faq-item">
+        <button class="faq-vraag" aria-expanded="false">
+          Wat als mijn ruit alleen WA verzekerd is?
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-antwoord">WA-dekking vergoedt geen eigen schade. Ruitschade is alleen gedekt bij WA+ (WA-Extra) of All-Risk (Casco). Twijfelt u? Wij kijken het voor u na op basis van uw polisnummer.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA BLOK -->
+<div class="cta-blok">
+  <h2>Schade via SAA?<br>Wij regelen het.</h2>
+  <p>Bel, WhatsApp of mail ons — wij zorgen dat uw ruit zo snel mogelijk hersteld of vervangen is.</p>
+  <div class="cta-btns">
+    <a href="../contact.html" class="btn-primary">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      Schade melden
+    </a>
+    <a href="tel:+31880225800" class="btn-secondary">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      088-0225800
+    </a>
+    <a href="https://wa.me/31655726869" target="_blank" rel="noopener" class="btn-whatsapp">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="footer-logo-text" aria-label="No-Risk Autoruitservice - Home">
+        <img src="../logo.png" alt="No-Risk Autoruitservice" style="height:38px;width:auto;display:block;">
+      </a>
+      <p class="footer-tagline">BOVAG en Glasgarant autoruitherstel. Voordelig vakkundig en snel.</p>
+      <div class="footer-badges">
+        <div class="footer-badge"><img src="../bovag.png" alt="BOVAG Erkend Ruitherstel"></div>
+        <div class="footer-badge"><img src="../Glasgarant.png" alt="Glasgarant Keurmerk"></div>
+        <div class="footer-badge"><img src="../erkendduurzaam.gif" alt="Erkend Duurzaam"></div>
+        <div class="footer-badge"><img src="../Schadegarant.png" alt="Schadegarant Gecertificeerd"></div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Diensten</h4>
+      <ul>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Voorruit reparatie</a></li>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Voorruit vervangen</a></li>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Achterruit vervangen</a></li>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Mobiele autoruit service</a></li>
+        <li><a href="../autoruitschade-verzekerd.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Uw verzekering</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Locaties</h4>
+      <ul>
+        <li><a href="../amsterdam.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Amsterdam</a></li>
+        <li><a href="../rotterdam.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Rotterdam</a></li>
+        <li><a href="../denhaag.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Den Haag</a></li>
+        <li><a href="../barendrecht.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Barendrecht</a></li>
+        <li><a href="../spijkenisse.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Spijkenisse</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <ul class="footer-contact-list">
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+          <span class="ct"><a href="tel:0880225800">088-0225800</a></span>
+        </li>
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <span class="ct"><a href="mailto:info@no-risk.nl">info@no-risk.nl</a></span>
+        </li>
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+          <span class="ct"><a href="https://wa.me/31655726869" target="_blank" rel="noopener">0655726869</a></span>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-socials">
+      <h4>Socials</h4>
+      <ul class="footer-socials-list">
+        <li><a href="https://www.instagram.com/noriskautoruitservice/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#CC0000" stroke="none"/></svg>
+          Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/no-risk-autoruitservice/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="#CC0000"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@noriskautoruitservice" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="#CC0000"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          YouTube</a></li>
+        <li><a href="https://www.google.com/search?q=No-Risk+Autoruitservice+Glasgarant+herstelbedrijf#mpd=~13647546857451617395/customers/reviews" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          Google</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a href="https://no-risk.nl/algemene-voorwaarden/" target="_blank" rel="noopener">Algemene voorwaarden</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/cookie-verklaring/" target="_blank" rel="noopener">Cookie verklaring</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/disclaimer/" target="_blank" rel="noopener">Disclaimer</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/privacy-verklaring/" target="_blank" rel="noopener">Privacy verklaring</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="../index.html">© No-Risk Autoruitservice 1996-2026</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+  document.querySelectorAll('.faq-vraag').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+</script>
+<script src="../search.js"></script>
+
+</body>
+</html>
