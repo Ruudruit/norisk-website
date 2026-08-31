@@ -45,7 +45,7 @@
     /* ── NAVIGATIE ── */
     nav {
       position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-      background: rgba(17,17,17,0.95); backdrop-filter: blur(8px);
+      background: #CC0000;
       padding: 0 2rem; height: 68px;
       display: flex; align-items: center; justify-content: space-between;
       transition: background var(--transition);
@@ -56,11 +56,11 @@
     .nav-links a {
       color: rgba(255,255,255,0.85); text-decoration: none;
       padding: 0.5rem 1rem; border-radius: var(--radius);
-      font-size: 0.95rem; position: relative; transition: color var(--transition);
+      font-size: 0.95rem; font-weight: 700; position: relative; transition: color var(--transition);
     }
     .nav-links a::after {
       content: ''; position: absolute; bottom: 4px; left: 1rem; right: 1rem;
-      height: 2px; background: var(--rood);
+      height: 2px; background: #fff;
       transform: scaleX(0); transform-origin: left; transition: transform var(--transition);
     }
     .nav-links a:hover { color: var(--wit); }
@@ -70,7 +70,7 @@
       padding: 0.55rem 1.2rem !important; border-radius: var(--radius) !important;
       font-weight: 600; transition: background var(--transition), transform var(--transition) !important;
     }
-    .nav-cta:hover { background: var(--rood-hover) !important; transform: translateY(-1px); }
+    .nav-cta:hover { background: rgba(255,255,255,0.85) !important; transform: translateY(-1px); }
     .nav-cta::after { display: none !important; }
 
     /* Zoekwidget */
@@ -1417,7 +1417,7 @@
   hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
   window.addEventListener('scroll', () => {
     document.querySelector('nav').style.background =
-      window.scrollY > 60 ? 'rgba(17,17,17,0.98)' : 'rgba(17,17,17,0.95)';
+      window.scrollY > 60 ? '#aa0000' : '#CC0000';
   });
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {

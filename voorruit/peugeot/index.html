@@ -35,7 +35,7 @@
     }
     .nav-links a::after {
       content: ''; position: absolute; bottom: 4px; left: 0.9rem; right: 0.9rem;
-      height: 2px; background: var(--rood);
+      height: 2px; background: #fff;
       transform: scaleX(0); transform-origin: left; transition: transform var(--transition);
     }
     .nav-links a:hover { color: #fff; }
@@ -43,7 +43,7 @@
     .nav-cta { background: var(--rood); color: #fff !important;
       padding: 0.5rem 1.1rem !important; border-radius: var(--radius) !important;
       font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
-    .nav-cta:hover { background: var(--rood-hover) !important; }
+    .nav-cta:hover { background: rgba(255,255,255,0.85) !important; }
     .nav-cta::after { display: none !important; }
     /* Zoekbalk */
     .nav-search { position: relative; display: flex; align-items: center; margin-left: 0.75rem; }
@@ -68,6 +68,13 @@
     .sr-label { font-size: 0.9rem; font-weight: 500; }
     .sr-label mark { background: none; color: var(--rood); font-weight: 700; }
     .sr-bj { font-size: 0.78rem; color: #999; white-space: nowrap; margin-left: 8px; }
+    .sr-icon { margin-right: 5px; font-size: 0.85rem; }
+    .sr-badge { font-size: 0.72rem; font-weight: 600; padding: 2px 7px; border-radius: 10px; white-space: nowrap; margin-left: 8px; }
+    .sr-badge--locatie { background: #e8f4ff; color: #1565c0; }
+    .sr-badge--dienst  { background: #fff3e0; color: #e65100; }
+    .sr-badge--info    { background: #f3e5f5; color: #6a1b9a; }
+    .sr-badge--merk    { background: #e8f5e9; color: #2e7d32; }
+    .sr-badge--pagina  { background: #fafafa; color: #555; }
     .sr-empty { padding: 12px 14px; color: #999; font-size: 0.88rem; }
     /* Hamburger */
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer;
