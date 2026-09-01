@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ruitschade melden | No-Risk Autoruitservice</title>
-  <meta name="description" content="Voorruit stuk, ster of barst? Meld uw autoruitschade online in 4 stappen. Via uw verzekering, veelal zonder eigen risico. No-Risk Autoruitservice — BOVAG en Glasgarant gecertificeerd.">
+  <meta name="description" content="Voorruit stuk, ster of barst? Meld uw autoruitschade online in 4 stappen. Via uw verzekering, verlaagd of geen eigen risico. No-Risk Autoruitservice — BOVAG en Glasgarant gecertificeerd.">
   <link rel="canonical" href="https://no-risk.nl/ruitschade-melden/">
   <script type="application/ld+json">
   {
@@ -291,7 +291,7 @@
   .nrw .result-norisk { background: #D0021B; border-radius: 6px; padding: 28px 24px; text-align: center; margin-bottom: 20px; }
   .nrw .result-norisk .r-icon { font-size: 36px; margin-bottom: 10px; }
   .nrw .result-norisk .r-title { font-size: 20px; text-transform: uppercase; letter-spacing: 2px; color: #fff; margin-bottom: 8px; }
-  .nrw .result-norisk .r-sub { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+  .nrw .result-norisk .r-sub { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.6; }
   .nrw .result-norisk .r-btn { display: inline-block; margin-top: 16px; padding: 11px 28px; background: #fff; color: #D0021B; border-radius: 2px; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; font-family: 'Ropa Sans', sans-serif; }
   .nrw .result-others-title { font-size: 13px; color: #aaa; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
   .nrw .result-list { display: flex; flex-direction: column; gap: 8px; }
@@ -836,6 +836,7 @@ var NR_PC_COORDS={1000:[52.374,4.89],1001:[52.374,4.89],1002:[52.374,4.89],1003:
     var startDay = (first.getDay() + 6) % 7; // ma=0
     var daysInMonth = new Date(y, m + 1, 0).getDate();
     var today = new Date(); today.setHours(0,0,0,0);
+    var minDate = new Date(today); minDate.setDate(minDate.getDate() + 1);
     var grid = document.getElementById('nr-cal-grid');
     grid.innerHTML = '';
     for (var i = 0; i < startDay; i++) {
@@ -846,9 +847,9 @@ var NR_PC_COORDS={1000:[52.374,4.89],1001:[52.374,4.89],1002:[52.374,4.89],1003:
       var el = document.createElement('div');
       el.className = 'nrcd';
       el.textContent = d;
-      if (date > today) { el.classList.add('future'); }
+      if (date >= minDate) { el.classList.add('future'); }
       else {
-        if (date.toDateString() === today.toDateString()) el.classList.add('today');
+        // past or today: not selectable
         if (nrCalSelected && date.toDateString() === nrCalSelected.toDateString()) el.classList.add('selected');
         (function(dt){ el.onclick = function(e){ e.stopPropagation(); nrSelectDate(dt); }; })(date);
       }
@@ -1062,6 +1063,7 @@ var NR_PC_COORDS={1000:[52.374,4.89],1001:[52.374,4.89],1002:[52.374,4.89],1003:
     var startDay = (first.getDay() + 6) % 7;
     var days     = new Date(y, m + 1, 0).getDate();
     var today    = new Date(); today.setHours(0,0,0,0);
+    var minDate  = new Date(today); minDate.setDate(minDate.getDate() + 1);
     var grid     = document.getElementById('nr-apc-grid');
     grid.innerHTML = '';
     for (var i = 0; i < startDay; i++) {
@@ -1073,7 +1075,7 @@ var NR_PC_COORDS={1000:[52.374,4.89],1001:[52.374,4.89],1002:[52.374,4.89],1003:
       var el    = document.createElement('div');
       el.className = 'nrcd';
       el.textContent = d;
-      var isPast    = date <= today;
+      var isPast    = date < minDate;
       var isZondag  = dow === 0;
       if (isPast || isZondag) {
         el.classList.add('future'); // grey out
@@ -1189,7 +1191,7 @@ var NR_PC_COORDS={1000:[52.374,4.89],1001:[52.374,4.89],1002:[52.374,4.89],1003:
         '<div class="result-norisk">' +
           '<div class="r-icon">&#10003;</div>' +
           '<div class="r-title">Wij helpen u verder!</div>' +
-          '<div class="r-sub">No-Risk Autoruitservice heeft een contract met ' + nrGekozenVerzekeraar + ' voor het vervangen van uw voorruit. Wij regelen alles rechtstreeks met uw verzekeraar — u betaalt geen voorschot.<br><br>Wij helpen u graag op een vestiging of mobiel aan huis of op uw werk.</div>' +
+          '<div class="r-sub">No-Risk Autoruitservice heeft een contract met ' + nrGekozenVerzekeraar + ' voor het vervangen van uw voorruit. Wij regelen alles rechtstreeks met uw verzekeraar — u betaalt geen voorschot.<br><br>Wij helpen u graag op afspraak bij &eacute;&eacute;n van onze vestigingen van uw keuze.</div>' +
         '</div>';
       document.getElementById('nr-afspraak-blok').style.display = 'block';
       verstuurBtn.style.display = 'inline-block';
