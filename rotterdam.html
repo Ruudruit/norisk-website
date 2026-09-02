@@ -119,10 +119,17 @@
 
     /* ── PAGE HEADER (locatiepagina) ── */
     .page-header {
-      background: linear-gradient(135deg, #111 60%, #330000 100%);
-      padding: 120px 2rem 60px;
+      position: relative;
+      background: url('barendrecht-vestiging.jpg') center center / cover no-repeat;
+      padding: 120px 2rem 70px;
       text-align: center;
     }
+    .page-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(17,0,0,0.80) 100%);
+    }
+    .page-header > * { position: relative; z-index: 1; }
     .page-header .breadcrumb {
       font-size: 0.82rem; color: rgba(255,255,255,0.5);
       margin-bottom: 1.2rem; display: flex; justify-content: center; align-items: center; gap: 0.4rem;
@@ -673,7 +680,7 @@
       <a href="index.html" class="footer-logo-text" aria-label="No-Risk Autoruitservice - Home">
         <img src="logo-rood.png" alt="No-Risk Autoruitservice" style="height:38px;width:auto;display:block;">
       </a>
-      <p class="footer-tagline">BOVAG en Glasgarant autoruitherstel. Voordelig vakkundig en snel.</p>
+      <p class="footer-tagline">BOVAG en Glasgarant autoruitherstel.</p>
       <div class="footer-badges">
         <div class="footer-badge"><img src="bovag.png" alt="BOVAG Erkend Ruitherstel"></div>
         <div class="footer-badge"><img src="Glasgarant.png" alt="Glasgarant Keurmerk"></div>
