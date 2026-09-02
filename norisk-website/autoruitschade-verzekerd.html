@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uw Verzekering – No-Risk Autoruitservice</title>
+  <meta name="description" content="No-Risk Autoruitservice werkt rechtstreeks samen met alle grote Nederlandse verzekeraars. Ruitschade melden? Wij regelen alles — verlaagd of geen eigen risico.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Is mijn autoruitschade verzekerd?","acceptedAnswer":{"@type":"Answer","text":"Ruitschade is verzekerd als uw auto WA+ (WA-Extra) of Casco (All-Risk) verzekerd is. Bij een sterretje of kleine ster is reparatie via Glasgarant vaak mogelijk zonder eigen risico."}},
+      {"@type":"Question","name":"Stijgt mijn premie door claimen autoruitschade?","acceptedAnswer":{"@type":"Answer","text":"Nee. Ruitschade heeft geen invloed op uw schadevrije jaren en uw premie stijgt er niet door."}},
+      {"@type":"Question","name":"Scheur in voorruit door steenslag?","acceptedAnswer":{"@type":"Answer","text":"Een kleine ster of barst door steenslag kan vaak gerepareerd worden. Dat is snel, goedkoop en bij veel verzekeraars zonder eigen risico. Rij nooit door met een beschadigde voorruit — schade breidt zich snel uit."}},
+      {"@type":"Question","name":"Autoruit kapot door vandalisme?","acceptedAnswer":{"@type":"Answer","text":"Schade door vandalisme is gedekt als u WA+ of All-Risk verzekerd bent. Maak altijd een melding bij de politie voordat u de schade claimt."}},
+      {"@type":"Question","name":"Autoruitschade door inbraak?","acceptedAnswer":{"@type":"Answer","text":"Schade aan de ruit door inbraak valt ook onder WA+ of All-Risk. Zorg voor een politiemelding als bewijs voor uw verzekeraar."}},
+      {"@type":"Question","name":"Wat valt niet onder de verzekering?","acceptedAnswer":{"@type":"Answer","text":"Autoruitschade wordt niet vergoed als uw auto enkel WA verzekerd is. WA is bedoeld voor vergoeding van schade aan anderen, niet aan uw eigen voertuig."}},
+      {"@type":"Question","name":"Worden krassen in de voorruit vergoed?","acceptedAnswer":{"@type":"Answer","text":"Nee. Krassen in de voorruit vallen doorgaans niet onder de ruitscha deverzekering, omdat het om slijtage gaat en niet om een plotselinge beschadiging."}},
+      {"@type":"Question","name":"Is autoruitschade na aanrijding verzekerd?","acceptedAnswer":{"@type":"Answer","text":"Schade als gevolg van een aanrijding valt onder de WA-schaderegeling (als de tegenpartij schuld heeft) of uw eigen casco-dekking. Dit is een aparte procedure van ruitschadeverzekering."}}
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rood: #CC0000;
+      --rood-hover: #aa0000;
+      --zwart: #111111;
+      --grijs: #333333;
+      --lichtgrijs: #f5f5f5;
+      --wit: #ffffff;
+      --font: 'Segoe UI', Arial, sans-serif;
+      --radius: 8px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.10);
+      --transition: 0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--zwart); background: var(--wit); line-height: 1.6; }
+
+    /* ── NAVIGATIE ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: #CC0000;
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background var(--transition);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.85); text-decoration: none;
+      padding: 0.5rem 1rem; border-radius: var(--radius);
+      font-size: 0.95rem; font-weight: 700; position: relative; transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 4px; left: 1rem; right: 1rem;
+      height: 2px; background: #fff;
+      transform: scaleX(0); transform-origin: left; transition: transform var(--transition);
+    }
+    .nav-links a:hover { color: var(--wit); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta {
+      background: var(--rood); color: var(--wit) !important;
+      padding: 0.55rem 1.2rem !important; border-radius: var(--radius) !important;
+      font-weight: 600; transition: background var(--transition), transform var(--transition) !important;
+    }
+    .nav-cta:hover { background: rgba(255,255,255,0.85) !important; transform: translateY(-1px); }
+    .nav-cta::after { display: none !important; }
+
+    /* Zoekwidget */
+    .nav-search { position: relative; display: flex; align-items: center; margin-left: 0.75rem; }
+    .nav-search-icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); cursor: pointer; flex-shrink: 0; }
+    .nav-search-icon svg { width: 16px; height: 16px; fill: none; stroke: rgba(255,255,255,0.8); stroke-width: 2; }
+    #search-input { background: none; border: none; outline: none; color: #fff; font-size: 0.9rem; width: 160px; padding: 4px 8px; }
+    #search-input::placeholder { color: rgba(255,255,255,0.5); }
+    .search-box { display: none; position: absolute; right: 0; top: calc(100% + 10px);
+      width: 340px; background: #fff; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      list-style: none; overflow: hidden; z-index: 2000; }
+    .search-box.open { display: block; }
+    .sr-item { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; text-decoration: none; color: #222; transition: background 0.15s; }
+    .sr-item:hover, .sr-item:focus { background: #f5f5f5; outline: none; }
+    .sr-label { font-size: 0.9rem; font-weight: 500; }
+    .sr-label mark { background: none; color: var(--rood); font-weight: 700; }
+    .sr-icon { margin-right: 5px; font-size: 0.85rem; }
+    .sr-bj { font-size: 0.78rem; color: #999; white-space: nowrap; margin-left: 8px; }
+    .sr-badge { font-size: 0.72rem; font-weight: 600; padding: 2px 7px; border-radius: 10px; white-space: nowrap; margin-left: 8px; }
+    .sr-badge--locatie { background: #e8f4ff; color: #1565c0; }
+    .sr-badge--dienst  { background: #fff3e0; color: #e65100; }
+    .sr-badge--info    { background: #f3e5f5; color: #6a1b9a; }
+    .sr-badge--merk    { background: #e8f5e9; color: #2e7d32; }
+    .sr-badge--pagina  { background: #fafafa; color: #555; }
+    .sr-badge--volmacht { background: #fce8e8; color: #b71c1c; }
+    .sr-empty { padding: 12px 14px; color: #999; font-size: 0.88rem; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: var(--transition); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, #111 55%, #1a0000 100%);
+      padding: 120px 2rem 64px;
+      text-align: center;
+    }
+    .page-header .breadcrumb {
+      font-size: 0.82rem; color: rgba(255,255,255,0.5);
+      margin-bottom: 1.2rem; display: flex; justify-content: center; align-items: center; gap: 0.4rem;
+    }
+    .page-header .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color var(--transition); }
+    .page-header .breadcrumb a:hover { color: var(--wit); }
+    .page-header .breadcrumb span { color: rgba(255,255,255,0.25); }
+    .page-header .dienst-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(204,0,0,0.22); border: 1px solid rgba(204,0,0,0.45);
+      color: #ff9999; padding: 5px 16px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.5px;
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800;
+      color: var(--wit); line-height: 1.15; margin-bottom: 1rem; text-wrap: balance;
+    }
+    .page-header h1 em { color: var(--rood); font-style: normal; }
+    .page-header p {
+      color: rgba(255,255,255,0.75); font-size: 1.05rem;
+      max-width: 600px; margin: 0 auto 2rem;
+    }
+    .page-header-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--rood); color: var(--wit);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 16px rgba(204,0,0,0.4);
+    }
+    .btn-primary:hover { background: var(--rood-hover); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(204,0,0,0.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.1); color: var(--wit);
+      border: 2px solid rgba(255,255,255,0.4);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 600; text-decoration: none;
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); border-color: var(--wit); transform: translateY(-2px); }
+    .btn-whatsapp-hero {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25D366; color: var(--wit);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 600; text-decoration: none;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+    }
+    .btn-whatsapp-hero:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,211,102,0.45); }
+
+    /* ── STATS BALK ── */
+    .stats-balk { background: var(--rood); padding: 0.9rem 2rem; }
+    .stats-balk-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    }
+    .stats-item { display: flex; align-items: center; gap: 8px; color: var(--wit); font-size: 0.9rem; font-weight: 600; }
+    .stats-item svg { width: 18px; height: 18px; fill: none; stroke: var(--wit); stroke-width: 2; flex-shrink: 0; }
+
+    /* ── VERZEKERAARS SECTIE ── */
+    .verzekeraars-sectie { padding: 5rem 2rem; background: var(--wit); }
+    .sectie-inner { max-width: 1100px; margin: 0 auto; }
+    .sectie-kop { text-align: center; margin-bottom: 3rem; }
+    .sectie-label { color: var(--rood); font-size: 0.82rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .sectie-titel { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 800; line-height: 1.2; margin-bottom: 0.9rem; text-wrap: balance; }
+    .sectie-tekst { color: var(--grijs); font-size: 1rem; max-width: 640px; margin: 0 auto; line-height: 1.75; }
+
+    /* Tegel-grid */
+    .tegel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+      align-items: stretch;
+    }
+
+    /* Basis tegel */
+    .verzekeraar-tegel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--wit);
+      border: 2px solid var(--lichtgrijs);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem 0.85rem;
+      text-decoration: none;
+      color: var(--zwart);
+      min-height: 100px;
+      position: relative;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+    .verzekeraar-tegel:hover {
+      border-color: var(--rood);
+      box-shadow: 0 6px 20px rgba(204,0,0,0.13);
+      transform: translateY(-2px);
+    }
+
+    /* Logo-tegel: logo bovenaan, naam klein eronder */
+    .verzekeraar-tegel.heeft-logo {
+      padding: 1.3rem 1rem 0.7rem;
+      justify-content: flex-start;
+    }
+    .tegel-logo {
+      max-height: 54px;
+      max-width: 130px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .tegel-naam {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #888;
+      text-align: center;
+      line-height: 1.3;
+      letter-spacing: 0.01em;
+    }
+    .verzekeraar-tegel:not(.heeft-logo) .tegel-naam {
+      font-size: 0.9rem;
+      color: var(--zwart);
+      font-weight: 800;
+    }
+
+    /* Pijl-chip rechtsonder */
+    .tegel-pijl {
+      position: absolute;
+      bottom: 0.6rem;
+      right: 0.7rem;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: rgba(204,0,0,0.1);
+      display: flex; align-items: center; justify-content: center;
+      transition: background var(--transition);
+    }
+    .verzekeraar-tegel:hover .tegel-pijl { background: var(--rood); }
+    .tegel-pijl svg { width: 11px; height: 11px; fill: none; stroke: var(--rood); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; transition: stroke var(--transition); }
+    .verzekeraar-tegel:hover .tegel-pijl svg { stroke: #fff; }
+
+
+    /* Groep-heading binnen verzekeraars-sectie */
+    .groep-kop {
+      margin: 3rem 0 1.25rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .groep-kop:first-of-type { margin-top: 2rem; }
+    .groep-kop h3 {
+      font-size: 1.05rem; font-weight: 800; color: var(--zwart);
+      white-space: nowrap;
+    }
+    .groep-kop::after {
+      content: ''; flex: 1; height: 2px;
+      background: linear-gradient(to right, var(--lichtgrijs), transparent);
+    }
+    .groep-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--rood);
+      background: rgba(204,0,0,0.07); padding: 2px 8px; border-radius: 4px;
+    }
+
+    /* Keurmerk-noot */
+    .keurmerk-noot {
+      display: flex; align-items: flex-start; gap: 1rem;
+      background: var(--lichtgrijs); border-left: 4px solid var(--rood);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.1rem 1.4rem; margin-top: 2.5rem;
+    }
+    .keurmerk-noot svg { width: 22px; height: 22px; fill: none; stroke: var(--rood); stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
+    .keurmerk-noot p { color: var(--grijs); font-size: 0.95rem; line-height: 1.7; }
+    .keurmerk-noot strong { color: var(--zwart); }
+
+    /* ── FAQ ── */
+    .faq-sectie { background: var(--lichtgrijs); padding: 5rem 2rem; }
+    .faq-inner { max-width: 1000px; margin: 0 auto; }
+    .faq-kolommen { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; }
+    .faq-kolom-titel {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.05rem; font-weight: 800; margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem; border-bottom: 2px solid;
+    }
+    .faq-kolom-titel.ja { color: #1b7d3a; border-color: #1b7d3a; }
+    .faq-kolom-titel.nee { color: #b71c1c; border-color: #b71c1c; }
+    .faq-kolom-titel svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .faq-item {
+      background: var(--wit); border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; text-align: left;
+      padding: 1rem 1.2rem; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 0.8rem;
+      font-family: var(--font); font-size: 0.93rem; font-weight: 700; color: var(--zwart);
+      transition: background var(--transition);
+    }
+    .faq-q:hover { background: rgba(204,0,0,0.04); }
+    .faq-q svg { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: var(--rood); stroke-width: 2.5; transition: transform 0.3s ease; }
+    .faq-item.open .faq-q svg { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+      padding: 0 1.2rem;
+    }
+    .faq-a p { color: var(--grijs); font-size: 0.93rem; line-height: 1.75; padding-bottom: 1rem; }
+    .faq-item.open .faq-a { max-height: 300px; }
+
+    /* ── WERKWIJZE SECTIE ── */
+    .werkwijze-sectie { padding: 5rem 2rem; }
+    .werkwijze-inner { max-width: 960px; margin: 0 auto; }
+    .stappen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .stap-kaart {
+      background: var(--lichtgrijs); border-radius: 12px;
+      padding: 1.8rem 1.5rem; text-align: center;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .stap-kaart:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .stap-nr {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--rood); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.1rem; margin: 0 auto 1rem;
+    }
+    .stap-kaart h3 { font-size: 1rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .stap-kaart p { font-size: 0.88rem; color: var(--grijs); line-height: 1.65; }
+
+    /* ── CTA ── */
+    .cta-sectie { background: var(--rood); text-align: center; padding: 5rem 2rem; }
+    .cta-sectie h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; color: var(--wit); margin-bottom: 1rem; }
+    .cta-sectie p { color: rgba(255,255,255,0.88); font-size: 1.05rem; max-width: 520px; margin: 0 auto 2rem; }
+    .btn-wit {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--wit); color: var(--rood);
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .btn-wit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
+    .btn-cta-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #111; color: #fff;
+      border: 2px solid #111;
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: background var(--transition);
+    }
+    .btn-cta-ghost:hover { background: #333; }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25D366; color: #fff; border: 2px solid #25D366;
+      padding: 0.9rem 2rem; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .btn-whatsapp:hover { background: #1ebe5d; border-color: #1ebe5d; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer { background: #0a0a0a; color: rgba(255,255,255,0.7); padding: 3.5rem 2rem 0; }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr 0.9fr;
+      gap: 2.5rem; padding-bottom: 3rem;
+    }
+    .footer-brand { display: flex; flex-direction: column; gap: 1.2rem; }
+    .footer-logo-text {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--wit);
+      font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px; line-height: 1.1;
+    }
+    .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.85); line-height: 1.5; margin-top: -0.4rem; }
+    .footer-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.4rem; }
+    .footer-badge {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 0.5rem 0.6rem;
+      display: flex; align-items: center; justify-content: center; min-height: 48px;
+    }
+    .footer-badge img { max-height: 32px; max-width: 100%; object-fit: contain; }
+    .footer-col h4, .footer-contact h4, .footer-socials h4 {
+      color: var(--wit); font-size: 0.78rem; font-weight: 700;
+      margin-bottom: 1.2rem; letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.88rem;
+      display: flex; align-items: center; gap: 0.5rem; transition: color var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--rood); }
+    .footer-col ul li a .arrow {
+      width: 16px; height: 16px; background: var(--rood); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .footer-col ul li a .arrow svg { width: 9px; height: 9px; fill: none; stroke: #fff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .footer-col ul li a .pin { display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .footer-col ul li a .pin svg { width: 19px; height: 19px; }
+    .footer-contact-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+    .footer-contact-list li { display: flex; align-items: center; gap: 0.75rem; }
+    .footer-contact-list .ci { width: 17px; height: 17px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .footer-contact-list .ci svg { width: 17px; height: 17px; fill: none; stroke: var(--rood); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .footer-contact-list .ci svg.filled { fill: var(--rood); stroke: none; }
+    .footer-contact-list .ct { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.4; font-weight: 600; }
+    .footer-contact-list a { color: rgba(255,255,255,0.85); text-decoration: none; transition: color var(--transition); }
+    .footer-contact-list li:hover a { color: var(--rood); }
+    .footer-socials-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .footer-socials-list li a {
+      display: flex; align-items: center; gap: 0.65rem;
+      color: rgba(255,255,255,0.85); text-decoration: none;
+      font-size: 0.9rem; font-weight: 600; transition: color var(--transition);
+    }
+    .footer-socials-list li a:hover { color: var(--rood); }
+    .footer-socials-list svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08); padding: 1.2rem 0;
+      display: flex; justify-content: center; align-items: center;
+      flex-wrap: wrap; gap: 0.6rem 1rem;
+      font-size: 0.78rem; color: rgba(255,255,255,0.35);
+      max-width: 1200px; margin: 0 auto; text-align: center;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.85); text-decoration: none; transition: color var(--transition); white-space: nowrap; }
+    .footer-bottom a:hover { color: var(--rood); }
+
+    /* ── MOBIEL ── */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0;
+        position: absolute; top: 68px; left: 0; right: 0;
+        background: rgba(17,17,17,0.98); padding: 1rem 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.75rem 2rem; border-radius: 0; }
+      .nav-links a::after { display: none; }
+      #search-input { width: 100px; }
+      .tegel-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+      .faq-kolommen { grid-template-columns: 1fr; gap: 2rem; }
+      .stappen-grid { grid-template-columns: 1fr; }
+      .stats-balk-inner { gap: 1rem; flex-direction: column; align-items: flex-start; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-socials { grid-column: 1 / -1; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-badges { grid-template-columns: repeat(4, 1fr); }
+      .footer-bottom { flex-direction: column; align-items: center; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-badges { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATIE -->
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="No-Risk Autoruitservice - Home">
+    <img src="logo.png" alt="No-Risk Autoruitservice">
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="diensten.html">Diensten</a></li>
+    <li><a href="locaties.html">Onze locaties</a></li>
+    <li><a href="autoruitschade-verzekerd.html">Uw verzekering</a></li>
+    <li><a href="over-ons.html">Over ons</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-search">
+    <div class="nav-search-icon">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </div>
+    <input type="search" id="search-input" placeholder="Zoek verzekeraar…" autocomplete="off" spellcheck="false">
+    <ul class="search-box" id="search-box" role="listbox" aria-label="Zoekresultaten"></ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    Uw Verzekering
+  </div>
+  <div class="dienst-label">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff9999" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    BOVAG en Glasgarant autoruitherstel
+  </div>
+  <h1>Uw Verzekering &amp;<br><em>Autoruitschade</em></h1>
+  <p>No-Risk werkt rechtstreeks samen met alle grote Nederlandse verzekeraars. Wij regelen de melding — u betaalt verlaagd of geen eigen risico.</p>
+  <div class="page-header-btns">
+    <a href="ruitschade-melden/" class="btn-primary">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      Online ruitschade melden
+    </a>
+    <a href="tel:+31880225800" class="btn-secondary">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Bel 088-0225800
+    </a>
+    <a href="https://wa.me/31655726869" target="_blank" rel="noopener" class="btn-whatsapp-hero">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- STATS BALK -->
+<div class="stats-balk">
+  <div class="stats-balk-inner">
+    <div class="stats-item">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      24 aangesloten verzekeraars
+    </div>
+    <div class="stats-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Veelal €0,- eigen risico bij ster
+    </div>
+    <div class="stats-item">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      Geen invloed op schadevrije jaren
+    </div>
+  </div>
+</div>
+
+<!-- VERZEKERAARS -->
+<section class="verzekeraars-sectie">
+  <div class="sectie-inner">
+    <div class="sectie-kop">
+      <p class="sectie-label">Aangesloten verzekeraars</p>
+      <h2 class="sectie-titel">Wij werken rechtstreeks samen<br>met uw verzekeraar</h2>
+      <p class="sectie-tekst">In dit overzicht vindt u alle verzekeringsmaatschappijen waarmee wij uw autoruitschade rechtstreeks mogen herstellen. Als BOVAG- en Glasgarant-erkend bedrijf herstellen wij tegen een lager of nihil eigen risico.</p>
+    </div>
+
+    <div class="groep-kop">
+      <span class="groep-label">Direct</span>
+      <h3>Verzekeringsmaatschappijen</h3>
+    </div>
+    <div class="tegel-grid">
+
+      <a href="autoruitschade-verzekerd/nationale-nederlanden.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/nationale-nederlanden.png" alt="Nationale-Nederlanden">
+        <span class="tegel-naam">Nationale-Nederlanden</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/asr.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/asr.jpg" alt="a.s.r.">
+        <span class="tegel-naam">a.s.r.</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/ohra.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/ohra.png" alt="OHRA">
+        <span class="tegel-naam">OHRA</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/klaverblad.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/klaverblad.png" alt="Klaverblad Verzekeringen">
+        <span class="tegel-naam">Klaverblad</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/de-goudse.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/de-goudse.jpg" alt="De Goudse Verzekeringen">
+        <span class="tegel-naam">De Goudse</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/de-zeeuwse.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/de-zeeuwse.jpg" alt="De Zeeuwse Verzekeringen">
+        <span class="tegel-naam">De Zeeuwse</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/som.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/som.png" alt="SOM">
+        <span class="tegel-naam">SOM</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/msig.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/msig.jpg" alt="MSIG Europe">
+        <span class="tegel-naam">MSIG Europe</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/abnamro.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/abnamro.png" alt="ABN AMRO">
+        <span class="tegel-naam">ABN AMRO</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/tvm.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/tvm.png" alt="TVM">
+        <span class="tegel-naam">TVM</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/ansvar.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/ansvar.png" alt="Ansvar Idéa">
+        <span class="tegel-naam">Ansvar Idéa</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/rhion.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/rhion.png" alt="Rhion">
+        <span class="tegel-naam">Rhion</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/amlin.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/amlin.webp" alt="MS Amlin">
+        <span class="tegel-naam">MS Amlin</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/anwb.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/anwb.webp" alt="ANWB">
+        <span class="tegel-naam">ANWB</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/bovag.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/bovag.png" alt="BOVAG Ruitherstel">
+        <span class="tegel-naam">BOVAG</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/bovemij.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/bovemij.jpg" alt="Bovemij Verzekeringen">
+        <span class="tegel-naam">Bovemij</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/ing.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/ing.jpg" alt="ING">
+        <span class="tegel-naam">ING</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/interpolis.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/interpolis.jpg" alt="Interpolis">
+        <span class="tegel-naam">Interpolis</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/unigarant.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/unigarant.jpg" alt="Unigarant">
+        <span class="tegel-naam">Unigarant</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+    </div>
+
+    <div class="groep-kop">
+      <span class="groep-label">Via volmacht</span>
+      <h3>Volmachten</h3>
+    </div>
+    <div class="tegel-grid">
+
+      <a href="autoruitschade-verzekerd/acura.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/acura.jpg" alt="Acura">
+        <span class="tegel-naam">Acura</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/aevitae.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/aevitae.jpg" alt="Aevitae">
+        <span class="tegel-naam">Aevitae</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/agevo.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/agevo.jpg" alt="Agevo">
+        <span class="tegel-naam">Agevo</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/anac-backoffice.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/anac-backoffice.jpg" alt="ANAC Backoffice">
+        <span class="tegel-naam">ANAC Backoffice</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/axi-plan-adviesgroep.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/axi-plan-adviesgroep.png" alt="AXI Plan Adviesgroep">
+        <span class="tegel-naam">AXI Plan Adviesgroep</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/baljeu.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/baljeu.png" alt="Baljeu">
+        <span class="tegel-naam">Baljeu</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/biesbosch.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/biesbosch.jpg" alt="Biesbosch Assuradeuren Anno 2000">
+        <span class="tegel-naam">Biesbosch Assuradeuren Anno 2000</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/bijdevaate.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/bijdevaate.png" alt="Bijdevaate">
+        <span class="tegel-naam">Bijdevaate</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/blauworanje.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/blauworanje.jpg" alt="BlauwOranje">
+        <span class="tegel-naam">BlauwOranje</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/bongers-lemmers.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/bongers-lemmers.jpg" alt="Bongers &amp; Lemmers">
+        <span class="tegel-naam">Bongers &amp; Lemmers</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/boot.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/boot.jpg" alt="Boot Assurantie">
+        <span class="tegel-naam">Boot Assurantie</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/brandsma.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/brandsma.jpg" alt="Brandsma Assuradeuren Oldeberkoop">
+        <span class="tegel-naam">Brandsma Assuradeuren Oldeberkoop</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/cds.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/cds.jpg" alt="CDS">
+        <span class="tegel-naam">CDS</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/centraal-nederlands-assuradeurenbedrijf.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/centraal-nederlands-assuradeurenbedrijf.png" alt="Centraal Nederlands Assuradeurenbedrijf">
+        <span class="tegel-naam">Centraal Nederlands Assuradeurenbedrijf</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/centraal-volmachtbedrijf-cvb.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/centraal-volmachtbedrijf-cvb.jpg" alt="Centraal Volmachtbedrijf CVB">
+        <span class="tegel-naam">Centraal Volmachtbedrijf CVB</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/cerass.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/cerass.png" alt="Cerass">
+        <span class="tegel-naam">Cerass</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/certe.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/certe.jpg" alt="certe assuradeuren">
+        <span class="tegel-naam">certe assuradeuren</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/chabot.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/chabot.jpg" alt="Chabot">
+        <span class="tegel-naam">Chabot</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/confident-limburg.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/confident-limburg.jpg" alt="Confident Limburg">
+        <span class="tegel-naam">Confident Limburg</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/connect.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/connect.png" alt="Connect">
+        <span class="tegel-naam">Connect</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/corstanje.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/corstanje.png" alt="Corstanje">
+        <span class="tegel-naam">Corstanje</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/cumela.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/cumela.jpg" alt="Cumela">
+        <span class="tegel-naam">Cumela</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/dak.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/dak.jpg" alt="DAK">
+        <span class="tegel-naam">DAK</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/de-waerdse.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/de-waerdse.png" alt="De Waerdse">
+        <span class="tegel-naam">De Waerdse</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/den-ouden.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/den-ouden.png" alt="Den Ouden">
+        <span class="tegel-naam">Den Ouden</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/diverz.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/diverz.jpg" alt="DiVerz!">
+        <span class="tegel-naam">DiVerz!</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/elmac.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/elmac.png" alt="Elmac">
+        <span class="tegel-naam">Elmac</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/felison.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/felison.jpg" alt="Felison">
+        <span class="tegel-naam">Felison</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/fgd.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/fgd.jpg" alt="FGD">
+        <span class="tegel-naam">FGD</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/financieel-fit.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/financieel-fit.jpg" alt="Financieel Fit |">
+        <span class="tegel-naam">Financieel Fit |</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/geerts.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/geerts.png" alt="Geerts Financiële">
+        <span class="tegel-naam">Geerts Financiële</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/ghw.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/ghw.png" alt="GHW">
+        <span class="tegel-naam">GHW</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/gouda-bredius.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/gouda-bredius.jpg" alt="Gouda &amp; Bredius">
+        <span class="tegel-naam">Gouda &amp; Bredius</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/guis-partners.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/guis-partners.jpg" alt="Guis &amp; Partners">
+        <span class="tegel-naam">Guis &amp; Partners</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/haags-assuradeuren-bedrijf.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/haags-assuradeuren-bedrijf.jpg" alt="Haags Assuradeuren Bedrijf">
+        <span class="tegel-naam">Haags Assuradeuren Bedrijf</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/hbh.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/hbh.png" alt="HBH">
+        <span class="tegel-naam">HBH</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/heeres.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/heeres.png" alt="Heeres">
+        <span class="tegel-naam">Heeres</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/heinenoord.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/heinenoord.jpg" alt="Heinenoord">
+        <span class="tegel-naam">Heinenoord</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/hoeksche-waard.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/hoeksche-waard.png" alt="Hoeksche Waard">
+        <span class="tegel-naam">Hoeksche Waard</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/hollandia.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/hollandia.png" alt="Hollandia">
+        <span class="tegel-naam">Hollandia</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/hoorn-de-vos.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/hoorn-de-vos.png" alt="Hoorn De Vos Metselaar en Sturop">
+        <span class="tegel-naam">Hoorn De Vos Metselaar en Sturop</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/ifa.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/ifa.png" alt="IFA">
+        <span class="tegel-naam">IFA</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/independer.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/independer.jpg" alt="Independer.nl">
+        <span class="tegel-naam">Independer.nl</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/insura-quest.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/insura-quest.png" alt="Insura Quest">
+        <span class="tegel-naam">Insura Quest</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/intermed.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/intermed.jpg" alt="Intermed">
+        <span class="tegel-naam">Intermed</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/intermont.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/intermont.png" alt="Intermont">
+        <span class="tegel-naam">Intermont</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/istr.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/istr.png" alt="ISTR">
+        <span class="tegel-naam">ISTR</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/khb.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/khb.jpg" alt="KHB">
+        <span class="tegel-naam">KHB</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/klg-nomden.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/klg-nomden.jpg" alt="KLG Nomden">
+        <span class="tegel-naam">KLG Nomden</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/kuiper.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/kuiper.png" alt="Kuiper">
+        <span class="tegel-naam">Kuiper</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/lancyr.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/lancyr.png" alt="Lancyr">
+        <span class="tegel-naam">Lancyr</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/langterm.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/langterm.jpg" alt="Langterm">
+        <span class="tegel-naam">Langterm</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/laponder.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/laponder.jpg" alt="Laponder">
+        <span class="tegel-naam">Laponder</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/lukassen-boer.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/lukassen-boer.jpg" alt="Lukassen &amp; Boer">
+        <span class="tegel-naam">Lukassen &amp; Boer</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/lussenburg.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/lussenburg.jpg" alt="Lussenburg">
+        <span class="tegel-naam">Lussenburg</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/luyten.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/luyten.jpg" alt="Luyten">
+        <span class="tegel-naam">Luyten</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/mandaat.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/mandaat.png" alt="Mandaat">
+        <span class="tegel-naam">Mandaat</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/meijers.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/meijers.jpg" alt="Meijers">
+        <span class="tegel-naam">Meijers</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/nedasco.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/nedasco.jpg" alt="Nedasco">
+        <span class="tegel-naam">Nedasco</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/nederlandse-assuradeuren.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/nederlandse-assuradeuren.jpg" alt="Nederlandse Assuradeuren">
+        <span class="tegel-naam">Nederlandse Assuradeuren</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/nlg.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/nlg.jpg" alt="NLG">
+        <span class="tegel-naam">NLG</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/noorderlinge.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/noorderlinge.jpg" alt="Noorderlinge">
+        <span class="tegel-naam">Noorderlinge</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/obm.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/obm.png" alt="OBM">
+        <span class="tegel-naam">OBM</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/omniguard.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/omniguard.jpg" alt="Omniguard">
+        <span class="tegel-naam">Omniguard</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/orivia.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/orivia.jpg" alt="Orivia Underwriting">
+        <span class="tegel-naam">Orivia Underwriting</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/overwater.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/overwater.jpg" alt="Overwater">
+        <span class="tegel-naam">Overwater</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/padmos.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/padmos.png" alt="Padmos">
+        <span class="tegel-naam">Padmos</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/polaris.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/polaris.jpg" alt="Polaris">
+        <span class="tegel-naam">Polaris</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/quintes-underwriting.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/quintes-underwriting.png" alt="Quintes Underwriting">
+        <span class="tegel-naam">Quintes Underwriting</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/raadhoven.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/raadhoven.jpg" alt="Raadhoven">
+        <span class="tegel-naam">Raadhoven</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/risk.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/risk.png" alt="Risk">
+        <span class="tegel-naam">Risk</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/robbe.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/robbe.png" alt="Robbe Financiële">
+        <span class="tegel-naam">Robbe Financiële</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/saa.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/saa.png" alt="SAA">
+        <span class="tegel-naam">SAA</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/salland.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/salland.png" alt="Salland">
+        <span class="tegel-naam">Salland</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/schouten-zekerheid.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/schouten-zekerheid.jpg" alt="Schouten Zekerheid">
+        <span class="tegel-naam">Schouten Zekerheid</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/sleutelstad.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/sleutelstad.jpg" alt="Sleutelstad">
+        <span class="tegel-naam">Sleutelstad</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/sovib.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/sovib.jpg" alt="Sovib">
+        <span class="tegel-naam">Sovib</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/streefkerk.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/streefkerk.jpg" alt="Streefkerk makelaars o.g. &amp; assurantiën">
+        <span class="tegel-naam">Streefkerk makelaars o.g. &amp; assurantiën</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/supergarant.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/supergarant.jpg" alt="SuperGarant">
+        <span class="tegel-naam">SuperGarant</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/surebusiness.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/surebusiness.jpg" alt="SUREbusiness">
+        <span class="tegel-naam">SUREbusiness</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/soderberg-partners.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/soderberg-partners.jpg" alt="Söderberg &amp; Partners">
+        <span class="tegel-naam">Söderberg &amp; Partners</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/thoma-berkelstaete.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/thoma-berkelstaete.jpg" alt="Thoma &amp; Berkelstaete">
+        <span class="tegel-naam">Thoma &amp; Berkelstaete</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/uiterwijk-winkel.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/uiterwijk-winkel.png" alt="Uiterwijk Winkel">
+        <span class="tegel-naam">Uiterwijk Winkel</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/van-den-hoven.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/van-den-hoven.png" alt="Van den Hoven">
+        <span class="tegel-naam">Van den Hoven</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/van-helvoort.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/van-helvoort.jpg" alt="Van Helvoort">
+        <span class="tegel-naam">Van Helvoort</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/van-marwijk.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/van-marwijk.jpg" alt="Van Marwijk">
+        <span class="tegel-naam">Van Marwijk</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/vcn.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/vcn.jpg" alt="VCN">
+        <span class="tegel-naam">VCN</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/veerhaven.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/veerhaven.jpg" alt="Veerhaven">
+        <span class="tegel-naam">Veerhaven</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/verheul.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/verheul.png" alt="Verheul">
+        <span class="tegel-naam">Verheul</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/victor-insurance-europe.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/victor-insurance-europe.jpg" alt="Victor Insurance Europe">
+        <span class="tegel-naam">Victor Insurance Europe</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/vkg-incl-5319-5138.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/vkg-incl-5319-5138.png" alt="VKG incl. 5319, 5138">
+        <span class="tegel-naam">VKG incl. 5319, 5138</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/voogd-voogd.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/voogd-voogd.jpg" alt="Voogd &amp; Voogd">
+        <span class="tegel-naam">Voogd &amp; Voogd</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/vrieling.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/vrieling.jpg" alt="Vrieling">
+        <span class="tegel-naam">Vrieling</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/ww.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/ww.png" alt="W&amp;W">
+        <span class="tegel-naam">W&amp;W</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/weitenberg.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/weitenberg.png" alt="Weitenberg">
+        <span class="tegel-naam">Weitenberg</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/wildschut.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/wildschut.jpg" alt="Wildschut">
+        <span class="tegel-naam">Wildschut</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/woongarant.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/woongarant.jpg" alt="Woongarant">
+        <span class="tegel-naam">Woongarant</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/yinco.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/yinco.jpg" alt="Yinco">
+        <span class="tegel-naam">Yinco</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/yousure.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/yousure.jpg" alt="YouSure Verzekeringen">
+        <span class="tegel-naam">YouSure Verzekeringen</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="autoruitschade-verzekerd/zicht.html" class="verzekeraar-tegel heeft-logo">
+        <img class="tegel-logo" src="autoruitschade-verzekerd/logos/zicht.jpg" alt="Zicht">
+        <span class="tegel-naam">Zicht</span>
+        <span class="tegel-pijl"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+    </div>
+
+    <div class="keurmerk-noot">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p><strong>Geen eigen risico bij sterreparatie.</strong> Als A-status Glasgarant herstelbedrijf repareren wij een ster of kleine barst via de meeste aangesloten verzekeraars zonder eigen risico. Bij vervanging geldt afhankelijk van uw verzekeraar een verlaagd eigen risico — wij checken dit altijd direct voor u.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sectie">
+  <div class="faq-inner">
+    <div class="sectie-kop">
+      <p class="sectie-label">Vraag &amp; antwoord</p>
+      <h2 class="sectie-titel">Wat is wel en niet verzekerd?</h2>
+    </div>
+
+    <div class="faq-kolommen">
+
+      <!-- WEL VERGOED -->
+      <div>
+        <div class="faq-kolom-titel ja">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1b7d3a" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Wel vergoed
+        </div>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Is mijn autoruitschade verzekerd?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><p>Ruitschade is verzekerd als uw auto WA+ (ook wel WA-Extra) of Casco (All-Risk) verzekerd is. Heeft u alleen de verplichte WA-dekking, dan wordt ruitschade niet vergoed door uw eigen verzekeraar.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Stijgt mijn premie door claimen autoruitschade?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><p>Nee. Ruitschade heeft géén invloed op uw schadevrije jaren en uw premie stijgt er niet door. U kunt dus zonder zorgen claimen — het is precies waarvoor u verzekerd bent.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Scheur in voorruit door steenslag?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><p>Een kleine ster of barst door steenslag kan in veel gevallen worden gerepareerd — snel, goedkoop, en bij de meeste Glasgarant-verzekeraars zonder eigen risico. Wacht niet te lang: schade breidt zich uit door trillingen en temperatuurverschillen.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Autoruit kapot door vandalisme?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><p>Schade door vandalisme is gedekt als u WA+ of All-Risk verzekerd bent. Maak eerst een politiemelding (online of bij het bureau) en neem die mee als u de schade meldt — de meeste verzekeraars vragen hierom.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Autoruitschade door inbraak?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><p>Schade aan de ruit door inbraak valt ook onder WA+ of All-Risk. Doe aangifte bij de politie en bewaar het politierapportnummer — uw verzekeraar heeft dit nodig bij de schademelding.</p></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- NIET VERGOED -->
+      <div>
+        <div class="faq-kolom-titel nee">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b71c1c" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Niet vergoed
+        </div>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Enkel WA verzekerd — wat nu?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><p>Autoruitschade wordt niet vergoed als uw auto enkel WA verzekerd is. WA-dekking is bedoeld voor vergoeding van schade aan derden, niet aan uw eigen voertuig. U kunt de kosten wel zelf betalen — bel ons voor een offerte.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Krassen in de voorruit
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><p>Krassen vallen doorgaans niet onder de ruitschadeverzekering, omdat het om geleidelijke slijtage gaat en niet om een plotselinge en onverwachte gebeurtenis. U kunt de ruit wel op eigen kosten laten vervangen.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Autoruitschade bij gebruikte auto?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><p>Schade die al aanwezig was op het moment van aankoop of verzekering wordt niet vergoed. Verzekering dekt alleen nieuwe, onvoorziene schadegebeurtenissen. Meld dit bij ons — we kijken graag mee naar een oplossing.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Autoruitschade na aanrijding?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><p>Schade als gevolg van een aanrijding valt niet onder de ruitschadeverzekering, maar onder de cascoverzekering (All-Risk) of WA van de schuldige partij. Dit is een aparte claimroute — bel uw verzekeraar voor de juiste procedure.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              Scheur in panoramadak?
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-a"><p>Panoramadaken vallen niet altijd onder de standaard ruitschadeverzekering. Dit is afhankelijk van uw polis. Check uw polisblad of bel uw verzekeraar om na te gaan of u hiervoor gedekt bent.</p></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WERKWIJZE -->
+<section class="werkwijze-sectie">
+  <div class="werkwijze-inner">
+    <div class="sectie-kop">
+      <p class="sectie-label">Hoe werkt het</p>
+      <h2 class="sectie-titel">Schade melden in 3 stappen</h2>
+      <p class="sectie-tekst" style="margin-top:0.5rem;">Wij nemen het contact met uw verzekeraar volledig uit handen.</p>
+    </div>
+    <div class="stappen-grid">
+      <div class="stap-kaart">
+        <div class="stap-nr">1</div>
+        <h3>Meld uw schade</h3>
+        <p>Bel ons op 088-0225800, stuur een WhatsApp of vul het online formulier in. U hoeft zelf niets bij uw verzekeraar te melden.</p>
+      </div>
+      <div class="stap-kaart">
+        <div class="stap-nr">2</div>
+        <h3>Wij regelen alles</h3>
+        <p>No-Risk checkt uw verzekeringsdekking en meldt de schade rechtstreeks bij uw verzekeraar. U betaalt veelal geen voorschot.</p>
+      </div>
+      <div class="stap-kaart">
+        <div class="stap-nr">3</div>
+        <h3>Afspraak &amp; herstel</h3>
+        <p>We plannen een afspraak op een moment dat u uitkomt. Na herstel kalibreren wij uw ADAS-systemen en ontvangt u levenslange BOVAG garantie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sectie">
+  <div style="max-width:1200px;margin:0 auto;">
+    <h2>Autoruit stuk? Bel ons nu.</h2>
+    <p>Wij staan klaar om u zo snel mogelijk te helpen op 4 locaties in de Randstad</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="tel:0880225800" class="btn-wit">📞 Direct bellen</a>
+      <a href="ruitschade-melden/" class="btn-cta-ghost">Online ruitschade melden</a>
+      <a href="https://wa.me/31655726869" target="_blank" rel="noopener" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-text" aria-label="No-Risk Autoruitservice - Home">
+        <img src="logo-rood.png" alt="No-Risk Autoruitservice" style="height:38px;width:auto;display:block;">
+      </a>
+      <p class="footer-tagline">BOVAG en Glasgarant autoruitherstel.</p>
+      <div class="footer-badges">
+        <div class="footer-badge"><img src="bovag.png" alt="BOVAG Erkend Ruitherstel"></div>
+        <div class="footer-badge"><img src="Glasgarant.png" alt="Glasgarant Keurmerk"></div>
+        <div class="footer-badge"><img src="erkendduurzaam.gif" alt="Erkend Duurzaam"></div>
+        <div class="footer-badge"><img src="Schadegarant.png" alt="Schadegarant Gecertificeerd"></div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Diensten</h4>
+      <ul>
+        <li><a href="diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Voorruit reparatie</a></li>
+        <li><a href="diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Voorruit vervangen</a></li>
+        <li><a href="diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Achterruit vervangen</a></li>
+        <li><a href="diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Mobiele autoruit service</a></li>
+        <li><a href="verzekering.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Uw verzekering</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Locaties</h4>
+      <ul>
+        <li><a href="amsterdam.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Amsterdam</a></li>
+        <li><a href="rotterdam.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Rotterdam</a></li>
+        <li><a href="denhaag.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Den Haag</a></li>
+        <li><a href="barendrecht.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Barendrecht</a></li>
+        <li><a href="spijkenisse.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Spijkenisse</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <ul class="footer-contact-list">
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+          <span class="ct"><a href="tel:0880225800">088-0225800</a></span>
+        </li>
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <span class="ct"><a href="mailto:info@no-risk.nl">info@no-risk.nl</a></span>
+        </li>
+        <li>
+          <span class="ci"><svg viewBox="0 0 24 24" style="fill:#25D366;stroke:none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+          <span class="ct"><a href="https://wa.me/31655726869" target="_blank" rel="noopener">0655726869</a></span>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-socials">
+      <h4>Socials</h4>
+      <ul class="footer-socials-list">
+        <li><a href="https://www.instagram.com/noriskautoruitservice/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#CC0000" stroke="none"/></svg>
+          Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/no-risk-autoruitservice/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="#CC0000"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@noriskautoruitservice" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="#CC0000"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          YouTube</a></li>
+        <li><a href="https://www.google.com/search?q=No-Risk+Autoruitservice+Glasgarant+herstelbedrijf#mpd=~13647546857451617395/customers/reviews" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          Google</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a href="https://no-risk.nl/algemene-voorwaarden/" target="_blank" rel="noopener">Algemene voorwaarden</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/cookie-verklaring/" target="_blank" rel="noopener">Cookie verklaring</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/disclaimer/" target="_blank" rel="noopener">Disclaimer</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/privacy-verklaring/" target="_blank" rel="noopener">Privacy verklaring</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="index.html">© No-Risk Autoruitservice 1996-2026</a>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+</script>
+<script src="search.js"></script>
+<script>
+  (function() {
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12') { e.preventDefault(); return; }
+      if (e.ctrlKey && ['u','s','a'].includes(e.key.toLowerCase())) { e.preventDefault(); return; }
+      if (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase())) { e.preventDefault(); return; }
+    });
+  })();
+</script>
+</body>
+</html>
