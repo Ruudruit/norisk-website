@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prijs nieuwe voorruit op kenteken – No-Risk Autoruitservice</title>
+  <meta name="description" content="Zoek direct de prijs van uw nieuwe voorruit op kenteken. No-Risk Autoruitservice — BOVAG-gecertificeerd, levenslange garantie, vaak €0,- eigen risico.">
+  <link rel="canonical" href="https://no-risk.nl/prijs-nieuwe-voorruit/">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rood: #CC0000; --rood-hover: #aa0000;
+      --zwart: #111111; --grijs: #444;
+      --lichtgrijs: #f5f5f5; --wit: #ffffff;
+      --font: 'Segoe UI', Arial, sans-serif;
+      --radius: 10px; --transition: 0.22s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--zwart); background: var(--wit); line-height: 1.6; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: #CC0000;
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none;
+      padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.95rem;
+      position: relative; transition: color var(--transition); }
+    .nav-links a::after { content: ''; position: absolute; bottom: 4px; left: 1rem; right: 1rem;
+      height: 2px; background: #fff;
+      transform: scaleX(0); transform-origin: left; transition: transform var(--transition); }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-search { position: relative; display: flex; align-items: center; margin-left: 0.75rem; }
+    .search-form {
+      display: flex; align-items: center; background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 0 8px 0 14px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .search-form:focus-within { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.45); }
+    #search-input { background: none; border: none; outline: none; color: #fff;
+      font-family: inherit; font-size: 0.875rem; width: 190px; padding: 7px 0; }
+    #search-input::placeholder { color: rgba(255,255,255,0.5); }
+    .search-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.7);
+      display: flex; align-items: center; padding: 4px; margin-left: 4px;
+      border-radius: 50%; transition: color 0.15s; }
+    .search-btn:hover { color: #fff; }
+    .search-btn svg { width: 15px; height: 15px; }
+    .search-box { display: none; position: absolute; right: 0; top: calc(100% + 10px);
+      width: 380px; background: #fff; border-radius: 10px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.22); overflow: hidden; z-index: 2000; }
+    .search-box.open { display: block; }
+    #search-results { list-style: none; max-height: 320px; overflow-y: auto; padding: 4px 0; }
+    .sr-item { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; text-decoration: none; color: #222; transition: background 0.15s; }
+    .sr-item:hover, .sr-item:focus { background: #f5f5f5; outline: none; }
+    .sr-label { font-size: 0.9rem; font-weight: 500; }
+    .sr-label mark { background: none; color: var(--rood); font-weight: 700; }
+    .sr-bj { font-size: 0.78rem; color: #999; white-space: nowrap; margin-left: 8px; }
+    .sr-badge { font-size: 0.72rem; background: #f0f0f0; color: #666; padding: 2px 7px; border-radius: 10px; white-space: nowrap; margin-left: 8px; }
+    .sr-icon { margin-right: 5px; }
+    .sr-empty { padding: 12px 14px; color: #999; font-size: 0.88rem; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+
+    /* ── MOBILE NAV ── */
+    @media (max-width: 860px) {
+      .hamburger { display: flex; }
+      .nav-links { display: none; flex-direction: column; gap: 0; position: fixed;
+        top: 68px; left: 0; width: 100%; background: #b30000;
+        padding: 1rem 0; z-index: 999; }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 0.8rem 2rem; border-radius: 0; }
+      .nav-search { display: none; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #111 55%, #330000 100%);
+      padding: 130px 2rem 80px;
+      text-align: center;
+    }
+    .breadcrumb { font-size: 0.8rem; color: rgba(255,255,255,0.45);
+      margin-bottom: 1.4rem; display: flex; justify-content: center; align-items: center; gap: 0.4rem; }
+    .breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    .breadcrumb a:hover { color: #fff; }
+    .breadcrumb span { color: rgba(255,255,255,0.2); }
+    .hero h1 { font-size: clamp(1.9rem, 4vw, 2.9rem); font-weight: 800;
+      color: #fff; line-height: 1.15; margin-bottom: 0.8rem; }
+    .hero h1 em { color: #FFD500; font-style: normal; }
+    .hero p.lead { color: rgba(255,255,255,0.72); font-size: 1.05rem;
+      max-width: 520px; margin: 0 auto 2.5rem; }
+
+    /* ── KENTEKEN WIDGET ── */
+    .kenteken-widget {
+      display: inline-flex;
+      align-items: stretch;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      max-width: 420px;
+      width: 100%;
+    }
+    .plate-flag {
+      background: #003DA5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      gap: 3px;
+      min-width: 44px;
+    }
+    .plate-flag .eu-stars {
+      color: #FFD500;
+      font-size: 8px;
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+    .plate-flag .nl-code {
+      color: #fff;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    #kenteken-input {
+      flex: 1;
+      background: #FFD500;
+      border: none;
+      outline: none;
+      font-family: 'Courier New', monospace;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #111;
+      text-align: center;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      padding: 0.7rem 1rem;
+      width: 100%;
+    }
+    #kenteken-input::placeholder {
+      color: rgba(0,0,0,0.25);
+      letter-spacing: 4px;
+      font-size: 1.7rem;
+    }
+    .kenteken-btn {
+      background: #CC0000;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0 1.4rem;
+      cursor: pointer;
+      transition: background 0.18s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .kenteken-btn:hover { background: #aa0000; }
+    .kenteken-btn svg { width: 18px; height: 18px; }
+
+    /* ── RESULTAAT SECTIE ── */
+    .resultaat-sectie {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* Loading */
+    .state-loading { text-align: center; padding: 3rem 0; }
+    .spinner {
+      width: 44px; height: 44px;
+      border: 4px solid #eee;
+      border-top-color: #CC0000;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .state-loading p { color: #888; }
+
+    /* Auto info kaart */
+    .auto-kaart {
+      background: #fff;
+      border: 1.5px solid #eee;
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .auto-kaart-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.3rem;
+    }
+    .auto-plate-display {
+      background: #FFD500;
+      font-family: 'Courier New', monospace;
+      font-weight: 900;
+      font-size: 1.3rem;
+      letter-spacing: 4px;
+      color: #111;
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      border: 2px solid rgba(0,0,0,0.08);
+    }
+    .auto-naam { font-size: 1.3rem; font-weight: 800; color: var(--zwart); }
+    .auto-naam small { font-size: 0.85rem; font-weight: 500; color: #888; display: block; }
+
+    .auto-specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.8rem;
+    }
+    .spec-item {
+      background: #f8f8f8;
+      border-radius: 8px;
+      padding: 0.6rem 0.9rem;
+    }
+    .spec-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: #999; font-weight: 600; }
+    .spec-value { font-size: 0.97rem; font-weight: 700; color: var(--zwart); margin-top: 2px; }
+
+    /* Match gevonden */
+    .match-card {
+      background: linear-gradient(135deg, #fff 60%, #fff8f8 100%);
+      border: 2px solid var(--rood);
+      border-radius: 14px;
+      padding: 1.8rem;
+      box-shadow: 0 6px 28px rgba(204,0,0,0.1);
+    }
+    .match-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 0.5rem;
+    }
+    .match-badge {
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .match-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--zwart); margin-bottom: 0.3rem; }
+    .match-card p { color: #555; margin-bottom: 1.4rem; font-size: 0.97rem; }
+    .btn-match {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--rood);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: 10px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .btn-match:hover { background: var(--rood-hover); transform: translateY(-2px); }
+    .btn-match svg { width: 18px; height: 18px; }
+    .btn-secondary-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--rood);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-left: 1.2rem;
+      transition: opacity 0.15s;
+    }
+    .btn-secondary-link:hover { opacity: 0.75; }
+
+    /* Geen match — livesearch fallback */
+    .geen-match-card {
+      background: #fff;
+      border: 1.5px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 1.8rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .geen-match-card h2 { font-size: 1.2rem; font-weight: 800; color: var(--zwart); margin-bottom: 0.5rem; }
+    .geen-match-card p { color: #666; margin-bottom: 1.4rem; font-size: 0.97rem; }
+
+    /* Live zoeken inline (fallback) */
+    .inline-search-wrap {
+      position: relative;
+    }
+    .inline-search-field {
+      display: flex;
+      align-items: center;
+      background: #f5f5f5;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      padding: 0 12px;
+      transition: border-color 0.18s;
+    }
+    .inline-search-field:focus-within { border-color: var(--rood); background: #fff; }
+    .inline-search-field svg { width: 18px; height: 18px; color: #aaa; flex-shrink: 0; }
+    #inline-search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: none;
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.85rem 0.6rem;
+      color: var(--zwart);
+    }
+    #inline-search-input::placeholder { color: #bbb; }
+    .inline-results {
+      list-style: none;
+      background: #fff;
+      border: 1.5px solid #eee;
+      border-radius: 10px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+      margin-top: 6px;
+      overflow: hidden;
+      display: none;
+    }
+    .inline-results.open { display: block; }
+    .inline-results li a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      text-decoration: none;
+      color: #222;
+      font-size: 0.93rem;
+      transition: background 0.12s;
+    }
+    .inline-results li a:hover { background: #f5f5f5; }
+    .inline-results li a mark { background: none; color: var(--rood); font-weight: 700; }
+    .il-bj { font-size: 0.78rem; color: #aaa; white-space: nowrap; margin-left: 8px; }
+    .il-empty { padding: 12px 14px; color: #aaa; font-size: 0.88rem; }
+
+    /* Error */
+    .state-error {
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .error-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .state-error h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .state-error p { color: #888; font-size: 0.95rem; margin-bottom: 1.2rem; }
+
+    /* ── USP BALK ── */
+    .usp-balk { background: var(--rood); padding: 0.9rem 2rem; }
+    .usp-balk-inner { max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .usp-item { display: flex; align-items: center; gap: 8px;
+      color: #fff; font-size: 0.9rem; font-weight: 600; }
+
+    /* ── HOE WERKT HET ── */
+    .hoe-sectie {
+      background: var(--lichtgrijs);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .hoe-sectie h2 { font-size: 1.7rem; font-weight: 800; margin-bottom: 2.5rem; }
+    .stappen {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .stap {
+      flex: 1;
+      min-width: 180px;
+      max-width: 240px;
+    }
+    .stap-num {
+      width: 48px; height: 48px;
+      background: var(--rood);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.9rem;
+    }
+    .stap h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .stap p { font-size: 0.88rem; color: #666; }
+
+    /* ── FOOTER ── */
+    footer { background: #0a0a0a; color: rgba(255,255,255,0.7); padding: 3.5rem 2rem 0; }
+    .footer-inner { max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr 1fr;
+      gap: 2.5rem; padding-bottom: 3rem; }
+    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .footer-inner { grid-template-columns: 1fr; } }
+    .footer-logo-text { text-decoration: none; display: inline-block; margin-bottom: 0.9rem; }
+    .footer-tagline { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 1.4rem; }
+    .footer-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .footer-badge { background: rgba(255,255,255,0.06); border-radius: 8px; padding: 6px 10px; display: flex; align-items: center; }
+    .footer-badge img { height: 28px; width: auto; filter: brightness(0.9); }
+    footer h4 { color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 1.1rem; }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 0.55rem; }
+    footer ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem; display: flex; align-items: center; gap: 6px; transition: color 0.18s; }
+    footer ul li a:hover { color: #fff; }
+    .arrow svg { width: 14px; height: 14px; stroke: var(--rood); fill: none; stroke-width: 2; stroke-linecap: round; }
+    .pin svg { width: 14px; height: 14px; }
+    .footer-contact-list li a { align-items: flex-start; }
+    .ci { display: flex; align-items: center; flex-shrink: 0; }
+    .ci svg { width: 16px; height: 16px; fill: none; stroke: var(--rood); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .ct { line-height: 1.3; }
+    .footer-socials-list li a { gap: 8px; align-items: center; }
+    .footer-socials-list svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 1.2rem 0;
+      text-align: center; font-size: 0.8rem; display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
+    .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+
+    /* hidden */
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="../index.html" class="nav-logo" aria-label="No-Risk Autoruitservice - Home">
+    <img src="../logo.png" alt="No-Risk Autoruitservice">
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../diensten.html">Diensten</a></li>
+    <li><a href="../locaties.html">Onze locaties</a></li>
+    <li><a href="../verzekering/index.html">Uw verzekering</a></li>
+    <li><a href="../index.html#over-ons">Over ons</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-search">
+    <div class="search-form">
+      <input type="search" id="search-input" autocomplete="off"
+        placeholder="Zoek uw automerk of model…" aria-label="Zoek op automerk of model">
+      <button class="search-btn" aria-label="Zoeken">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+    </div>
+    <div class="search-box" id="search-box" role="listbox">
+      <ul id="search-results"></ul>
+    </div>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <span>Prijs nieuwe voorruit</span>
+  </div>
+  <h1>Prijs nieuwe voorruit<br>op <em>kenteken</em> zoeken</h1>
+  <p class="lead">Voer uw kenteken in en ontdek direct welke voorruit bij uw auto past — en wat dit kost.</p>
+
+  <div class="kenteken-widget">
+    <div class="plate-flag">
+      <span class="eu-stars">★★★<br>★ ★<br>★★★</span>
+      <span class="nl-code">NL</span>
+    </div>
+    <input type="text" id="kenteken-input" maxlength="8"
+      placeholder="XX-XXX-X" autocomplete="off" autocapitalize="characters"
+      spellcheck="false" aria-label="Kenteken invoeren">
+    <button class="kenteken-btn" id="zoek-btn" aria-label="Zoek voorruit">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      Zoek
+    </button>
+  </div>
+</section>
+
+<!-- ── RESULTATEN ── -->
+<section class="resultaat-sectie" id="resultaat-sectie">
+  <!-- Wordt gevuld door JavaScript -->
+</section>
+
+<!-- ── HOE WERKT HET ── -->
+<section class="hoe-sectie">
+  <h2>Hoe werkt het?</h2>
+  <div class="stappen">
+    <div class="stap">
+      <div class="stap-num">1</div>
+      <h3>Voer uw kenteken in</h3>
+      <p>Wij zoeken uw auto direct op via het kentekenregister van de RDW.</p>
+    </div>
+    <div class="stap">
+      <div class="stap-num">2</div>
+      <h3>We tonen uw auto</h3>
+      <p>Merk, model en bouwjaar worden automatisch herkend.</p>
+    </div>
+    <div class="stap">
+      <div class="stap-num">3</div>
+      <h3>Bekijk uw voorruit</h3>
+      <p>Direct naar de juiste pagina met prijs en mogelijkheden voor uw auto.</p>
+    </div>
+    <div class="stap">
+      <div class="stap-num">4</div>
+      <h3>Online regelen</h3>
+      <p>Meld uw ruitschade direct online — vaak €0,- eigen risico via uw verzekering.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── USP BALK ── -->
+<div class="usp-balk">
+  <div class="usp-balk-inner">
+    <div class="usp-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      BOVAG-gecertificeerd
+    </div>
+    <div class="usp-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Levenslange garantie
+    </div>
+    <div class="usp-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Vaak €0,- eigen risico
+    </div>
+    <div class="usp-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Glasgarant keurmerk
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="footer-logo-text" aria-label="No-Risk Autoruitservice - Home">
+        <img src="../logo-rood.png" alt="No-Risk Autoruitservice" style="height:38px;width:auto;display:block;">
+      </a>
+      <p class="footer-tagline">BOVAG en Glasgarant autoruitherstel.</p>
+      <div class="footer-badges">
+        <div class="footer-badge"><img src="../bovag.png" alt="BOVAG Erkend Ruitherstel"></div>
+        <div class="footer-badge"><img src="../Glasgarant.png" alt="Glasgarant Keurmerk"></div>
+        <div class="footer-badge"><img src="../erkendduurzaam.gif" alt="Erkend Duurzaam"></div>
+        <div class="footer-badge"><img src="../Schadegarant.png" alt="Schadegarant Gecertificeerd"></div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Diensten</h4>
+      <ul>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Voorruit reparatie</a></li>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Voorruit vervangen</a></li>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Achterruit vervangen</a></li>
+        <li><a href="../diensten.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Mobiele autoruit service</a></li>
+        <li><a href="./index.html"><span class="arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>Prijs nieuwe voorruit</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Locaties</h4>
+      <ul>
+        <li><a href="../amsterdam.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Amsterdam</a></li>
+        <li><a href="../rotterdam.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Rotterdam</a></li>
+        <li><a href="../denhaag.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Den Haag</a></li>
+        <li><a href="../barendrecht.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Barendrecht</a></li>
+        <li><a href="../spijkenisse.html"><span class="pin"><svg viewBox="0 0 24 24" fill="#CC0000" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>Spijkenisse</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-contact-list">
+        <li><a href="../contact.html">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          <span class="ct">Contactgegevens</span></a></li>
+        <li><a href="tel:0880225800">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.59 19.79 19.79 0 01.88 2 2 2 0 012.87 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+          <span class="ct">088-0225800</span></a></li>
+        <li><a href="mailto:info@no-risk.nl">
+          <span class="ci"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <span class="ct">info@no-risk.nl</span></a></li>
+        <li><a href="https://wa.me/31655726869" target="_blank" rel="noopener">
+          <span class="ci"><svg viewBox="0 0 24 24" style="fill:#25D366;stroke:none;width:17px;height:17px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+          <span class="ct">0655726869</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Socials</h4>
+      <ul class="footer-socials-list">
+        <li><a href="https://www.instagram.com/noriskautoruitservice/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#CC0000" stroke="none"/></svg>
+          Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/no-risk-autoruitservice/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="#CC0000"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@noriskautoruitservice" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="#CC0000"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          YouTube</a></li>
+        <li><a href="https://www.google.com/search?q=No-Risk+Autoruitservice+Glasgarant+herstelbedrijf#mpd=~13647546857451617395/customers/reviews" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          Google</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a href="../index.html">© No-Risk Autoruitservice 1996-2026</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/privacy-verklaring/" target="_blank">Privacy verklaring</a>
+    <span style="color:rgba(255,255,255,0.15)">|</span>
+    <a href="https://no-risk.nl/algemene-voorwaarden/" target="_blank">Algemene voorwaarden</a>
+  </div>
+</footer>
+
+<script>
+/* ─────────────────────────────────────────────────────────────
+   KENTEKEN LOOKUP — prijs-nieuwe-voorruit
+   ─────────────────────────────────────────────────────────── */
+
+const kentekenInput = document.getElementById('kenteken-input');
+const zoekBtn       = document.getElementById('zoek-btn');
+const resultaatDiv  = document.getElementById('resultaat-sectie');
+
+let searchData = null; // Lazy-geladen
+
+/* Laad search-data.json één keer */
+function laadSearchData() {
+  if (searchData) return Promise.resolve(searchData);
+  return fetch('../search-data.json')
+    .then(r => r.json())
+    .then(d => { searchData = d.filter(e => e.t === 'model'); return searchData; })
+    .catch(() => { searchData = []; return []; });
+}
+
+/* ── Kenteken formattering ── */
+kentekenInput.addEventListener('input', () => {
+  let v = kentekenInput.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  // Auto-koppelteken na 2 of 3 tekens (vereenvoudigd: elke 2-3-3 of 3-2-3)
+  kentekenInput.value = v;
+});
+
+kentekenInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') zoek();
+});
+
+zoekBtn.addEventListener('click', zoek);
+
+function zoek() {
+  const raw = kentekenInput.value.replace(/[^A-Z0-9]/gi, '').toUpperCase();
+  if (raw.length < 4) {
+    toonError('Voer een geldig kenteken in', 'Gebruik minimaal 4 tekens, bijv. AB-123-C.');
+    return;
+  }
+  toonLaden(raw);
+  laadSearchData().then(() => rdwOpzoeken(raw));
+}
+
+/* ── RDW API aanroepen ── */
+function rdwOpzoeken(kenteken) {
+  const url = 'https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=' + encodeURIComponent(kenteken);
+  fetch(url)
+    .then(r => { if (!r.ok) throw new Error('RDW ' + r.status); return r.json(); })
+    .then(data => {
+      if (!data || data.length === 0) {
+        toonError('Kenteken niet gevonden', 'Controleer het kenteken en probeer het opnieuw. Het voertuig staat mogelijk niet in het RDW-register.');
+        return;
+      }
+      verwerkAuto(kenteken, data[0]);
+    })
+    .catch(() => {
+      toonError('Verbinding mislukt', 'Controleer uw internetverbinding en probeer het opnieuw.');
+    });
+}
+
+/* ── Auto verwerken en koppelen ── */
+function verwerkAuto(kenteken, rdw) {
+  const merk    = (rdw.merk || '').trim().toUpperCase();
+  const model   = (rdw.handelsbenaming || '').trim().toUpperCase();
+  const kleur   = capitalize(rdw.eerste_kleur || '—');
+  const carros  = capitalize(rdw.inrichting || rdw.voertuigsoort || '—');
+  const jaar    = rdwJaar(rdw.datum_eerste_toelating || rdw.datum_eerste_afgifte_nederland || '');
+  const brandst = capitalize(rdw.brandstof_omschrijving || (rdw.brandstof_omschrijving_1 || '—'));
+
+  // Mooie weergave van kenteken
+  const kentDisplay = formatKenteken(kenteken);
+
+  // Zoek match in search-data.json
+  const match = vindVooruit(merk, model, jaar);
+
+  toonResultaat(kentDisplay, merk, model, kleur, carros, jaar, brandst, match);
+}
+
+function rdwJaar(datum) {
+  // datum_eerste_toelating = "20140301" of "2014-03-01"
+  if (!datum) return null;
+  const s = datum.toString().replace(/-/g, '');
+  if (s.length >= 4) return parseInt(s.substring(0, 4), 10);
+  return null;
+}
+
+function formatKenteken(raw) {
+  // Probeer xx-xxx-x of xx-xx-xx patronen te detecteren
+  const r = raw.replace(/[^A-Z0-9]/g, '');
+  if (r.length === 6) return r.slice(0,2) + '-' + r.slice(2,4) + '-' + r.slice(4,6);
+  if (r.length === 7) {
+    // Kijk welk patroon: 2-3-2 of 3-2-2 etc.
+    return r.slice(0,2) + '-' + r.slice(2,5) + '-' + r.slice(5,7);
+  }
+  return r;
+}
+
+function capitalize(s) {
+  if (!s) return '—';
+  return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+}
+
+/* ── Matching ── */
+function vindVooruit(merk, model, jaar) {
+  if (!searchData || !merk) return null;
+
+  // Normaliseer merk + model
+  const doelLabel = (merk + ' ' + model).trim();
+
+  let beste = null;
+  let bestScore = 0;
+
+  for (const e of searchData) {
+    const label = e.l.toUpperCase();
+    const score = matchScore(label, doelLabel, e.b, jaar);
+    if (score > bestScore) {
+      bestScore = score;
+      beste = e;
+    }
+  }
+
+  // Drempelwaarde: minimaal 0.5 voor een match
+  return bestScore >= 0.5 ? beste : null;
+}
+
+function matchScore(label, doel, bouwjaar, jaar) {
+  // Label = "TOYOTA AYGO" of "TOYOTA AYGO CROSS"
+  // Doel  = merk + " " + model zoals uit RDW
+
+  const labelWords = label.split(/\s+/);
+  const doelWords  = doel.split(/\s+/);
+
+  // Bereken overlap (woorden van label in doel)
+  let matches = 0;
+  for (const w of labelWords) {
+    if (doelWords.includes(w)) matches++;
+  }
+  if (matches === 0) return 0;
+
+  // Proportionele score op label-lengte
+  let score = matches / labelWords.length;
+
+  // Extra: jaar in bereik?
+  if (jaar && bouwjaar) {
+    const bj = bouwjaar.replace(/–|-/g, '–').split(/[–-]/);
+    const van = parseInt(bj[0], 10);
+    const tot = parseInt(bj[bj.length - 1], 10);
+    if (!isNaN(van) && !isNaN(tot)) {
+      if (jaar >= van && jaar <= tot) {
+        score += 0.4; // Jaar klopt: extra bonus
+      } else {
+        score -= 0.3; // Jaar buiten bereik: aftrek
+      }
+    }
+  }
+
+  return score;
+}
+
+/* ── Renderen ── */
+function toonLaden(kenteken) {
+  resultaatDiv.innerHTML = `
+    <div class="state-loading">
+      <div class="spinner"></div>
+      <p>Kenteken <strong>${kenteken}</strong> opzoeken…</p>
+    </div>`;
+  resultaatDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function toonResultaat(kentDisplay, merk, model, kleur, carros, jaar, brandst, match) {
+  const autoNaam = [merk, model].filter(Boolean).join(' ') || 'Onbekend voertuig';
+  const jaarTekst = jaar ? jaar.toString() : '—';
+
+  const autoKaart = `
+    <div class="auto-kaart">
+      <div class="auto-kaart-header">
+        <span class="auto-plate-display">${kentDisplay}</span>
+        <div>
+          <div class="auto-naam">${autoNaam}<small>${jaarTekst} · ${carros}</small></div>
+        </div>
+      </div>
+      <div class="auto-specs">
+        <div class="spec-item"><div class="spec-label">Merk</div><div class="spec-value">${capitalize(merk) || '—'}</div></div>
+        <div class="spec-item"><div class="spec-label">Model</div><div class="spec-value">${capitalize(model) || '—'}</div></div>
+        <div class="spec-item"><div class="spec-label">Bouwjaar</div><div class="spec-value">${jaarTekst}</div></div>
+        <div class="spec-item"><div class="spec-label">Kleur</div><div class="spec-value">${kleur}</div></div>
+        <div class="spec-item"><div class="spec-label">Carrosserie</div><div class="spec-value">${carros}</div></div>
+        <div class="spec-item"><div class="spec-label">Brandstof</div><div class="spec-value">${brandst}</div></div>
+      </div>
+    </div>`;
+
+  let onderBlok;
+  if (match) {
+    const url = match.s.startsWith('/') ? '..' + match.s : '../' + match.s;
+    onderBlok = `
+      <div class="match-card">
+        <div class="match-card-header">
+          <span class="match-badge">✓ Gevonden</span>
+        </div>
+        <h2>Voorruit gevonden voor uw ${capitalize(merk)} ${capitalize(model)}</h2>
+        <p>We hebben de juiste voorruit voor uw auto gevonden. Bekijk de opties, prijs en mogelijkheden direct op de productpagina.</p>
+        <a href="${url}" class="btn-match">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+          Bekijk uw voorruit opties
+        </a>
+        <a href="../ruitschade-melden/index.html" class="btn-secondary-link">Of direct schade melden →</a>
+      </div>`;
+  } else {
+    onderBlok = `
+      <div class="geen-match-card">
+        <h2>Zoek uw auto handmatig</h2>
+        <p>We konden uw auto niet automatisch koppelen. Zoek hieronder op merk of model om de juiste voorruit te vinden.</p>
+        <div class="inline-search-wrap">
+          <div class="inline-search-field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="search" id="inline-search-input" autocomplete="off"
+              placeholder="Bijv. Toyota Aygo of Volkswagen Polo…"
+              aria-label="Zoek op automerk of model">
+          </div>
+          <ul class="inline-results" id="inline-results"></ul>
+        </div>
+        <p style="margin-top:1rem;font-size:0.88rem;color:#aaa;">Of bel ons: <a href="tel:0880225800" style="color:var(--rood);font-weight:600;">088-0225800</a> — wij helpen u verder.</p>
+      </div>`;
+  }
+
+  resultaatDiv.innerHTML = autoKaart + onderBlok;
+  resultaatDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Inline livesearch initialiseren als er geen match was
+  if (!match) {
+    initInlineSearch();
+    // Pre-fill met merk+model zodat klant gelijk iets ziet
+    const pre = [merk, model].filter(Boolean).join(' ');
+    if (pre) {
+      const il = document.getElementById('inline-search-input');
+      if (il) { il.value = pre; inlineSearch(pre); }
+    }
+  }
+}
+
+function toonError(titel, tekst) {
+  resultaatDiv.innerHTML = `
+    <div class="state-error">
+      <div class="error-icon">🔍</div>
+      <h2>${titel}</h2>
+      <p>${tekst}</p>
+      <button onclick="document.getElementById('kenteken-input').focus()"
+        style="background:var(--rood);color:#fff;border:none;padding:0.7rem 1.6rem;border-radius:8px;font-size:0.95rem;font-weight:700;cursor:pointer;">
+        Opnieuw proberen
+      </button>
+    </div>`;
+  resultaatDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ── Inline livesearch (fallback) ── */
+function initInlineSearch() {
+  const inp = document.getElementById('inline-search-input');
+  const box = document.getElementById('inline-results');
+  if (!inp || !box) return;
+
+  inp.addEventListener('input', () => {
+    const q = inp.value.trim();
+    if (q.length < 2) { box.classList.remove('open'); box.innerHTML = ''; return; }
+    inlineSearch(q);
+  });
+
+  document.addEventListener('click', e => {
+    if (!inp.closest('.inline-search-wrap').contains(e.target)) {
+      box.classList.remove('open');
+    }
+  });
+}
+
+function inlineSearch(q) {
+  const box = document.getElementById('inline-results');
+  if (!box || !searchData) return;
+
+  const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+  const hits = searchData.filter(e => {
+    const hay = (e.l + ' ' + (e.b || '')).toLowerCase();
+    return terms.every(t => hay.includes(t));
+  }).slice(0, 10);
+
+  if (!hits.length) {
+    box.innerHTML = '<li class="il-empty">Geen resultaten gevonden</li>';
+    box.classList.add('open');
+    return;
+  }
+
+  box.innerHTML = hits.map(h => {
+    const hl  = inlineHighlight(h.l, terms);
+    const url = h.s.startsWith('/') ? '..' + h.s : '../' + h.s;
+    return `<li><a href="${url}"><span>${hl}</span><span class="il-bj">${h.b || ''}</span></a></li>`;
+  }).join('');
+  box.classList.add('open');
+}
+
+function inlineHighlight(text, terms) {
+  let r = text;
+  terms.forEach(t => {
+    const re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+    r = r.replace(re, '<mark>$1</mark>');
+  });
+  return r;
+}
+</script>
+
+<!-- Nav search (site-wide livesearch in nav) -->
+<script src="../search.js"></script>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+</script>
+
+</body>
+</html>
