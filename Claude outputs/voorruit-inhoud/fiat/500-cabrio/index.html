@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voorruit FIAT 500 Cabrio vervangen – Kies uw bouwjaar | No-Risk</title>
+  <meta name="description" content="Kies het bouwjaar van uw FIAT 500 Cabrio (2010–2018) en ontdek de prijs voor vervanging of reparatie bij No-Risk Autoruitservice.">
+  <link rel="canonical" href="https://no-risk.nl/voorruit/fiat/500-cabrio/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rood: #CC0000; --rood-hover: #aa0000; --wit: #fff;
+      --accent: #BB0A0A;
+      --radius: 8px; --transition: 0.2s ease;
+    }
+    body { font-family: 'Inter', sans-serif; background: #f4f5f7; color: #222; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: #CC0000;
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.82); text-decoration: none;
+      padding: 0.5rem 0.9rem; border-radius: var(--radius);
+      font-size: 0.93rem; position: relative; transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 4px; left: 0.9rem; right: 0.9rem;
+      height: 2px; background: #fff;
+      transform: scaleX(0); transform-origin: left; transition: transform var(--transition);
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { background: var(--rood); color: #fff !important;
+      padding: 0.5rem 1.1rem !important; border-radius: var(--radius) !important;
+      font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
+    .nav-cta:hover { background: rgba(255,255,255,0.85) !important; }
+    .nav-cta::after { display: none !important; }
+    /* Zoekbalk */
+    .nav-search { position: relative; display: flex; align-items: center; margin-left: 0.75rem; }
+    .search-form { display: flex; align-items: center; background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 0 8px 0 14px;
+      transition: background 0.2s, border-color 0.2s; }
+    .search-form:focus-within { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.45); }
+    #search-input { background: none; border: none; outline: none; color: #fff;
+      font-family: inherit; font-size: 0.875rem; width: 190px; padding: 7px 0; }
+    #search-input::placeholder { color: rgba(255,255,255,0.5); }
+    .search-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.7);
+      display: flex; align-items: center; padding: 4px; margin-left: 4px; border-radius: 50%; transition: color 0.15s; }
+    .search-btn:hover { color: #fff; }
+    .search-btn svg { width: 15px; height: 15px; }
+    .search-box { display: none; position: absolute; right: 0; top: calc(100% + 10px);
+      width: 380px; background: #fff; border-radius: 10px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.22); overflow: hidden; z-index: 2000; }
+    .search-box.open { display: block; }
+    #search-results { list-style: none; max-height: 320px; overflow-y: auto; padding: 4px 0; }
+    .sr-item { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; text-decoration: none; color: #222; transition: background 0.15s; }
+    .sr-item:hover, .sr-item:focus { background: #f5f5f5; outline: none; }
+    .sr-label { font-size: 0.9rem; font-weight: 500; }
+    .sr-label mark { background: none; color: var(--rood); font-weight: 700; }
+    .sr-bj { font-size: 0.78rem; color: #999; white-space: nowrap; margin-left: 8px; }
+    .sr-icon { margin-right: 5px; font-size: 0.85rem; }
+    .sr-badge { font-size: 0.72rem; font-weight: 600; padding: 2px 7px; border-radius: 10px; white-space: nowrap; margin-left: 8px; }
+    .sr-badge--locatie { background: #e8f4ff; color: #1565c0; }
+    .sr-badge--dienst  { background: #fff3e0; color: #e65100; }
+    .sr-badge--info    { background: #f3e5f5; color: #6a1b9a; }
+    .sr-badge--merk    { background: #e8f5e9; color: #2e7d32; }
+    .sr-badge--pagina  { background: #fafafa; color: #555; }
+    .sr-empty { padding: 12px 14px; color: #999; font-size: 0.88rem; }
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+
+    /* ── HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, #0f0f0f 50%, color-mix(in srgb, #BB0A0A 30%, #0f0f0f) 100%);
+      padding: 110px 2rem 56px; text-align: center;
+    }
+    .breadcrumb {
+      font-size: 0.78rem; color: rgba(255,255,255,0.4);
+      margin-bottom: 1.6rem; display: flex; justify-content: center; align-items: center; gap: 0.4rem; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .breadcrumb a:hover { color: #fff; }
+    .merk-logo-wrap {
+      width: 80px; height: 80px; background: rgba(255,255,255,0.92);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.2rem; overflow: hidden;
+    }
+    .merk-logo-wrap img { width: 60px; height: 60px; object-fit: contain; }
+    .merk-monogram {
+      width: 80px; height: 80px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px;
+      margin: 0 auto 1.2rem;
+    }
+    .page-header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 800;
+      color: #fff; line-height: 1.15; margin-bottom: 0.7rem;
+    }
+    .page-header h1 em { color: var(--accent); font-style: normal; }
+    .page-header p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 500px; margin: 0 auto; }
+
+    /* ── GRID ── */
+    .modellen-wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .modellen-count { font-size: 0.85rem; color: #888; margin-bottom: 1.2rem; }
+    .modellen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .model-card {
+      background: #fff; border: 1.5px solid #e8e8e8; border-radius: 10px;
+      padding: 1.2rem 1.1rem 1rem;
+      text-decoration: none; color: #222;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      position: relative; overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .model-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--accent);
+    }
+    .model-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.1); border-color: transparent; }
+    .mc-top { display: flex; flex-direction: column; gap: 2px; }
+    .mc-naam { font-weight: 700; font-size: 1rem; color: #111; }
+    .mc-uitv { font-size: 0.73rem; color: #bbb; letter-spacing: 0.3px; }
+    .mc-bj { font-size: 0.93rem; color: #555; font-weight: 700; }
+    .mc-cta {
+      margin-top: auto; padding-top: 0.6rem;
+      font-size: 0.82rem; font-weight: 600; color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    .footer-mini {
+      background: #111; color: rgba(255,255,255,0.4); text-align: center;
+      padding: 1.5rem; font-size: 0.82rem;
+    }
+    .footer-mini a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-mini a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0;
+        position: absolute; top: 68px; left: 0; right: 0;
+        background: rgba(17,17,17,0.98); padding: 1rem 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.75rem 2rem; border-radius: 0; }
+      .nav-links a::after { display: none; }
+      .modellen-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../../index.html" class="nav-logo" aria-label="No-Risk Autoruitservice - Home">
+    <img src="../../../logo.png" alt="No-Risk Autoruitservice">
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../../../index.html">Home</a></li>
+    <li><a href="../../../diensten.html">Diensten</a></li>
+    <li><a href="../../../locaties.html">Onze locaties</a></li>
+    <li><a href="../../../autoruitschade-verzekerd.html">Uw verzekering</a></li>
+    <li><a href="../../../over-ons.html">Over ons</a></li>
+    <li><a href="../../../contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-search">
+    <div class="search-form">
+      <input type="search" id="search-input" placeholder="Zoek merk of model…" autocomplete="off" spellcheck="false">
+      <button class="search-btn" aria-label="Zoeken">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </div>
+    <ul class="search-box" id="search-box" role="listbox" aria-label="Zoekresultaten"></ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="breadcrumb">
+    <a href="../../../index.html">Home</a>
+    <span>›</span>
+    <a href="../../../voorruit/">Voorruit per merk</a>
+    <span>›</span>
+    <a href="../">FIAT</a>
+    <span>›</span>
+    500 Cabrio
+  </div>
+  <div class="merk-logo-wrap">
+      <img src="../../../logos/fiat.svg" alt="FIAT logo"
+        onerror="this.src='../../../logos/fiat.png';this.onerror=function(){this.closest('.merk-logo-wrap').innerHTML='<div class=merk-monogram style=background:#00838f;color:#fff>FIA</div>'}">
+    </div>
+  <h1>Voorruit <em>FIAT 500 Cabrio</em><br>vervangen of repareren?</h1>
+  <p>Directe vervanging voor de FIAT 500 Cabrio (2010–2018).</p>
+</div>
+
+<div class="modellen-wrap">
+  <p class="modellen-count">1 bouwjaarbereik beschikbaar</p>
+  <div class="modellen-grid">
+<a href="2010-2018/" class="model-card">
+  <div class="mc-top">
+    <span class="mc-naam">500 Cabrio</span>
+    
+  </div>
+  <span class="mc-bj">2010 – 2018</span>
+  <span class="mc-cta">Bekijk opties →</span>
+</a>
+  </div>
+</div>
+
+<footer class="footer-mini">
+  © 2025 No-Risk Autoruitservice &nbsp;·&nbsp;
+  <a href="../../../index.html">Home</a> &nbsp;·&nbsp;
+  <a href="../../../locaties.html">Onze locaties</a> &nbsp;·&nbsp;
+  <a href="../../../contact.html">Contact</a>
+</footer>
+
+<script>
+  const h = document.getElementById('hamburger');
+  const n = document.getElementById('nav-links');
+  h.addEventListener('click', () => n.classList.toggle('open'));
+</script>
+<script src="../../../search.js"></script>
+</body>
+</html>
